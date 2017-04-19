@@ -21,8 +21,8 @@
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  <!--Nav bar collapsed upong screensize -->
-        <ul class="nav navbar-nav navbar-left"> <!-- Top NAV start -->
-          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Student", root_path %></li>
+        <ul class="nav navbar-nav"> <!-- Top NAV start -->
+          <li class="<%= 'active' if current_page?(student_studentdashboard_path) %>"><%= link_to "Student", student_studentdashboard_path %></li>
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Faculty", root_path %></li>
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Admin", root_path %></li>
         </ul>
@@ -31,7 +31,6 @@
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Sign In", root_path %></li>
         </ul>
       </div>
-
     </nav>
   </header>
 
