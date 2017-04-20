@@ -1,0 +1,15 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<container id = "list all users">
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to userinfo = user.first + ', ' + user.last, user %>
+      <%= gravatar_for user, size: 50 %>
+      </br>
+      <div>ID #<%= user.school_id %></div>
+    </li>
+  <% end %>
+</ul>
+</container>
