@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  password: MyString
+  permission: MyString
+  view_as: MyString
+  first: MyString
+  last: MyString
+  email: MyString
+  degree_id: 1
+  course_load: 1
+  in_class: 1
+  online: 1
+  path_id: 1
+  deleted: 1
+
+two:
+  username: MyString
+  password: MyString
+  permission: MyString
+  view_as: MyString
+  first: MyString
+  last: MyString
+  email: MyString
+  degree_id: 1
+  course_load: 1
+  in_class: 1
+  online: 1
+  path_id: 1
+  deleted: 1

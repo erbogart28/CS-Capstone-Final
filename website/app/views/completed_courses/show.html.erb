@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+					<div class="margin-vertical">
+			  <strong>User:</strong>
+			  <%= @completed_course.user_id %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Course:</strong>
+			  <%= @completed_course.course_id %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', completed_courses_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Edit', edit_completed_course_path(@completed_course), class:"btn btn-xs btn-warning color-white" %>
+	</div>
+</div>

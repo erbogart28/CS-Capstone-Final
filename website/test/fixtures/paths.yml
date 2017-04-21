@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  degree_id: 1
+  start_quarter: MyString
+  course_load: 1
+  in_class: 1
+  online: 1
+
+two:
+  degree_id: 1
+  start_quarter: MyString
+  course_load: 1
+  in_class: 1
+  online: 1

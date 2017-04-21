@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+					<div class="margin-vertical">
+			  <strong>Major:</strong>
+			  <%= @degree.major %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Concentration:</strong>
+			  <%= @degree.concentration %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Degree reqs:</strong>
+			  <%= @degree.degree_reqs_id %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', degrees_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Edit', edit_degree_path(@degree), class:"btn btn-xs btn-warning color-white" %>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Course Deliveries</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>Course</th>
+				      <th>Course term</th>
+				      <th>Course frequency</th>
+				      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @course_deliveries.each do |course_delivery| %>
+		      <tr>
+					<td><%= course_delivery.course_id %></td>
+					<td><%= course_delivery.course_term %></td>
+					<td><%= course_delivery.course_frequency %></td>
+					<td><%= link_to 'Show', course_delivery, class:"btn btn-primary btn-xs color-white" %> </td>
+			<td><%= link_to 'Edit', edit_course_delivery_path(course_delivery), class:"btn btn-warning btn-xs color-white" %></td>
+			<td><%= link_to 'Destroy', course_delivery, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+        <div class="panel-footer">
+		<%= link_to 'New Course Delivery', new_course_delivery_path, class:"btn btn-success color-white" %>
+        </div>
+</div>

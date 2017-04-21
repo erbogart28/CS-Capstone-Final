@@ -1,0 +1,22 @@
+<%= form_for(course_frequency) do |f| %>
+  <% if course_frequency.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course_frequency.errors.count, "error") %> prohibited this course_frequency from being saved:</h2>
+
+      <ul>
+      <% course_frequency.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :frequency %>
+    <%= f.text_field :frequency, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Submit, class:"btn btn-success" %>
+  </div>
+<% end %>

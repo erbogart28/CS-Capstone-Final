@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Prereqs</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>Course</th>
+				      <th>Prereq course</th>
+				      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @prereqs.each do |prereq| %>
+		      <tr>
+					<td><%= prereq.course_id %></td>
+					<td><%= prereq.prereq_course_id %></td>
+					<td><%= link_to 'Show', prereq, class:"btn btn-primary btn-xs color-white" %> </td>
+			<td><%= link_to 'Edit', edit_prereq_path(prereq), class:"btn btn-warning btn-xs color-white" %></td>
+			<td><%= link_to 'Destroy', prereq, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+        <div class="panel-footer">
+		<%= link_to 'New Prereq', new_prereq_path, class:"btn btn-success color-white" %>
+        </div>
+</div>

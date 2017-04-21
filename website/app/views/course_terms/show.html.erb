@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+					<div class="margin-vertical">
+			  <strong>Term:</strong>
+			  <%= @course_term.term %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', course_terms_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Edit', edit_course_term_path(@course_term), class:"btn btn-xs btn-warning color-white" %>
+	</div>
+</div>
