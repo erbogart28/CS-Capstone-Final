@@ -5,6 +5,11 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -31,7 +36,23 @@
           <li class="<%= 'active' if current_page?(student_studentdashboard_path) %>"><%= link_to "Student", student_studentdashboard_path %></li>
           <li class="<%= 'active' if current_page?(faculty_facultydashboard_path) %>"><%= link_to "Faculty", faculty_facultydashboard_path %></li>
           <li class="<%= 'active' if current_page?(admin_admindashboard_path) %>"><%= link_to "Admin", admin_admindashboard_path %></li>
-        </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Db Tables <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+		  <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Users", users_path %></li>
+		  <li class="<%= 'active' if current_page?(completed_courses_path) %>"><%= link_to "Completed Courses", completed_courses_path %></li>
+		  <li class="<%= 'active' if current_page?(degrees_path) %>"><%= link_to "Degrees", degrees_path %></li>
+		  <li class="<%= 'active' if current_page?(paths_path) %>"><%= link_to "Paths", paths_path %></li>
+		  <li class="<%= 'active' if current_page?(degree_reqs_path) %>"><%= link_to "Degree Reqs", degree_reqs_path %></li>
+		  <li class="<%= 'active' if current_page?(path_courses_path) %>"><%= link_to "Path Courses", path_courses_path %></li>
+		  <li class="<%= 'active' if current_page?(courses_path) %>"><%= link_to "Courses", courses_path %></li>
+		  <li class="<%= 'active' if current_page?(course_terms_path) %>"><%= link_to "Course Terms", course_terms_path %></li>
+		  <li class="<%= 'active' if current_page?(course_frequencies_path) %>"><%= link_to "Course Frequencies", course_frequencies_path %></li>
+		  <li class="<%= 'active' if current_page?(prereqs_path) %>"><%= link_to "Prereqs", prereqs_path %></li>
+		  <li class="<%= 'active' if current_page?(course_deliveries_path) %>"><%= link_to "Course Deliveries", course_deliveries_path %></li>
+            </ul>
+          </li>
+	</ul>
         <!-- Right side TOP NAV page links deleted-->
         <!--<ul class="nav navbar-nav navbar-right"> <!-- Top NAV start -->-->
         <!--  <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Sign In", root_path %></li>-->
@@ -39,11 +60,6 @@
       </div>
     </nav>
   </header>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <%= yield %>
 </body>

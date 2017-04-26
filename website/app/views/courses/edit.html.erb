@@ -1,0 +1,12 @@
+<h3>Editing Course</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<%= render 'form', course: @course %>
+        </div>
+        <div class="panel-footer">
+
+		<%= link_to 'Back', courses_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Show', @course, class:"btn btn-xs btn-primary color-white"%>
+	</div>
+</div>

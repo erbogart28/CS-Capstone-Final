@@ -1,0 +1,27 @@
+<%= form_for(completed_course) do |f| %>
+  <% if completed_course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(completed_course.errors.count, "error") %> prohibited this completed_course from being saved:</h2>
+
+      <ul>
+      <% completed_course.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :course_id %>
+    <%= f.number_field :course_id, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Submit, class:"btn btn-success" %>
+  </div>
+<% end %>

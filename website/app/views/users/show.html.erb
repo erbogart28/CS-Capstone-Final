@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+					<div class="margin-vertical">
+			  <strong>Username:</strong>
+			  <%= @user.username %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Password:</strong>
+			  <%= @user.password %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Permission:</strong>
+			  <%= @user.permission %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>View as:</strong>
+			  <%= @user.view_as %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>First:</strong>
+			  <%= @user.first %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Last:</strong>
+			  <%= @user.last %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Email:</strong>
+			  <%= @user.email %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Degree:</strong>
+			  <%= @user.degree_id %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Course load:</strong>
+			  <%= @user.course_load %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>In class:</strong>
+			  <%= @user.in_class %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Online:</strong>
+			  <%= @user.online %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Path:</strong>
+			  <%= @user.path_id %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Deleted:</strong>
+			  <%= @user.deleted %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', users_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Edit', edit_user_path(@user), class:"btn btn-xs btn-warning color-white" %>
+	</div>
+</div>
