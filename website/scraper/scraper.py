@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-from website.scraper import ThreadPool, season_map, Course, CurriculumKey as c
+from website.scraper import ThreadPool, season_map, Course, CSCurriculumKey as CS, ISCurriculumKey as IS
 import csv
 import re
 
@@ -8,28 +8,40 @@ prereq_pattern = re.compile("PREREQUISITE")
 
 ping_count = 0
 course_url = "http://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject={}&CatalogNbr={}"
-curriculum_url = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-in-Computer-Science.aspx"
+cs_curriculum_url = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-in-Computer-Science.aspx"
+is_curriculum_url_bsa = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-IS-Business-Systems-Analysis.aspx"
+is_curriculum_url_bi = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-IS-Business-Intelligence.aspx"
+is_curriculum_url_da = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-IS-Database-Administration.aspx"
+is_curriculum_url_em = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-IS-IT-Enterprise-Management.aspx"
+is_curriculum_url_s = "http://www.cdm.depaul.edu/academics/Pages/Current/Requirements-MS-IS-Standard.aspx"
 
-curriculum = {
-    c.INTRODUCTORY: [],
-    c.FOUNDATION: [],
-    c.AREAS: {
-        c.SOFTWARE_AND_SYSTEMS_DEVELOPMENT: [],
-        c.THEORY: [],
-        c.DATA_SCIENCE: [],
-        c.DATABASE_SYSTEMS: [],
-        c.ARTIFICIAL_INTELLIGENCE: [],
-        c.SOFTWARE_ENGINEERING: [],
-        c.MULTIMEDIA: []
+cs_curriculum = {
+    CS.INTRODUCTORY: [],
+    CS.FOUNDATION: [],
+    CS.AREAS: {
+        CS.SOFTWARE_AND_SYSTEMS_DEVELOPMENT: [],
+        CS.THEORY: [],
+        CS.DATA_SCIENCE: [],
+        CS.DATABASE_SYSTEMS: [],
+        CS.ARTIFICIAL_INTELLIGENCE: [],
+        CS.SOFTWARE_ENGINEERING: [],
+        CS.MULTIMEDIA: []
     },
-    c.RESEARCH_AND_THESIS_OPTIONS: {
-        c.RESEARCH_COLLOQUIUM: [],
-        c.MASTERS_RESEARCH: [],
-        c.MASTERS_THESIS: [],
-        c.GRADUATE_INTERNSHIP: []
+    CS.RESEARCH_AND_THESIS_OPTIONS: {
+        CS.RESEARCH_COLLOQUIUM: [],
+        CS.MASTERS_RESEARCH: [],
+        CS.MASTERS_THESIS: [],
+        CS.GRADUATE_INTERNSHIP: []
     }
 }
-curriculum_detail = {}
+
+is_curriculum_seed = {
+    IS.INTRODUCTORY: [],
+    IS.FOUNDATION: [],
+    IS.ADVANCED: [],
+    IS.MAJOR_ELECTIVES: [],
+    IS.CAPSTONE: []
+}
 
 
 def pull_html(url):
@@ -52,32 +64,50 @@ def push_html(url, course, destination):
         destination.append((course, html,))
 
 
-def curriculum_scraper(html_string):
+def cs_curriculum_scraper(html_string):
     soup = BeautifulSoup(html_string, 'html.parser')
     course_list_soup = soup.select('.courseList')
-    push_name_tuples(course_list_soup, 0, c.INTRODUCTORY)
-    push_name_tuples(course_list_soup, 1, c.FOUNDATION)
-    push_name_tuples(course_list_soup, 2, c.AREAS, c.SOFTWARE_AND_SYSTEMS_DEVELOPMENT)
-    push_name_tuples(course_list_soup, 3, c.AREAS, c.THEORY)
-    push_name_tuples(course_list_soup, 4, c.AREAS, c.DATA_SCIENCE)
-    push_name_tuples(course_list_soup, 5, c.AREAS, c.DATABASE_SYSTEMS)
-    push_name_tuples(course_list_soup, 6, c.AREAS, c.ARTIFICIAL_INTELLIGENCE)
-    push_name_tuples(course_list_soup, 7, c.AREAS, c.SOFTWARE_ENGINEERING)
-    push_name_tuples(course_list_soup, 8, c.AREAS, c.MULTIMEDIA)
-    push_name_tuples(course_list_soup, 9, c.RESEARCH_AND_THESIS_OPTIONS, c.RESEARCH_COLLOQUIUM)
-    push_name_tuples(course_list_soup, 10, c.RESEARCH_AND_THESIS_OPTIONS, c.MASTERS_RESEARCH)
-    push_name_tuples(course_list_soup, 11, c.RESEARCH_AND_THESIS_OPTIONS, c.MASTERS_THESIS)
-    push_name_tuples(course_list_soup, 12, c.RESEARCH_AND_THESIS_OPTIONS, c.GRADUATE_INTERNSHIP)
+    push_name_tuples(course_list_soup, 0, CS.INTRODUCTORY)
+    push_name_tuples(course_list_soup, 1, CS.FOUNDATION)
+    push_name_tuples(course_list_soup, 2, CS.AREAS, CS.SOFTWARE_AND_SYSTEMS_DEVELOPMENT)
+    push_name_tuples(course_list_soup, 3, CS.AREAS, CS.THEORY)
+    push_name_tuples(course_list_soup, 4, CS.AREAS, CS.DATA_SCIENCE)
+    push_name_tuples(course_list_soup, 5, CS.AREAS, CS.DATABASE_SYSTEMS)
+    push_name_tuples(course_list_soup, 6, CS.AREAS, CS.ARTIFICIAL_INTELLIGENCE)
+    push_name_tuples(course_list_soup, 7, CS.AREAS, CS.SOFTWARE_ENGINEERING)
+    push_name_tuples(course_list_soup, 8, CS.AREAS, CS.MULTIMEDIA)
+    push_name_tuples(course_list_soup, 9, CS.RESEARCH_AND_THESIS_OPTIONS, CS.RESEARCH_COLLOQUIUM)
+    push_name_tuples(course_list_soup, 10, CS.RESEARCH_AND_THESIS_OPTIONS, CS.MASTERS_RESEARCH)
+    push_name_tuples(course_list_soup, 11, CS.RESEARCH_AND_THESIS_OPTIONS, CS.MASTERS_THESIS)
+    push_name_tuples(course_list_soup, 12, CS.RESEARCH_AND_THESIS_OPTIONS, CS.GRADUATE_INTERNSHIP)
 
 
-def push_name_tuples(course_list_soup, index, key, secondary_key=None):
-    global curriculum
+def is_curriculum_scraper(html_string, is_curriculum):
+    soup = BeautifulSoup(html_string, 'html.parser')
+    course_list_soup = soup.select('.courseList')
+    concentration = soup.select('#programPageConcentration')[0].text[:-14]
+    index = 0
+    if concentration == "Business Intelligence" or concentration == "Database Administration":
+        push_name_tuples(course_list_soup, index, IS.INTRODUCTORY, curric=is_curriculum)
+        index += 1
+    push_name_tuples(course_list_soup, index, IS.FOUNDATION, curric=is_curriculum)
+    index += 1
+    if concentration != "Standard":
+        push_name_tuples(course_list_soup, index, IS.ADVANCED, curric=is_curriculum)
+        index += 1
+    if concentration != "Standard":
+        push_name_tuples(course_list_soup, index, IS.MAJOR_ELECTIVES, curric=is_curriculum)
+        index += 1
+    push_name_tuples(course_list_soup, index, IS.CAPSTONE, curric=is_curriculum)
+
+
+def push_name_tuples(course_list_soup, index, key, secondary_key=None, curric = cs_curriculum):
     course_soup = course_list_soup[index].select('.CDMExtendedCourseInfo')
     name_list = [Course(*td.text.strip().split()) for td in course_soup if not td.text.startswith("GAM 490")]
     if secondary_key:
-        curriculum[key][secondary_key].extend(name_list)
+        curric[key][secondary_key].extend(name_list)
     else:
-        curriculum[key].extend(name_list)
+        curric[key].extend(name_list)
 
 
 def course_gen(curr):
@@ -91,11 +121,11 @@ def course_gen(curr):
                 yield i
 
 
-def scrape_course_detail():
-    global curriculum, course_url
+def scrape_course_detail(curric):
+    global course_url
     t = ThreadPool(40)
     course_html_list = []
-    for course in course_gen(curriculum):
+    for course in course_gen(curric):
         url = course_url.format(course.subject, course.num)
         t.add_task(push_html, url, course, course_html_list)
     t.wait_completion()
@@ -118,18 +148,49 @@ def parse_and_update_course(course_obj, course_html):
     course_obj.prerequisites = prereqs
 
 
-def write_to_csv():
-    with open('courses.csv', 'w', newline='') as csvfile:
+def write_to_csv(curric, name):
+    with open(name, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=':', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        for course in course_gen(curriculum):
+        for course in course_gen(curric):
             writer.writerow(["{} {}".format(course.subject, course.num),
                              course.prerequisites if course.prerequisites is not None else "",
                              ",".join(entry for entry in course.history)])
 
 
 if __name__ == '__main__':
-    html_string = pull_html(curriculum_url)
-    curriculum_scraper(html_string)
-    scrape_course_detail()
-    write_to_csv()
-    print(*("{} : {}".format(i, j) for i, j in curriculum.items()), sep='\n')
+    html_string = pull_html(cs_curriculum_url)
+    cs_curriculum_scraper(html_string)
+    scrape_course_detail(cs_curriculum)
+    write_to_csv(cs_curriculum, 'cs.csv')
+
+    # curr = is_curriculum_seed.copy()
+    # html_string = pull_html(is_curriculum_url_bsa)
+    # is_curriculum_scraper(html_string, curr)
+    # scrape_course_detail(curr)
+    # write_to_csv(curr, 'is_bsa.csv')
+
+    # curr = is_curriculum_seed.copy()
+    # html_string = pull_html(is_curriculum_url_bi)
+    # is_curriculum_scraper(html_string, curr)
+    # scrape_course_detail(curr)
+    # write_to_csv(curr, 'is_bi.csv')
+
+    # curr = is_curriculum_seed.copy()
+    # html_string = pull_html(is_curriculum_url_da)
+    # is_curriculum_scraper(html_string, curr)
+    # scrape_course_detail(curr)
+    # write_to_csv(curr, 'is_da.csv')
+
+    # curr = is_curriculum_seed.copy()
+    # html_string = pull_html(is_curriculum_url_em)
+    # is_curriculum_scraper(html_string, curr)
+    # scrape_course_detail(curr)
+    # write_to_csv(curr, 'is_em.csv')
+
+    # curr = is_curriculum_seed.copy()
+    # html_string = pull_html(is_curriculum_url_s)
+    # is_curriculum_scraper(html_string, curr)
+    # scrape_course_detail(curr)
+    # write_to_csv(curr, 'is_s.csv')
+
+    print(*("{} : {}".format(i, j) for i, j in cs_curriculum.items()), sep='\n')

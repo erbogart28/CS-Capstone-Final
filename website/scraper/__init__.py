@@ -2,7 +2,7 @@ from threading import Thread
 from queue import Queue
 
 
-class CurriculumKey:
+class CSCurriculumKey:
     INTRODUCTORY = 0
     FOUNDATION = 1
     SOFTWARE_AND_SYSTEMS_DEVELOPMENT = 2
@@ -18,6 +18,15 @@ class CurriculumKey:
     GRADUATE_INTERNSHIP = 12
     AREAS = 13
     RESEARCH_AND_THESIS_OPTIONS = 14
+
+
+class ISCurriculumKey:
+    INTRODUCTORY = 0
+    FOUNDATION = 1
+    ADVANCED = 2
+    MAJOR_ELECTIVES = 3
+    CAPSTONE = 4
+    # extra cdm elective
 
 
 season_map = {
