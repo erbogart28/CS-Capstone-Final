@@ -48,7 +48,7 @@ private
   end
   # Before filters
   
-  # Confirms a logged-in user.
+  # Confirms non logged-in user.
   def logged_in_user
     unless logged_in?
       store_location
