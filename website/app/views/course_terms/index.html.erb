@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Course Terms</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>Term</th>
+				      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @course_terms.each do |course_term| %>
+		      <tr>
+					<td><%= course_term.term %></td>
+					<td><%= link_to 'Show', course_term, class:"btn btn-primary btn-xs color-white" %> </td>
+			<td><%= link_to 'Edit', edit_course_term_path(course_term), class:"btn btn-warning btn-xs color-white" %></td>
+			<td><%= link_to 'Destroy', course_term, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+        <div class="panel-footer">
+		<%= link_to 'New Course Term', new_course_term_path, class:"btn btn-success color-white" %>
+        </div>
+</div>

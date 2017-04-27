@@ -18,4 +18,3 @@ class User < ApplicationRecord
     validates :school_id, presence: true, length: { maximum: 15 }
 
 end
-

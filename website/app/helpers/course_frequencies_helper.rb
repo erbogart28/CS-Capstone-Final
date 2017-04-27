@@ -1,0 +1,2 @@
+module CourseFrequenciesHelper
+end

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Completed Courses</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>User</th>
+				      <th>Course</th>
+				      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @completed_courses.each do |completed_course| %>
+		      <tr>
+					<td><%= completed_course.user_id %></td>
+					<td><%= completed_course.course_id %></td>
+					<td><%= link_to 'Show', completed_course, class:"btn btn-primary btn-xs color-white" %> </td>
+			<td><%= link_to 'Edit', edit_completed_course_path(completed_course), class:"btn btn-warning btn-xs color-white" %></td>
+			<td><%= link_to 'Destroy', completed_course, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+        <div class="panel-footer">
+		<%= link_to 'New Completed Course', new_completed_course_path, class:"btn btn-success color-white" %>
+        </div>
+</div>

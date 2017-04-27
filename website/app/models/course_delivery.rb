@@ -1,0 +1,2 @@
+class CourseDelivery < ApplicationRecord
+end

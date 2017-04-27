@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Degree Reqs</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>Course</th>
+				      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @degree_reqs.each do |degree_req| %>
+		      <tr>
+					<td><%= degree_req.course_id %></td>
+					<td><%= link_to 'Show', degree_req, class:"btn btn-primary btn-xs color-white" %> </td>
+			<td><%= link_to 'Edit', edit_degree_req_path(degree_req), class:"btn btn-warning btn-xs color-white" %></td>
+			<td><%= link_to 'Destroy', degree_req, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+        <div class="panel-footer">
+		<%= link_to 'New Degree Req', new_degree_req_path, class:"btn btn-success color-white" %>
+        </div>
+</div>

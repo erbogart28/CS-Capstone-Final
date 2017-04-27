@@ -1,5 +1,7 @@
 <container>
-<h1>Admin Dashboard</h1>
+  <div class="page-header">
+    <h1>Admin Dashboard</h1>
+  </div>
 </container>
 
 <!--Look into BOOTCARDS for displaying data -->
@@ -11,7 +13,7 @@
             <div class="card-content">
                 <h4 class="card-title">Faculty</h4>
                     <p class="aboutText">
-                        View all faculty accounts and information. 
+                        View all faculty accounts and information.
                     </p>
                     <div class="access">
                         <%= link_to "Users", users_path, :class => "btn btn-primary" %>
@@ -19,7 +21,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="card">
@@ -34,14 +36,14 @@
             </div>
         </div>
     </div>
-        
+
     <!--Start Card 2 About Section -->
     <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="card">
             <div class="card-content">
                 <h4 class="card-title">View As</h4>
                     <p class="aboutText">
-                        View the site as you would a student or faculty member. 
+                        View the site as you would a student or faculty member.
                     </p>
                     <div class="access">
                         <%= link_to 'Faculty', root_path, :class => "btn btn-primary", :style => "margin-right:2%" %>
@@ -52,5 +54,5 @@
     </div>
 </div> <!-- End row 1-->
 
-    
+
 <!--Look into BOOTCARDS for displaying data -->
