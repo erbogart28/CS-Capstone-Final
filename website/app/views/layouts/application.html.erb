@@ -5,46 +5,78 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="assets/js/bootstrap-dropdown.js" type="text/javascript"></script>
 </head>
-
-<body>
+<body> 
   <header> 
-    <nav class="navbar-default">   <!--Nav bar default -->
-      <div class = "navbar-header">
-        <div class="navbar-brand">
+    <nav class="navbar-default">   <!--Start nav bar default -->
+      <div class = "navbar-header"> <!-- Start navbar header -->
+        <div class="navbar-brand"> <!-- Start navbar-brand -->
           <%= link_to image_tag("brandtest.png"), root_path, :alt => "Capstone Site", :class =>"img-responsive", :style => "margin-top:-16%" %>
-        </div>
-          <!--<a class="navbar-brand" href="/">Capstone</a>-->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-      </div>
+        </div> <!-- end navbar-brand -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div> <!-- End navbar head -->
       
-
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  <!--Nav bar collapsed upong screensize -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  <!--Start navbar collapsed  -->
         <ul class="nav navbar-nav"> <!-- Top NAV start -->
           <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
           <li class="<%= 'active' if current_page?(student_studentdashboard_path) %>"><%= link_to "Student", student_studentdashboard_path %></li>
           <li class="<%= 'active' if current_page?(faculty_facultydashboard_path) %>"><%= link_to "Faculty", faculty_facultydashboard_path %></li>
           <li class="<%= 'active' if current_page?(admin_admindashboard_path) %>"><%= link_to "Admin", admin_admindashboard_path %></li>
-        </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Db Tables <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+		  <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Users", users_path %></li>
+		  <li class="<%= 'active' if current_page?(completed_courses_path) %>"><%= link_to "Completed Courses", completed_courses_path %></li>
+		  <li class="<%= 'active' if current_page?(degrees_path) %>"><%= link_to "Degrees", degrees_path %></li>
+		  <li class="<%= 'active' if current_page?(paths_path) %>"><%= link_to "Paths", paths_path %></li>
+		  <li class="<%= 'active' if current_page?(degree_reqs_path) %>"><%= link_to "Degree Reqs", degree_reqs_path %></li>
+		  <li class="<%= 'active' if current_page?(path_courses_path) %>"><%= link_to "Path Courses", path_courses_path %></li>
+		  <li class="<%= 'active' if current_page?(courses_path) %>"><%= link_to "Courses", courses_path %></li>
+		  <li class="<%= 'active' if current_page?(course_terms_path) %>"><%= link_to "Course Terms", course_terms_path %></li>
+		  <li class="<%= 'active' if current_page?(course_frequencies_path) %>"><%= link_to "Course Frequencies", course_frequencies_path %></li>
+		  <li class="<%= 'active' if current_page?(prereqs_path) %>"><%= link_to "Prereqs", prereqs_path %></li>
+		  <li class="<%= 'active' if current_page?(course_deliveries_path) %>"><%= link_to "Course Deliveries", course_deliveries_path %></li>
+            </ul>
+          </li>
+	</ul>
         <!-- Right side TOP NAV page links deleted-->
-        <!--<ul class="nav navbar-nav navbar-right"> <!-- Top NAV start -->-->
-        <!--  <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Sign In", root_path %></li>-->
-        <!--</ul>-->
-      </div>
-    </nav>
-  </header>
+        <ul class="nav navbar-nav navbar-right"> <!--start for login button functions | dropdown | "setting non-functional atm -->
+         <% if logged_in? %> <!-- dropdown options showed if a user is logged in -->
+          <li class="dropdown"> <!-- start dropdown -->
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret">
+           </b>
+           </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li> <!-- not even close to being finished -->
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li> <!-- Not working / will allow for editing prfoile -->
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul> <!--end dropdown menu -->
+          </li> <!-- End dropdown -->
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+      </ul>
+    </div> <!-- End navbar collapose -->
+  </nav> <!-- end main navbar -->
+</header> 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+<!-- flash messages based on controller created methods -->
+  <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
 <%= yield %>
 </body>
 

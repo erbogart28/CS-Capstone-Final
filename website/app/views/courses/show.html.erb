@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+					<div class="margin-vertical">
+			  <strong>People soft:</strong>
+			  <%= @course.people_soft_id %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Name:</strong>
+			  <%= @course.name %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Description:</strong>
+			  <%= @course.description %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', courses_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Edit', edit_course_path(@course), class:"btn btn-xs btn-warning color-white" %>
+	</div>
+</div>

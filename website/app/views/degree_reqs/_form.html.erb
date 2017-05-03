@@ -1,0 +1,22 @@
+<%= form_for(degree_req) do |f| %>
+  <% if degree_req.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(degree_req.errors.count, "error") %> prohibited this degree_req from being saved:</h2>
+
+      <ul>
+      <% degree_req.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :course_id %>
+    <%= f.number_field :course_id, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :Submit, class:"btn btn-success" %>
+  </div>
+<% end %>

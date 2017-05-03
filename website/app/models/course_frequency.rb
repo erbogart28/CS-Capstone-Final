@@ -1,0 +1,2 @@
+class CourseFrequency < ApplicationRecord
+end

@@ -1,0 +1,15 @@
+<!-- error messages for sign up 
+
+fuckin error messages. Cannot get them to show next to fields. No motivation to try to accomplish that right now.-->
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li style="list-style:none;"> * <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

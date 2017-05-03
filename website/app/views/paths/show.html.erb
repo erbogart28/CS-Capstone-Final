@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+					<div class="margin-vertical">
+			  <strong>Degree:</strong>
+			  <%= @path.degree_id %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Start quarter:</strong>
+			  <%= @path.start_quarter %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Course load:</strong>
+			  <%= @path.course_load %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>In class:</strong>
+			  <%= @path.in_class %>
+			</div>
+					<div class="margin-vertical">
+			  <strong>Online:</strong>
+			  <%= @path.online %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', paths_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Edit', edit_path_path(@path), class:"btn btn-xs btn-warning color-white" %>
+	</div>
+</div>
