@@ -1,3 +1,6 @@
+<!-- I'm just using this if statement to comment out this multilined erb code -->
+<% if false %>
+
 <% provide(:title, 'Edit user') %>
 <% provide(:button_text, 'Save changes') %>
 <h1>Update Profile</h1>
@@ -11,6 +14,7 @@
   </div>
 </div>
 
+<% end %>
 
 <h3>Editing User</h3>
 
@@ -20,7 +24,7 @@
         </div>
         <div class="panel-footer">
 
-		<%= link_to 'Back', users_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Back', users_path, class:"btn btn-xs btn-default margin-right color-white" %>
 		<%= link_to 'Show', @user, class:"btn btn-xs btn-primary color-white"%>
 	</div>
 </div>

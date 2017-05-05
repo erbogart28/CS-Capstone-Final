@@ -1,0 +1,2 @@
+module BrowseCoursesHelper
+end
