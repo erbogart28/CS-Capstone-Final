@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+=begin
     enum role: [:student, :faculty, :admin]
     after_initialize :set_default_role, :if => :new_record?
     
@@ -16,5 +17,6 @@ class User < ApplicationRecord
     validates :first, presence: true
     validates :last, presence: true
     validates :school_id, presence: true, length: { maximum: 15 }
+=end
 
 end

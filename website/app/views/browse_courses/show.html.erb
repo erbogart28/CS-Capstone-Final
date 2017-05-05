@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+        <div class="panel-body">
+			<div class="margin-vertical">
+			  <strong>Course code:</strong>
+			  <%= @browse_course.course_code %>
+			</div>
+			<div class="margin-vertical">
+			  <strong>Name:</strong>
+			  <%= @browse_course.name %>
+			</div>
+			<div class="margin-vertical">
+			  <strong>Description:</strong>
+			  <%= @browse_course.description %>
+			</div>
+		        </div>
+
+        <div class="panel-footer">
+		<%= link_to 'Back', browse_courses_path, class:"btn btn-xs btn-default color-white" %>
+	</div>
+</div>

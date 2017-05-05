@@ -1,3 +1,6 @@
+<!-- I'm just using this if statement to comment out this multilined erb code -->
+<% if false %>
+
 <h1>Profile</h1>
 <div class="container">
 <div class="row">
@@ -13,9 +16,9 @@
 </div>
 </div>
 
-<p id="notice"><%= notice %></p>
+<% end %>
 
-<div class="panel panel-default">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
         <div class="panel-body">
 					<div class="margin-vertical">
 			  <strong>Username:</strong>
@@ -72,7 +75,7 @@
 		        </div>
 
         <div class="panel-footer">
-		<%= link_to 'Back', users_path, class:"btn btn-xs btn-default margin-right" %>
+		<%= link_to 'Back', users_path, class:"btn btn-xs btn-default margin-right color-white" %>
 		<%= link_to 'Edit', edit_user_path(@user), class:"btn btn-xs btn-warning color-white" %>
 	</div>
 </div>

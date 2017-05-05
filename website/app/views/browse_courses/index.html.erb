@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Browse Courses</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>Name</th>
+				      <th>Course code</th>
+				      <th>Description</th>
+				      <th colspan="3"></th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @browse_courses.each do |browse_course| %>
+		      <tr>
+					<td><%= browse_course.name %></td>
+					<td><%= browse_course.course_code %></td>
+					<td><%= browse_course.description %></td>
+					<td><%= link_to 'Show', browse_course_path(browse_course), class:"btn btn-primary btn-xs color-white" %> </td>
+		      </tr>
+		    <% end %>
+		  </tbody>
+		</table>
+	</div>
+        <div class="panel-footer">
+        </div>
+</div>
