@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy]
-before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is logged in before editing is allowed
-before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
+# before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is logged in before editing is allowed
+# before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
 #PERMISSIONS CAN BE ADDED THROUGH CALLING METHODS LIKE THIS - BEFORE PAGE LOAD VERIFIY USER TYPE
 
   # GET /users
@@ -30,6 +30,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # POST /users.json
   def create
     @user = User.new(user_params)
+=begin
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
@@ -37,10 +38,11 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     else
       render 'new'
     end
+=end
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, success: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -53,6 +55,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
+=begin
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -60,16 +63,15 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
      else
       render 'edit'
     end
+=end
 
-    respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        flash[:success] = "User was successfully updated."
+        redirect_to @user
       else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
+#    end
   end
 
   # DELETE /users/1
@@ -77,7 +79,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, success: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

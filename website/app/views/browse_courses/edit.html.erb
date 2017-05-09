@@ -1,0 +1,12 @@
+<h3>Editing Browse Course</h3>
+
+<div class="panel panel-default">
+        <div class="panel-body">
+		<%= render 'form', browse_course: @browse_course %>
+        </div>
+        <div class="panel-footer">
+
+		<%= link_to 'Back', browse_courses_path, class:"btn btn-xs btn-default margin-right color-white" %>
+		<%= link_to 'Show', @browse_course, class:"btn btn-xs btn-primary color-white"%>
+	</div>
+</div>

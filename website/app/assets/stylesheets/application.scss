@@ -40,7 +40,9 @@ h1{
 }
 
 .alert{
-	padding: 10px;
+    padding: 3px 10px;
+    margin: 7px 0 0;
+    line-height: 2;
 }
 
 .loging-header {
@@ -49,6 +51,7 @@ h1{
 
 .alert-placeholder {
 	height: 50px;
+	padding: 0px;
 }
 
 .navbar-margin-bottom {
@@ -70,6 +73,18 @@ h1{
 
 .no-margin {
 	margin: 0;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #51524c;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: #51524c;
 }
 
 .color-white {

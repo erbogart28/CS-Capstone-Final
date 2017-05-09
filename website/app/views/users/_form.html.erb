@@ -1,3 +1,6 @@
+<!-- I'm just using this if statement to comment out this multilined erb code -->
+<% if false %>
+
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
@@ -20,6 +23,8 @@
   <%= f.password_field :password_confirmation, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
+
 <% end %>
 
 <%= form_for(user) do |f| %>
