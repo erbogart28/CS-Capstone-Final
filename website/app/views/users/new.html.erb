@@ -1,7 +1,7 @@
 <!-- I'm just using this if statement to comment out this multilined erb code -->
 
 <h3>New User</h3>
-
+<% provide(:button_text, 'Create my account') %>
 <div class="panel panel-default">
         <div class="panel-body">
 		    <%= render 'form', user: @user %>
