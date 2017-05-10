@@ -1,23 +1,4 @@
-<!-- I'm just using this if statement to comment out this multilined erb code -->
-<% if false %>
 
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
-
-<container id = "list all users">
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%=link_to userinfo = user.first + ', ' + user.last, user %>
-      <%= gravatar_for user, size: 50 %>
-      </br>
-      <div>ID #<%= user.school_id %></div>
-    </li>
-  <% end %>
-</ul>
-</container>
-
-<% end %>
 
 <h3>Users</h3>
 
@@ -59,7 +40,7 @@
 					<td><%= user.online %></td>
 					<td><%= user.path_id %></td>
 					<td><%= user.deleted %></td>
-					<td><%= link_to 'Show', user, class:"btn btn-primary btn-xs color-white" %> </td>
+			<td><%= link_to 'Show', user, class:"btn btn-primary btn-xs color-white" %> </td>
 			<td><%= link_to 'Edit', edit_user_path(user), class:"btn btn-warning btn-xs color-white" %></td>
 			<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
 		      </tr>

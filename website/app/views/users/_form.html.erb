@@ -1,5 +1,4 @@
-<!-- I'm just using this if statement to comment out this multilined erb code -->
-<% if false %>
+
 
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
@@ -12,9 +11,6 @@
   
   <%= f.label :email, "School Email" %>
   <%= f.email_field :email, class: 'form-control' %>
-  
-  <%= f.label :school_id, "School ID #" %>
-  <%= f.text_field :school_id, class: 'form-control' %>
 
   <%= f.label :password %> 
   <%= f.password_field :password, class: 'form-control' %>
@@ -25,8 +21,11 @@
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
 
-<% end %>
 
+
+
+<!-- I'm just using this if statement to comment out this multilined erb code -->
+<% if false %>
 <%= form_for(user) do |f| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -108,4 +107,5 @@
   <div class="actions">
     <%= f.submit :Submit, class:"btn btn-success" %>
   </div>
+<% end %>
 <% end %>
