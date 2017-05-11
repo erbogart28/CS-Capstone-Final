@@ -14,6 +14,10 @@
  *= require_self
  */
 
+// Import the relevant bootstrap SCSS code
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
  
 h1{
     margin-left:5%;
