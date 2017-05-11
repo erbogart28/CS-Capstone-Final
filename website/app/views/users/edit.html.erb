@@ -17,7 +17,7 @@
 <% end %>
 
 <h3>Editing User</h3>
-
+<% provide(:button_text, 'Save changes') %>
 <div class="panel panel-default">
         <div class="panel-body">
 		<%= render 'form', user: @user %>

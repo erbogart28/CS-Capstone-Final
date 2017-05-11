@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy]
-# before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is logged in before editing is allowed
-# before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
+before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is logged in before editing is allowed
+before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
 #PERMISSIONS CAN BE ADDED THROUGH CALLING METHODS LIKE THIS - BEFORE PAGE LOAD VERIFIY USER TYPE
 
   # GET /users
@@ -99,7 +99,6 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
       redirect_to login_url
     end
   end

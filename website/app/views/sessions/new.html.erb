@@ -1,9 +1,9 @@
 <% provide(:title, "Log in") %>
 
 <!-- generates warning message for user -->
-<div class="container" style="margin-top:2%;">
+<div class="container has-danger" style="margin-top:2%;" >
   <% flash.each do |message_type, message| %>
-    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <%# content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
 </div>
 
