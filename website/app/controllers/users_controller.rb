@@ -19,6 +19,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # GET /users/new
   def new
     @user = User.new
+    render :layout => "login"
   end
 
   # GET /users/1/edit
@@ -45,7 +46,8 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
         format.html { redirect_to @user, success: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { render :new, :layout => "login"}
+
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
