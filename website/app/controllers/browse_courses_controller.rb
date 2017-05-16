@@ -65,6 +65,7 @@ class BrowseCoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_browse_course
       @browse_course = Course.find(params[:id])
+      @browse_course_prereq = Course.joins("INNER JOIN Prereqs ON Courses.id - 1 = Prereqs.prereq_course_id").where("Prereqs.course_id = ?", @browse_course.id - 1)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

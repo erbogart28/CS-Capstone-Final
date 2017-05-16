@@ -14,7 +14,17 @@
 			  <strong>Description:</strong>
 			  <%= @browse_course.description %>
 			</div>
-		        </div>
+			<div class="margin-vertical">
+			 <strong>Prerequisite:</strong>
+			 </div>
+			<div class="margin-vertical"
+			  <ul style="list-style-type:circle">
+			    <% @browse_course_prereq.each do |item| %>
+			      <li><%= item.name %> <%= link_to 'View', browse_course_path(item), class:"btn btn-primary btn-xs color-white" %> </li>
+			    <% end %>
+			  <ul>
+			</div>
+		</div>
 
         <div class="panel-footer">
 		<%= link_to 'Back', browse_courses_path, class:"btn btn-xs btn-default color-white" %>
