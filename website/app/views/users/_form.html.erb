@@ -4,7 +4,7 @@
   <%= render 'shared/error_messages', object: @user %>
 
   <%= f.label :first, "First Name" %>
-  <%= f.text_field :first, class: 'form-control' %>
+  <%= f.text_field :first, class: 'form-control form-control-danger' %>
 
   <%= f.label :last, "Last Name" %>
   <%= f.text_field :last, class: 'form-control' %>
@@ -14,9 +14,6 @@
 
   <%= f.label :password %> 
   <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.label :password_confirmation, "Password Confirmation" %>
-  <%= f.password_field :password_confirmation, class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
