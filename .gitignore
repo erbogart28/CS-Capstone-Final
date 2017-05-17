@@ -18,6 +18,10 @@
 !/tmp/.keep
 .idea
 .idea/*
+*.csv
+website/tmp/*
+*.sqlite3
+*.log
+*.pyc
 
-# Ignore Byebug command history file.
-.byebug_history
+*.cache
