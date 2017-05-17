@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :degrees
   resources :completed_courses
   resources :users
-    # root 'home#land'  #root = default landing page for website
+    # root 'home#land'  #root = default landing page for website / deleted route in favor of login page root / unused page
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
     get 'admin/admindashboard'

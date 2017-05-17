@@ -1,33 +1,8 @@
-
-
+<% provide(:title, 'Edit user') %>
 <%= form_for(@user) do |f| %>
-  <%= render 'shared/error_messages', object: @user %>
-
-  <%= f.label :first, "First Name" %>
-  <%= f.text_field :first, class: 'form-control form-control-danger' %>
-
-  <%= f.label :last, "Last Name" %>
-  <%= f.text_field :last, class: 'form-control' %>
-  
-  <%= f.label :email, "School Email" %>
-  <%= f.email_field :email, class: 'form-control' %>
-
-  <%= f.label :password %> 
-  <%= f.password_field :password, class: 'form-control' %>
-
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
-
-
-
-
-<!-- I'm just using this if statement to comment out this multilined erb code -->
-<% if false %>
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
+  <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -102,7 +77,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit :Submit, class:"btn btn-success" %>
+    <%= f.submit yield(:button_text), class:"btn btn-primary" %>
   </div>
-<% end %>
 <% end %>
