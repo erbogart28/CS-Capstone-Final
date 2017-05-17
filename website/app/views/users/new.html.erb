@@ -1,13 +1,12 @@
 <!-- I'm just using this if statement to comment out this multilined erb code -->
 
-<h3>New User</h3>
+<h1>New User</h1>
 <% provide(:button_text, 'Create my account') %>
-<div class="panel panel-default">
+<div class="panel">
         <div class="panel-body">
-		    <%= render 'form', user: @user %>
+                <%= render 'form', user: @user %>
         </div>
-
         <div class="panel-footer">
-		    <%= link_to 'Back', users_path, class:"btn btn-xs btn-default color-white"%>
+                <%= link_to 'Back', users_path, class:"btn btn-xs btn-default color-white"%>
         </div>
 </div>
