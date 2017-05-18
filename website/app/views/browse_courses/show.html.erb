@@ -21,7 +21,7 @@
 			  <ul style="list-style-type:none">
 			    <% @browse_course_prereq.each do |item| %>
 			      <div class="margin-vertical">
-			        <li><%= link_to 'View', browse_course_path(item), class:"btn btn-primary btn-xs color-white" %> <%= item.name %> (<%= item.course_code %>) </li>
+			        <li>&emsp;<%= link_to 'View', browse_course_path(item), class:"btn btn-primary btn-xs color-white" %> <%= item.name %> (<%= item.course_code %>) </li>
 			      </div>
 			    <% end %>
 			  <ul>
