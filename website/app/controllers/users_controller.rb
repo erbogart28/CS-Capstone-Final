@@ -31,7 +31,6 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # POST /users.json
   def create
     @user = User.new(user_params)
-=begin
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
@@ -39,18 +38,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     else
       render 'new'
     end
-=end
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, success: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new, :layout => "login"}
-
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /users/1

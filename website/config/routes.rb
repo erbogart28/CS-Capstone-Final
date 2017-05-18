@@ -23,4 +23,7 @@ Rails.application.routes.draw do
     post   '/login',   to: 'sessions#create'
     delete '/logout',  to: 'sessions#destroy'
 
+	get		'when_if', to: 'when_ifs#index'
+	post    'when_if', to: 'when_ifs#run'
+
 end

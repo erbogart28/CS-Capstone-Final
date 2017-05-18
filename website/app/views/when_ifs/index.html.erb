@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h3>When-If Report</h3>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <%= form_tag(action: "run", method: "get") do %>
+            <%= select_tag(:when_if_starting_quarter, 
+                options_for_select([ "Spring", "test" ])) %>
+        <% end %>
+    </div>
+
+    <div class="panel-footer">
+    </div>
+
+</div>
