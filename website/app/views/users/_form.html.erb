@@ -15,7 +15,12 @@
   <%= f.label :password %> 
   <%= f.password_field :password, class: 'form-control' %>
 
+  <%= f.label :password_confirmation, "Password Confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <div class="login-button-padding">
+
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    </div>
 <% end %>
 
 
