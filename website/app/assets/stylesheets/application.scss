@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
-// Import the relevant bootstrap SCSS code
-@import "bootstrap-sprockets";
-@import "bootstrap";
- 
 .vertical-middle {
 	vertical-align: middle !important;
 }
