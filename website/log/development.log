@@ -9445,3 +9445,1046 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 74ms (Views: 71.0ms | ActiveRecord: 0.3ms)
 
 
+Started DELETE "/logout" for 10.240.1.20 at 2017-05-19 22:30:23 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Bri+R6wRGRqguHfjMc9SxWpCRSY+VzF9IN1GZPI97uYv8PKwjDA81LRHw0brZMjgWco842FhMKCkIA15MXkEFA=="}
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/
+Completed 302 Found in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.240.1.20 at 2017-05-19 22:30:24 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (15.4ms)
+Completed 200 OK in 516ms (Views: 514.4ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/login" for 10.240.1.60 at 2017-05-19 22:30:32 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x/W0xMUpXk8a/eqB/i7atLE2u0c/rEGbWl/WipyPmpjuvfgz5Qh7gQ4CXiQkhUCRgr7CgmCaQEbeop2XX8twag==", "session"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/users/2
+Completed 302 Found in 95ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2" for 10.240.0.206 at 2017-05-19 22:30:33 +0000
+Cannot render console from 10.240.0.206! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 101ms (Views: 97.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/degrees" for 10.240.1.20 at 2017-05-19 22:30:39 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DegreesController#index as HTML
+  Rendering degrees/index.html.erb within layouts/application
+  [1m[36mDegree Load (0.2ms)[0m  [1m[34mSELECT "degrees".* FROM "degrees"[0m
+  Rendered degrees/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 165ms (Views: 158.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/completed_courses" for 10.240.1.32 at 2017-05-19 22:30:42 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 116ms (Views: 110.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses" for 10.240.0.207 at 2017-05-19 22:30:45 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 215ms (Views: 209.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/prereqs" for 10.240.1.20 at 2017-05-19 22:30:49 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PrereqsController#index as HTML
+  Rendering prereqs/index.html.erb within layouts/application
+  [1m[36mPrereq Load (0.2ms)[0m  [1m[34mSELECT "prereqs".* FROM "prereqs"[0m
+  Rendered prereqs/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 131.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/completed_courses" for 10.240.0.179 at 2017-05-19 22:31:07 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 95ms (Views: 92.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses/new" for 10.240.1.20 at 2017-05-19 22:31:09 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#new as HTML
+  Rendering completed_courses/new.html.erb within layouts/application
+  Rendered completed_courses/_form.html.erb (4.2ms)
+  Rendered completed_courses/new.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 102ms (Views: 94.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/completed_courses" for 10.240.1.32 at 2017-05-19 22:31:15 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+3WyRIvLKQm5CzLuYyTH6MV2BVFEXiiSsy9mgD9BhPOwf4d++5lYJMogXvrekCrKq/wMS0QZ2tMfaa78eOQIuw==", "completed_course"=>{"user_id"=>"", "course_id"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "completed_courses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", 2017-05-19 22:31:15 UTC], ["updated_at", 2017-05-19 22:31:15 UTC]]
+  [1m[35m (94.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses/1
+Completed 302 Found in 101ms (ActiveRecord: 96.1ms)
+
+
+Started GET "/completed_courses/1" for 10.240.0.179 at 2017-05-19 22:31:15 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 101ms (Views: 95.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses/1/edit" for 10.240.1.20 at 2017-05-19 22:31:27 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering completed_courses/edit.html.erb within layouts/application
+  Rendered completed_courses/_form.html.erb (2.8ms)
+  Rendered completed_courses/edit.html.erb within layouts/application (4.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 106ms (Views: 102.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/completed_courses" for 10.240.1.20 at 2017-05-19 22:31:31 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses/1/edit" for 10.240.1.17 at 2017-05-19 22:31:37 +0000
+Cannot render console from 10.240.1.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering completed_courses/edit.html.erb within layouts/application
+  Rendered completed_courses/_form.html.erb (2.2ms)
+  Rendered completed_courses/edit.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 122ms (Views: 119.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses" for 10.240.1.32 at 2017-05-19 22:31:39 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 74ms (Views: 72.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses/1" for 10.240.1.60 at 2017-05-19 22:31:40 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 83ms (Views: 80.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses" for 10.240.1.32 at 2017-05-19 22:31:40 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 140ms (Views: 138.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/completed_courses/1" for 10.240.1.60 at 2017-05-19 22:31:43 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iYsuSytMfUJQ9numItlbWr01goPmLyuGFBTmOD48KLGgw2K8C21YjEQJzwP4csF/jr37RrkZKluQ6a0l/XjCQw==", "id"=>"1"}
+  [1m[36mCompletedCourse Load (0.1ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "completed_courses" WHERE "completed_courses"."id" = ?[0m  [["id", 1]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses
+Completed 302 Found in 13ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/completed_courses" for 10.240.1.60 at 2017-05-19 22:31:43 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 94ms (Views: 91.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses/new" for 10.240.0.207 at 2017-05-19 22:32:49 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#new as HTML
+  Rendering completed_courses/new.html.erb within layouts/application
+  Rendered completed_courses/_form.html.erb (1.8ms)
+  Rendered completed_courses/new.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 73.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/completed_courses" for 10.240.0.182 at 2017-05-19 22:32:50 +0000
+Cannot render console from 10.240.0.182! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"36YcqLzrW9elhI41R9EbjJq7y2PREQKHwJ2IbfnzzM+UrCmSzLkq+tav4iH6Zfau9DHCedFW8MZs20ARvlZAhw==", "completed_course"=>{"user_id"=>"", "course_id"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "completed_courses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", 2017-05-19 22:32:50 UTC], ["updated_at", 2017-05-19 22:32:50 UTC]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses/2
+Completed 302 Found in 79ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/completed_courses/2" for 10.240.0.207 at 2017-05-19 22:32:50 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 85ms (Views: 82.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses" for 10.240.0.207 at 2017-05-19 22:32:52 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 86.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/completed_courses/2" for 10.240.0.207 at 2017-05-19 22:33:28 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ytcduPGakpkhvp/xzTeYNia7S3SizkWSDakoakn2dbfjn1FP0bu3VzVBK1QXnAITFTMysf34RE+JVGN3irKfRQ==", "id"=>"2"}
+  [1m[36mCompletedCourse Load (0.1ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "completed_courses" WHERE "completed_courses"."id" = ?[0m  [["id", 2]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses
+Completed 302 Found in 25ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/completed_courses" for 10.240.0.207 at 2017-05-19 22:33:28 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses" for 10.240.1.60 at 2017-05-19 22:33:55 +0000
+Cannot render console from 10.240.1.60! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 89ms (Views: 87.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses/new" for 10.240.0.179 at 2017-05-19 22:33:56 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#new as HTML
+  Rendering completed_courses/new.html.erb within layouts/application
+  Rendered completed_courses/_form.html.erb (2.1ms)
+  Rendered completed_courses/new.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 166ms (Views: 164.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/completed_courses" for 10.240.0.207 at 2017-05-19 22:33:57 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hV4u7maoldF6fSy4Yx7P9Iyaj5T3b4EqgpmmOamhmLfOVBvUFvrk/AlWQKzeqiLW4hCGjvcoc2su325F7gQU/w==", "completed_course"=>{"user_id"=>"", "course_id"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "completed_courses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", 2017-05-19 22:33:57 UTC], ["updated_at", 2017-05-19 22:33:57 UTC]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses/3
+Completed 302 Found in 16ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/completed_courses/3" for 10.240.0.179 at 2017-05-19 22:33:57 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 119ms (Views: 116.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses" for 10.240.0.241 at 2017-05-19 22:35:21 +0000
+Cannot render console from 10.240.0.241! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 185ms (Views: 183.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/completed_courses/3" for 10.240.1.20 at 2017-05-19 22:35:24 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RRhACjirhsd5AU2s1lW18JVG+rV20jQoY/nA3KzPbMhsUAz9GIqjCW3++QkM/i/Vps6DcCnkNfXnBIvBb4uGOg==", "id"=>"3"}
+  [1m[36mCompletedCourse Load (0.1ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "completed_courses" WHERE "completed_courses"."id" = ?[0m  [["id", 3]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses
+Completed 302 Found in 15ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/completed_courses" for 10.240.1.20 at 2017-05-19 22:35:24 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 76ms (Views: 74.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses" for 10.240.0.110 at 2017-05-19 22:39:44 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/website/app/views/layouts/application.html.erb:91: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/layouts/application.html.erb:91: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (43.1ms)
+Started GET "/completed_courses" for 10.240.1.17 at 2017-05-19 22:40:08 +0000
+Cannot render console from 10.240.1.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/website/app/views/layouts/application.html.erb:95: syntax error, unexpected keyword_ensure, expecting keyword_end):
+  
+app/views/layouts/application.html.erb:95: syntax error, unexpected keyword_ensure, expecting keyword_end
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.2ms)
+Started GET "/completed_courses" for 10.240.1.20 at 2017-05-19 22:40:15 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/website/app/views/layouts/application.html.erb:91: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/layouts/application.html.erb:91: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.9ms)
+Started GET "/completed_courses" for 10.240.0.206 at 2017-05-19 22:40:45 +0000
+Cannot render console from 10.240.0.206! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 113ms (Views: 111.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/completed_courses/new" for 10.240.0.186 at 2017-05-19 22:40:50 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#new as HTML
+  Rendering completed_courses/new.html.erb within layouts/application
+  Rendered completed_courses/_form.html.erb (50.9ms)
+  Rendered completed_courses/new.html.erb within layouts/application (52.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 143ms (Views: 141.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/completed_courses" for 10.240.0.186 at 2017-05-19 22:40:51 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3XcuEVcSnz8DEkTjsMDyDCIdIsCWMXdUcgLonId5FtyWfRsrJ0DuEnA5KPcNdB8uTJcr2pZ2hRXeRCDgwNyalA==", "completed_course"=>{"user_id"=>"", "course_id"=>""}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "completed_courses" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", 2017-05-19 22:40:51 UTC], ["updated_at", 2017-05-19 22:40:51 UTC]]
+  [1m[35m (36.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses/4
+Completed 302 Found in 43ms (ActiveRecord: 37.4ms)
+
+
+Started GET "/completed_courses/4" for 10.240.0.179 at 2017-05-19 22:40:51 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 92ms (Views: 89.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses/4" for 10.240.0.204 at 2017-05-19 22:41:05 +0000
+Cannot render console from 10.240.0.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/website/app/views/layouts/application.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/layouts/application.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (37.7ms)
+Started GET "/completed_courses/4" for 10.240.0.179 at 2017-05-19 22:41:30 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering completed_courses/show.html.erb within layouts/application
+  Rendered completed_courses/show.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 93ms (Views: 91.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/completed_courses" for 10.240.0.204 at 2017-05-19 22:41:34 +0000
+Cannot render console from 10.240.0.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 279ms (Views: 276.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/completed_courses/4" for 10.240.0.182 at 2017-05-19 22:41:36 +0000
+Cannot render console from 10.240.0.182! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VtrBM6FyS3PbTyBSXN8s3J+Lz8TcPUr9NExrdVV914Z/ko3EgVNuvc+wlPeGdLb5rAO2AYMLSyCwsSBoljk9dA==", "id"=>"4"}
+  [1m[36mCompletedCourse Load (0.2ms)[0m  [1m[34mSELECT  "completed_courses".* FROM "completed_courses" WHERE "completed_courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "completed_courses" WHERE "completed_courses"."id" = ?[0m  [["id", 4]]
+  [1m[35m (205.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/completed_courses
+Completed 302 Found in 210ms (ActiveRecord: 205.9ms)
+
+
+Started GET "/completed_courses" for 10.240.0.179 at 2017-05-19 22:41:36 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CompletedCoursesController#index as HTML
+  Rendering completed_courses/index.html.erb within layouts/application
+  [1m[36mCompletedCourse Load (0.3ms)[0m  [1m[34mSELECT "completed_courses".* FROM "completed_courses"[0m
+  Rendered completed_courses/index.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 112ms (Views: 109.8ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 10.240.0.69 at 2017-05-19 22:41:51 +0000
+Cannot render console from 10.240.0.69! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5C49uhpsOGmfpv9nSMtiysAwNUse01T7E68r/2PddkDNZnFNOk0dp4tZS8KSYPjv87hMjkHlVSaXUmDioJmcsg=="}
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.240.1.15 at 2017-05-19 22:41:51 +0000
+Cannot render console from 10.240.1.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (2.1ms)
+Completed 200 OK in 186ms (Views: 184.3ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/login" for 10.240.0.69 at 2017-05-19 22:41:52 +0000
+Cannot render console from 10.240.0.69! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9LywA96QQ4AG9R5+pis65gpSujEtrJNanBbFsINknWPd9Pz0/rFmThIKqtt8gKDDOdrD9HKakocY646tQCB3kQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (2.0ms)
+Completed 200 OK in 158ms (Views: 156.9ms | ActiveRecord: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/signup" for 10.240.1.15 at 2017-05-19 22:41:54 +0000
+Cannot render console from 10.240.1.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/login
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/_form.html.erb (7.1ms)
+  Rendered users/new.html.erb within layouts/login (9.3ms)
+Completed 200 OK in 139ms (Views: 137.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.240.1.15 at 2017-05-19 22:41:55 +0000
+Cannot render console from 10.240.1.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2gd/rbkEJuFXQ8QTrrTolDMB+igTZqH78IWCDHSh6SOd6hCyxk/AYpiE6fkJjjoLRgZGQH25RnF7uQ91IxSY/g==", "user"=>{"first"=>"", "last"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+Unpermitted parameter: password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/login
+  Rendered shared/_error_messages.html.erb (3.2ms)
+  Rendered users/_form.html.erb (9.2ms)
+  Rendered users/new.html.erb within layouts/login (11.3ms)
+Completed 200 OK in 290ms (Views: 154.2ms | ActiveRecord: 0.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users" for 10.240.0.110 at 2017-05-19 22:41:58 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/login
+Filter chain halted as :logged_in_user rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 10.240.1.15 at 2017-05-19 22:41:58 +0000
+Cannot render console from 10.240.1.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (2.5ms)
+Completed 200 OK in 109ms (Views: 107.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 10.240.0.110 at 2017-05-19 22:42:08 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D1WNnJKmt9gYoCTOSXUtntxosQjvOYIZ7PLltEMacChEWct06CEOapvCN4E3Mt59492YqDPll6UREcH39W16/w==", "session"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/users
+Completed 302 Found in 71ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 10.240.0.110 at 2017-05-19 22:42:08 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = ?[0m  [["role", 0]]
+  Rendered users/_studentlist.html.erb (3.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = ?[0m  [["role", 1]]
+  Rendered users/_facultylist.html.erb (2.8ms)
+  Rendered users/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 119ms (Views: 115.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 10.240.0.204 at 2017-05-19 22:42:30 +0000
+Cannot render console from 10.240.0.204! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 225ms (Views: 221.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/edit" for 10.240.0.206 at 2017-05-19 22:42:31 +0000
+Cannot render console from 10.240.0.206! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_editform.html.erb (8.1ms)
+  Rendered users/edit.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 226ms (Views: 220.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/3" for 10.240.0.206 at 2017-05-19 22:42:33 +0000
+Cannot render console from 10.240.0.206! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nW8oTpUeexVZ4xFpR7vC2/waWEdCrEO8gAP7gioyVNXOciMQ9dPtQ7Gr/3cuKVTdQQyqqIBsZsbPXMTld5szJA==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "permission"=>"", "view_as"=>"", "first"=>"test", "last"=>"test", "email"=>"test@test.com", "degree_id"=>"", "course_load"=>"", "in_class"=>"", "online"=>"", "path_id"=>"", "deleted"=>""}, "commit"=>"Save changes", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "test@test.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (138.1ms)[0m  [1m[33mUPDATE "users" SET "username" = ?, "permission" = ?, "view_as" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["username", ""], ["permission", ""], ["view_as", ""], ["updated_at", 2017-05-19 22:42:33 UTC], ["id", 3]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/users/3
+Completed 302 Found in 160ms (ActiveRecord: 149.5ms)
+
+
+Started GET "/users/3" for 10.240.0.69 at 2017-05-19 22:42:33 +0000
+Cannot render console from 10.240.0.69! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 99ms (Views: 95.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 10.240.1.64 at 2017-05-19 22:42:37 +0000
+Cannot render console from 10.240.1.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5VaFQMGq5xJ4ydzwd5locC0C82Iut8xnMl2oXFIFlqzMHsm34YvC3Gw2aFWtMvJVHoqKp3GBzbq2oONBkUF8Xg=="}
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.240.1.17 at 2017-05-19 22:42:37 +0000
+Cannot render console from 10.240.1.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (1.9ms)
+Completed 200 OK in 171ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 10.240.0.69 at 2017-05-19 22:42:47 +0000
+Cannot render console from 10.240.0.69! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (2.4ms)
+Completed 200 OK in 224ms (Views: 222.9ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/login" for 10.240.0.110 at 2017-05-19 22:42:54 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38gxdkAkAhZtfbIdsKER61tQIvda7m3lZXyj00NSqVT2gH2BYAUn2HmCBrhqCovOaNhbMgXYbDjhgejOgBZDpg==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (2.1ms)
+Completed 200 OK in 89ms (Views: 87.1ms | ActiveRecord: 0.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/login" for 10.240.0.110 at 2017-05-19 22:43:09 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/bwuLW0xeA52B7epDqGhwZAeRLpACz7396TsXeuUsyjU9GLaTRBdwGL4AwzUCjvko5Y9fx89PypzWadAKNBZ2g==", "session"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/users/2
+Completed 302 Found in 74ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 10.240.1.17 at 2017-05-19 22:43:10 +0000
+Cannot render console from 10.240.1.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 141ms (Views: 137.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2/edit" for 10.240.1.32 at 2017-05-19 22:43:14 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_editform.html.erb (34.0ms)
+  Rendered users/edit.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 121ms (Views: 116.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/users/2" for 10.240.1.32 at 2017-05-19 22:43:17 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nmhCwcFXQCOcO4iT8RzRvm1JV4ekv+y6HvtIKy9eXVPqyYmLIVJzm9x3U9jicL6QJofqUxUbC88oyFmg/r7iVw==", "user"=>{"username"=>"", "password"=>"[FILTERED]", "permission"=>"", "view_as"=>"", "first"=>"admin", "last"=>"admin", "email"=>"admin@admin.com", "degree_id"=>"", "course_load"=>"", "in_class"=>"", "online"=>"", "path_id"=>"", "deleted"=>""}, "commit"=>"Save changes", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND ("users"."id" != ?) LIMIT ?[0m  [["email", "admin@admin.com"], ["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/users/2
+Completed 302 Found in 11ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for 10.240.1.32 at 2017-05-19 22:43:17 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 139ms (Views: 135.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 10.240.0.110 at 2017-05-19 22:43:23 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gsGQMvtChhDFXqFoT00+nC8WiBmXsnn7N8BfmxfigHaridzF22Oj3tGhFc2V5qS5HJ7x3MiEeCazPRSG1KZqhA=="}
+Redirected to http://capupdatedagain-erbogart28.c9users.io:8080/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.240.1.32 at 2017-05-19 22:43:23 +0000
+Cannot render console from 10.240.1.32! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/login
+  Rendered sessions/new.html.erb within layouts/login (2.2ms)
+Completed 200 OK in 213ms (Views: 211.3ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap-dropdown.js"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.2) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.2) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
