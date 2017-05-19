@@ -10,6 +10,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     @users = User.all
   end
 
+
   # GET /users/1
   # GET /users/1.json
   def show
