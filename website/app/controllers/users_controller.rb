@@ -36,9 +36,8 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
-      render 'new'
+      render 'new', layout: "layouts/login"
     end
-
   end
 
   # PATCH/PUT /users/1
@@ -98,4 +97,4 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
-end
+end#ne
