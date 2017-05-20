@@ -1,164 +1,164 @@
-CSC 400::S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
-CSC 401::S1O,S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
-CSC 402:CSC 401:S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
-CSC 403:CSC 402:S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
-CSC 406:CSC 401:S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
-CSC 407:CSC 406 and CSC 402:S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
-CSC 421:CSC 400 and CSC 403:SpO,WiO,AuO,SpE,WiE,AuE
-CSC 435:CSC 403 and CSC 407:SpO,WiO,AuO,SpE,WiE,AuE
-CSC 447:CSC 403 and CSC 406:SpO,WiO,AuO,SpE,WiE,AuE
-CSC 453:CSC 403:SpO,WiO,AuO,SpE,WiE,AuE
-SE 450:CSC 403:S0O,SpO,WiO,AuO,SpE,WiE,AuE
-CSC 436:CSC 435 and CSC 447:AuO
-CSC 438::SpE,AuE
-CSC 439::WiO
-CSC 443::
-CSC 448:CSC 447:
-CSC 461:CSC 400 and CSC 403 and CSC 406:SpO,AuO,AuE
-CSC 462:GAM 491 or CSC 461:SpO
-CSC 471:CSC 403 and CSC 407:WiO,WiE
-CSC 472:CSC 403 and CSC 407:AuO,AuE
-CSC 475::
-CSC 534:SE 450:
-CSC 536:CSC 435:SpO,SpE
-CSC 540:CSC 471:
-CSC 548:CSC 448:
-CSC 549:CSC 453:
-CSC 551:CSC 453 and (CSC 435 or TDC 405 or TDC 463):
-CSC 552:SE 450 and CSC 407:AuO,AuE
-CSC 553:CSC 453:WiO,WiE
-CSC 595:For specific prerequisites, see syllabus or consult course instructor. (variable credit):WiE
-CNS 450:CSC 407 or CNS 418:AuO,AuE
-GAM 690::WiO,WiE
-GAM 691::SpO,SpE
-HCI 441:CSC 403:
-SE 441:CSC 403:WiO,SpE
-SE 452:CSC 403:SpO,AuO,SpE,AuE
-SE 459:SE 450:AuO,AuE
-SE 525:CSC 435 and SE 450:
-SE 526::WiO,WiE
-SE 554:SE 450 or SE 452:SpO,SpE
-SE 560:SE 450 OR ((CSC 383 or CSC 301)  and SE 430):
-SE 491:SE 450:WiO,AuO,WiE,AuE
-SE 591:SE 491:SpO,WiO,SpE,WiE
-TDC 478:none:AuO,AuE
-TDC 484:TDC 413:WiO,WiE
-TDC 568:TDC 463:SpO,SpE
-CSC 431:(CSC 401 and two quarters of calculus) or instructor permission:WiO,WiE
-CSC 440:CSC 403:WiO,WiE
-CSC 444:CSC 400 and CSC 403:
-CSC 489:CSC 444 or CSC 421:AuO
-CSC 503:CSC 421:WiE
-CSC 521:(CSC 402 or CSC 404) and CSC 423 or  consent of instructor:SpO,SpE
-CSC 525:CSC 421:WiO
-CSC 531::
-CSC 535:CSC 447:
-CSC 547:Instructor consent required:
-CSC 557:CSC 439:
-CSC 580:SE 450:
-CSC 591:For specific prerequisites, see syllabus or consult course instructor. (variable credit):
-SE 533:SE 450:
-CSC 423:IT 403:S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
-CSC 424:CSC 423 or consent of instructor:S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
-CSC 425:CSC 423 or MAT 456 or consent of instructor:WiO,AuO,WiE,AuE
-CSC 428:CSC 423:
-CSC 433:IT 403 and (CSC 401  or IT 411):SpO,SpE
-CSC 465:IT 403 and (CSC 401 or IT 411):SpO,WiO,AuO,SpE,WiE,AuE
-CSC 478:IS 467 and CSC 401:SpO,AuO,SpE,AuE
-CSC 481:CSC 412 or consent of instructor:AuO,AuE
-CSC 482::WiO
-CSC 495:CSC 423 or SOC 412:SpO,AuO,SpE,AuE
-CSC 529:CSC 424 and  (IS 467 or ECT 584 or CSC 578):SpO,WiO,AuO,WiE
-CSC 555:CSC 401 and ( CSC 453 or CSC 455) and (IS 467 or CSC 478):SpO,WiO,AuO,SpE,AuE
-CSC 575:CSC 403:WiO,WiE
-CSC 578:(CSC 412 and CSC 478) or (CSC 403 and IS 467):AuO,AuE
-CSC 594:For specific prerequisites, see syllabus or consult course instructor. (variable credit):SpO,SpE,AuE
-CSC 598:For specific prerequisites, see syllabus or consult course instructor. (variable credit):
-CSC 672:Instructor consent required:SpO,WiO,SpE,AuE
-ECT 584:IT 403 AND (CSC 451 or CSC 453 or CSC 455):S2E,SpE
-IS 467:IT 403 or CSC 423:SpO,WiO,AuO,SpE,WiE,AuE
-CSC 433:IT 403 and (CSC 401  or IT 411):SpO,SpE
-CSC 452:(CSC 453 or CSC 451 or CSC 455) and (CSC 401 or IT 411):S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
-CSC 454:CSC 451 or CSC 453 or CSC 455:S2O,WiO,S2E
-CSC 478:IS 467 and CSC 401:SpO,AuO,SpE,AuE
-CSC 529:CSC 424 and  (IS 467 or ECT 584 or CSC 578):SpO,WiO,AuO,WiE
-CSC 543::SpO
-CSC 549:CSC 453:
-CSC 551:CSC 453 and (CSC 435 or TDC 405 or TDC 463):
-CSC 553:CSC 453:WiO,WiE
-CSC 554::SpO,WiE
-CSC 555:CSC 401 and ( CSC 453 or CSC 455) and (IS 467 or CSC 478):SpO,WiO,AuO,SpE,AuE
-CSC 575:CSC 403:WiO,WiE
-CSC 589:For specific prerequisites, see syllabus or consult with course instructor. (variable credit):
-CSC 457:CSC 403:
-CSC 458:CSC 403:WiE
-CSC 478:IS 467 and CSC 401:SpO,AuO,SpE,AuE
-CSC 480:CSC 403:WiO,WiE
-CSC 481:CSC 412 or consent of instructor:AuO,AuE
-CSC 482::WiO
-CSC 495:CSC 423 or SOC 412:SpO,AuO,SpE,AuE
-CSC 528:CSC 481:SpO
-CSC 529:CSC 424 and  (IS 467 or ECT 584 or CSC 578):SpO,WiO,AuO,WiE
-CSC 538:CSC 528:
-CSC 575:CSC 403:WiO,WiE
-CSC 576::WiE
-CSC 577:SE 450 and (IS 467 or CSC 478 or ECT 584):WiO
-CSC 578:(CSC 412 and CSC 478) or (CSC 403 and IS 467):AuO,AuE
-CSC 583:CSC 480:
-CSC 587:CSC 403 or HCI 460:WiO,WiE
-CSC 592:CSC 482 or CSC 528:
-CSC 594:For specific prerequisites, see syllabus or consult course instructor. (variable credit):SpO,SpE,AuE
-ECT 584:IT 403 AND (CSC 451 or CSC 453 or CSC 455):S2E,SpE
-GEO 441::S0O,SpO,AuO,S0E,SpE,AuE
-GEO 442::WiO,WiE
-IS 467:IT 403 or CSC 423:SpO,WiO,AuO,SpE,WiE,AuE
-SE 430:CSC 403:S0O,WiO,AuO,S0E,WiE,AuE
-SE 433:CSC 403:SpO,WiO,SpE,WiE
-SE 441:CSC 403:WiO,SpE
-SE 452:CSC 403:SpO,AuO,SpE,AuE
-SE 453::
-SE 456:CSC 403:WiO,WiE
-SE 457::SpO,WiE
-SE 459:SE 450:AuO,AuE
-SE 475:CSC 403:AuO,AuE
-SE 477:Knowledge of the Software development life cycle model, for example through courses such as SE430, ECT455, IS425, MIS555 or through appropriate work experience:SpO,WiO,SpE,WiE
-SE 480:SE 450:AuO,AuE
-SE 482::SpE
-SE 491:SE 450:WiO,AuO,WiE,AuE
-SE 525:CSC 435 and SE 450:
-SE 526::WiO,WiE
-SE 529:IT 403 and SE 430 or consent:
-SE 533:SE 450:
-SE 546::
-SE 549:SE 430 or SE 450:
-SE 554:SE 450 or SE 452:SpO,SpE
-SE 556:SE 456 and CSC 407:
-SE 560:SE 450 OR ((CSC 383 or CSC 301)  and SE 430):
-SE 579:SE 450:
-SE 581:SE 480:
-SE 582:(SE 477 or PM 430 or IS 430) and (SE 430 or SE 482 or IS 485):
-SE 591:SE 491:SpO,WiO,SpE,WiE
-CSC 461:CSC 400 and CSC 403 and CSC 406:SpO,AuO,AuE
-CSC 462:GAM 491 or CSC 461:SpO
-GAM 450:CSC 461 and (SE 456 or SE 450):SpO,AuE
-GAM 453:CSC 461 and (SE 456 or SE 450):AuO
-GAM 475:CSC 461 and (SE 456 or SE 450):AuO,AuE
-GAM 476:CSC 461 and (SE 456 or SE 450):WiO,WiE
-GAM 486:CSC 471:
-GAM 575:GAM 475:WiO,WiE
-GAM 576:GAM 575:SpE
-GAM 690::WiO,WiE
-GAM 691::SpO,SpE
-GPH 436:CSC 393 and MAT 150:
-GPH 469:CSC 461 and (GAM 425 or GPH 436):WiE
-GPH 570:GPH 469 or GAM 470:
-GPH 572:GPH 469:
-GPH 580::
-HCI 440::S0O,SpO,WiO,AuO,S0E,SpE,WiE,AuE
-HCI 441:CSC 403:
-SE 456:CSC 403:WiO,WiE
-SE 556:SE 456 and CSC 407:
-CSC 500:None (variable credit):SpO,WiO,AuO,SpE,WiE,AuE
-CSC 695:Consent of research advisor. Independent study form required. Students must successfully complete the foundation courses prior to their first enrollment in CSC 695. (variable credit ):SpO,WiO,AuO,S0E,SpE,WiE
-CSC 698:Successful defense of a Master's Thesis.  (variable credit):
-CSC 697::S1O,S2O,S0O,SpO,WiO,AuO,S0E,S2E,S1E,SpE,WiE,AuE
+CSC 400:Discrete Structures for Computer Science::S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
+CSC 401:Introduction to Programming::S2O,S1O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
+CSC 402:Data Structures I:CSC 401:S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
+CSC 403:Data Structures II:CSC 402:S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
+CSC 406:Systems I:CSC 401:S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
+CSC 407:Systems II:CSC 406 and CSC 402:S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
+CSC 421:Applied Algorithms and Structures:CSC 400 and CSC 403:SpO,WiO,AuO,SpE,WiE,AuE
+CSC 435:Distributed Systems I:CSC 403 and CSC 407:SpO,WiO,AuO,SpE,WiE,AuE
+CSC 447:Concepts of Programming Languages:CSC 403 and CSC 406:SpO,WiO,AuO,SpE,WiE,AuE
+CSC 453:Database Technologies:CSC 403:SpO,WiO,AuO,SpE,WiE,AuE
+SE 450:Object-Oriented Software Development:CSC 403:S0O,SpO,WiO,AuO,SpE,WiE,AuE
+CSC 436:Web Applications:CSC 435 and CSC 447:AuO
+CSC 438:Framework for Web Application Development::SpE,AuE
+CSC 439:Computer Security::WiO
+CSC 443:Introduction to Operating Systems::
+CSC 448:Compiler Design:CSC 447:
+CSC 461:Optimized C++:CSC 400 and CSC 403 and CSC 406:SpO,AuO,AuE
+CSC 462:C++ Multithreading:GAM 491 or CSC 461:SpO
+CSC 471:Mobile Application Development for iOS:CSC 403 and CSC 407:WiO,WiE
+CSC 472:Mobile Application Development for Android:CSC 403 and CSC 407:AuO,AuE
+CSC 475:Introduction to Robotics::
+CSC 534:Software Development for Limited and Embedded Devices:SE 450:
+CSC 536:Distributed Systems II:CSC 435:SpO,SpE
+CSC 540:Mobile Application Development II:CSC 471:
+CSC 548:Advanced Compiler Design:CSC 448:
+CSC 549:Database System Implementation:CSC 453:
+CSC 551:Distributed Database Systems:CSC 453 and (CSC 435 or TDC 405 or TDC 463):
+CSC 552:Concurrent Software Development:SE 450 and CSC 407:AuO,AuE
+CSC 553:Advanced Database Concepts:CSC 453:WiO,WiE
+CSC 595:Topics in Computer Science:For specific prerequisites, see syllabus or consult course instructor. (variable credit):WiE
+CNS 450:Digital Forensic Techniques:CSC 407 or CNS 418:AuO,AuE
+GAM 690:Game Development Studio I::WiO,WiE
+GAM 691:Game Development Studio II::SpO,SpE
+HCI 441:Introduction to User-Centered Development:CSC 403:
+SE 441:Continuous Delivery and Devops:CSC 403:WiO,SpE
+SE 452:Object-Oriented Enterprise Computing:CSC 403:SpO,AuO,SpE,AuE
+SE 459:Agile Software Development:SE 450:AuO,AuE
+SE 525:Software Security Architecture:CSC 435 and SE 450:
+SE 526:Software Security Assessment::WiO,WiE
+SE 554:Enterprise Component Architecture:SE 450 or SE 452:SpO,SpE
+SE 560:Structured Document Interchange and Processing:SE 450 OR ((CSC 383 or CSC 301)  and SE 430):
+SE 491:Software Engineering Studio:SE 450:WiO,AuO,WiE,AuE
+SE 591:Software Engineering Studio II:SE 491:SpO,WiO,SpE,WiE
+TDC 478:Information Storage and Management:none:AuO,AuE
+TDC 484:Scripting for Network Management:TDC 413:WiO,WiE
+TDC 568:Network Management:TDC 463:SpO,SpE
+CSC 431:Scientific Computing:(CSC 401 and two quarters of calculus) or instructor permission:WiO,WiE
+CSC 440:Cryptology:CSC 403:WiO,WiE
+CSC 444:Automata Theory and Formal Grammars:CSC 400 and CSC 403:
+CSC 489:Theory of Computation:CSC 444 or CSC 421:AuO
+CSC 503:Parallel Algorithms:CSC 421:WiE
+CSC 521:Monte Carlo Algorithms:(CSC 402 or CSC 404) and CSC 423 or  consent of instructor:SpO,SpE
+CSC 525:Combinatorial Optimization:CSC 421:WiO
+CSC 531:Introduction to Bioinformatics::
+CSC 535:Formal Semantics of Programming Languages:CSC 447:
+CSC 547:Advanced Topics in Program Languages:Instructor consent required:
+CSC 557:Foundations of Computer Security:CSC 439:
+CSC 580:Design of Object-Oriented Languages:SE 450:
+CSC 591:Topics in Algorithms:For specific prerequisites, see syllabus or consult course instructor. (variable credit):
+SE 533:Software Validation and Verification:SE 450:
+CSC 423:Data Analysis and Regression:IT 403:S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
+CSC 424:Advanced Data Analysis:CSC 423 or consent of instructor:S1O,SpO,WiO,AuO,S1E,SpE,WiE,AuE
+CSC 425:Time Series Analysis and Forecasting:CSC 423 or MAT 456 or consent of instructor:WiO,AuO,WiE,AuE
+CSC 428:Data Analysis for Experimenters:CSC 423:
+CSC 433:Scripting for Data Analysis:IT 403 and (CSC 401  or IT 411):SpO,SpE
+CSC 465:Data Visualization:IT 403 and (CSC 401 or IT 411):SpO,WiO,AuO,SpE,WiE,AuE
+CSC 478:Programming Machine Learning Applications:IS 467 and CSC 401:SpO,AuO,SpE,AuE
+CSC 481:Introduction to Image Processing:CSC 412 or consent of instructor:AuO,AuE
+CSC 482:Applied Image Analysis::WiO
+CSC 495:Social Network Analysis:CSC 423 or SOC 412:SpO,AuO,SpE,AuE
+CSC 529:Advanced Data Mining:CSC 424 and  (IS 467 or ECT 584 or CSC 578):SpO,WiO,AuO,WiE
+CSC 555:Mining Big Data:CSC 401 and ( CSC 453 or CSC 455) and (IS 467 or CSC 478):SpO,WiO,AuO,SpE,AuE
+CSC 575:Intelligent Information Retrieval:CSC 403:WiO,WiE
+CSC 578:Neural Networks and Deep Learning:(CSC 412 and CSC 478) or (CSC 403 and IS 467):AuO,AuE
+CSC 594:Topics in Artificial Intelligence:For specific prerequisites, see syllabus or consult course instructor. (variable credit):SpO,SpE,AuE
+CSC 598:Topics in Data Analysis:For specific prerequisites, see syllabus or consult course instructor. (variable credit):
+CSC 672:Predictive Analytics Capstone:Instructor consent required:SpO,WiO,SpE,AuE
+ECT 584:Web Data Mining:IT 403 AND (CSC 451 or CSC 453 or CSC 455):S2E,SpE
+IS 467:Fundamentals of Data Science:IT 403 or CSC 423:SpO,WiO,AuO,SpE,WiE,AuE
+CSC 433:Scripting for Data Analysis:IT 403 and (CSC 401  or IT 411):SpO,SpE
+CSC 452:Database Programming:(CSC 453 or CSC 451 or CSC 455) and (CSC 401 or IT 411):S2O,SpO,WiO,AuO,S2E,SpE,WiE,AuE
+CSC 454:Database Administration and Management:CSC 451 or CSC 453 or CSC 455:S2O,WiO,S2E
+CSC 478:Programming Machine Learning Applications:IS 467 and CSC 401:SpO,AuO,SpE,AuE
+CSC 529:Advanced Data Mining:CSC 424 and  (IS 467 or ECT 584 or CSC 578):SpO,WiO,AuO,WiE
+CSC 543:Spatial Databases and Geographic Information Systems::SpO
+CSC 549:Database System Implementation:CSC 453:
+CSC 551:Distributed Database Systems:CSC 453 and (CSC 435 or TDC 405 or TDC 463):
+CSC 553:Advanced Database Concepts:CSC 453:WiO,WiE
+CSC 554:Advanced Database Management::SpO,WiE
+CSC 555:Mining Big Data:CSC 401 and ( CSC 453 or CSC 455) and (IS 467 or CSC 478):SpO,WiO,AuO,SpE,AuE
+CSC 575:Intelligent Information Retrieval:CSC 403:WiO,WiE
+CSC 589:Topics in Database:For specific prerequisites, see syllabus or consult with course instructor. (variable credit):
+CSC 457:Expert Systems:CSC 403:
+CSC 458:Symbolic Programming:CSC 403:WiE
+CSC 478:Programming Machine Learning Applications:IS 467 and CSC 401:SpO,AuO,SpE,AuE
+CSC 480:Artificial Intelligence I:CSC 403:WiO,WiE
+CSC 481:Introduction to Image Processing:CSC 412 or consent of instructor:AuO,AuE
+CSC 482:Applied Image Analysis::WiO
+CSC 495:Social Network Analysis:CSC 423 or SOC 412:SpO,AuO,SpE,AuE
+CSC 528:Computer Vision:CSC 481:SpO
+CSC 529:Advanced Data Mining:CSC 424 and  (IS 467 or ECT 584 or CSC 578):SpO,WiO,AuO,WiE
+CSC 538:Vision Systems:CSC 528:
+CSC 575:Intelligent Information Retrieval:CSC 403:WiO,WiE
+CSC 576:Computational Advertising::WiE
+CSC 577:Recommender Systems:SE 450 and (IS 467 or CSC 478 or ECT 584):WiO
+CSC 578:Neural Networks and Deep Learning:(CSC 412 and CSC 478) or (CSC 403 and IS 467):AuO,AuE
+CSC 583:Artificial Intelligence II:CSC 480:
+CSC 587:Cognitive Science:CSC 403 or HCI 460:WiO,WiE
+CSC 592:Topics in Computer Vision and Pattern Recognition:CSC 482 or CSC 528:
+CSC 594:Topics in Artificial Intelligence:For specific prerequisites, see syllabus or consult course instructor. (variable credit):SpO,SpE,AuE
+ECT 584:Web Data Mining:IT 403 AND (CSC 451 or CSC 453 or CSC 455):S2E,SpE
+GEO 441:Geographic Information Systems (Gis) for Community Development::S0O,SpO,AuO,S0E,SpE,AuE
+GEO 442:Geographical Information Systems (Gis) for Sustainable Urban Development::WiO,WiE
+IS 467:Fundamentals of Data Science:IT 403 or CSC 423:SpO,WiO,AuO,SpE,WiE,AuE
+SE 430:Object Oriented Modeling:CSC 403:S0O,WiO,AuO,S0E,WiE,AuE
+SE 433:Software Testing and Quality Assurance:CSC 403:SpO,WiO,SpE,WiE
+SE 441:Continuous Delivery and Devops:CSC 403:WiO,SpE
+SE 452:Object-Oriented Enterprise Computing:CSC 403:SpO,AuO,SpE,AuE
+SE 453:Architecture and Frameworks for Developing Client Applications::
+SE 456:Architecture of Real-Time Systems:CSC 403:WiO,WiE
+SE 457:Service-Oriented Architecture::SpO,WiE
+SE 459:Agile Software Development:SE 450:AuO,AuE
+SE 475:Managing Globally Distributed Software Development:CSC 403:AuO,AuE
+SE 477:Software and Systems Project Management:Knowledge of the Software development life cycle model, for example through courses such as SE430, ECT455, IS425, MIS555 or through appropriate work experience:SpO,WiO,SpE,WiE
+SE 480:Software Architecture I:SE 450:AuO,AuE
+SE 482:Requirements Engineering::SpE
+SE 491:Software Engineering Studio:SE 450:WiO,AuO,WiE,AuE
+SE 525:Software Security Architecture:CSC 435 and SE 450:
+SE 526:Software Security Assessment::WiO,WiE
+SE 529:Software Risk Management:IT 403 and SE 430 or consent:
+SE 533:Software Validation and Verification:SE 450:
+SE 546:Software Architecture and Design for Desktop Applications::
+SE 549:Model-Driven Software Development:SE 430 or SE 450:
+SE 554:Enterprise Component Architecture:SE 450 or SE 452:SpO,SpE
+SE 556:Advanced Architecture of Computer Games:SE 456 and CSC 407:
+SE 560:Structured Document Interchange and Processing:SE 450 OR ((CSC 383 or CSC 301)  and SE 430):
+SE 579:Analytics and Data Mining in Software Engineering:SE 450:
+SE 581:Software Architecture II:SE 480:
+SE 582:Software-Intensive Systems Engineering and Management:(SE 477 or PM 430 or IS 430) and (SE 430 or SE 482 or IS 485):
+SE 591:Software Engineering Studio II:SE 491:SpO,WiO,SpE,WiE
+CSC 461:Optimized C++:CSC 400 and CSC 403 and CSC 406:SpO,AuO,AuE
+CSC 462:C++ Multithreading:GAM 491 or CSC 461:SpO
+GAM 450:Physics for Game Developers:CSC 461 and (SE 456 or SE 450):SpO,AuE
+GAM 453:Tool Programming for Game Development:CSC 461 and (SE 456 or SE 450):AuO
+GAM 475:Game Engine Programming I:CSC 461 and (SE 456 or SE 450):AuO,AuE
+GAM 476:Artificial Intelligence for Computer Games:CSC 461 and (SE 456 or SE 450):WiO,WiE
+GAM 486:Game Programming for Mobile Devices:CSC 471:
+GAM 575:Game Engine Programming II:GAM 475:WiO,WiE
+GAM 576:Game Engine Programming III:GAM 575:SpE
+GAM 690:Game Development Studio I::WiO,WiE
+GAM 691:Game Development Studio II::SpO,SpE
+GPH 436:Fundamentals of Computer Graphics:CSC 393 and MAT 150:
+GPH 469:Computer Graphics Development:CSC 461 and (GAM 425 or GPH 436):WiE
+GPH 570:Visualization:GPH 469 or GAM 470:
+GPH 572:Principles of Computer Animation:GPH 469:
+GPH 580:Hardware Shading Techniques::
+HCI 440:Introduction to User-Centered Design::S0O,SpO,WiO,AuO,S0E,SpE,WiE,AuE
+HCI 441:Introduction to User-Centered Development:CSC 403:
+SE 456:Architecture of Real-Time Systems:CSC 403:WiO,WiE
+SE 556:Advanced Architecture of Computer Games:SE 456 and CSC 407:
+CSC 500:Research Colloquium:None (variable credit):SpO,WiO,AuO,SpE,WiE,AuE
+CSC 695:Master's Research:Consent of research advisor. Independent study form required. Students must successfully complete the foundation courses prior to their first enrollment in CSC 695. (variable credit ):SpO,WiO,AuO,S0E,SpE,WiE
+CSC 698:Master's Thesis:Successful defense of a Master's Thesis.  (variable credit):
+CSC 697:Graduate Internship::S0O,S2O,S1O,SpO,WiO,AuO,S0E,S2E,S1E,SpE,WiE,AuE
