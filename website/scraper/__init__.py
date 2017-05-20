@@ -46,12 +46,13 @@ season_map = {
 
 
 class Course:
-    __slots__ = 'subject', 'num', 'name', 'prerequisites', 'history'
+    __slots__ = 'subject', 'num', 'name', 'prerequisites', 'history', 'description'
 
     def __init__(self, subject=None, num=None, name=None):
         self.subject = subject
         self.num = num
         self.name = name
+        self.description = None
         self.prerequisites = None
         self.history = None
 

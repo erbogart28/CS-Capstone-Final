@@ -5,6 +5,7 @@ import csv
 import re
 
 prereq_pattern = re.compile("PREREQUISITE")
+new_line_pattern = re.compile(r"[\r\n]")
 
 ping_count = 0
 course_url = "http://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject={}&CatalogNbr={}"
@@ -135,7 +136,9 @@ def scrape_course_detail(curric):
 
 def parse_and_update_course(course_obj, course_html):
     soup = BeautifulSoup(course_html, 'html.parser')
-    course_obj.name = soup.select('.CDMPageTitle')[0].text.split(":\r\n    ")[1]
+    title_div = soup.select('.CDMPageTitle')[0]
+    course_obj.name = title_div.text.split(":\r\n    ")[1]
+    course_obj.description = re.sub(new_line_pattern , ' ',title_div.findNext('div').text.strip())
     course_obj.history = [season_map[offering.text.strip()]
                           for offering in soup.select('.CTIPageSectionHeader')
                           if offering.text.strip() in season_map]
@@ -153,45 +156,46 @@ def write_to_csv(curric, name):
         writer = csv.writer(csvfile, delimiter=':', quotechar='|', quoting=csv.QUOTE_MINIMAL)
         for course in course_gen(curric):
             writer.writerow(["{} {}".format(course.subject, course.num),
-                             course.prerequisites if course.prerequisites is not None else "",
                              course.name,
+                             course.description,
+                             course.prerequisites if course.prerequisites is not None else "",
                              ",".join(entry for entry in course.history)])
 
 
 if __name__ == '__main__':
-    html_string = pull_html(cs_curriculum_url)
-    cs_curriculum_scraper(html_string)
-    scrape_course_detail(cs_curriculum)
-    write_to_csv(cs_curriculum, 'cs.csv')
+    # html_string = pull_html(cs_curriculum_url)
+    # cs_curriculum_scraper(html_string)
+    # scrape_course_detail(cs_curriculum)
+    # write_to_csv(cs_curriculum, 'cs.csv')
 
-    # curr = is_curriculum_seed.copy()
-    # html_string = pull_html(is_curriculum_url_bsa)
-    # is_curriculum_scraper(html_string, curr)
-    # scrape_course_detail(curr)
-    # write_to_csv(curr, 'is_bsa.csv')
+    curr = is_curriculum_seed.copy()
+    html_string = pull_html(is_curriculum_url_bsa)
+    is_curriculum_scraper(html_string, curr)
+    scrape_course_detail(curr)
+    write_to_csv(curr, 'is_bsa.csv')
 
-    # curr = is_curriculum_seed.copy()
-    # html_string = pull_html(is_curriculum_url_bi)
-    # is_curriculum_scraper(html_string, curr)
-    # scrape_course_detail(curr)
-    # write_to_csv(curr, 'is_bi.csv')
+    curr = is_curriculum_seed.copy()
+    html_string = pull_html(is_curriculum_url_bi)
+    is_curriculum_scraper(html_string, curr)
+    scrape_course_detail(curr)
+    write_to_csv(curr, 'is_bi.csv')
 
-    # curr = is_curriculum_seed.copy()
-    # html_string = pull_html(is_curriculum_url_da)
-    # is_curriculum_scraper(html_string, curr)
-    # scrape_course_detail(curr)
-    # write_to_csv(curr, 'is_da.csv')
+    curr = is_curriculum_seed.copy()
+    html_string = pull_html(is_curriculum_url_da)
+    is_curriculum_scraper(html_string, curr)
+    scrape_course_detail(curr)
+    write_to_csv(curr, 'is_da.csv')
 
-    # curr = is_curriculum_seed.copy()
-    # html_string = pull_html(is_curriculum_url_em)
-    # is_curriculum_scraper(html_string, curr)
-    # scrape_course_detail(curr)
-    # write_to_csv(curr, 'is_em.csv')
+    curr = is_curriculum_seed.copy()
+    html_string = pull_html(is_curriculum_url_em)
+    is_curriculum_scraper(html_string, curr)
+    scrape_course_detail(curr)
+    write_to_csv(curr, 'is_em.csv')
 
-    # curr = is_curriculum_seed.copy()
-    # html_string = pull_html(is_curriculum_url_s)
-    # is_curriculum_scraper(html_string, curr)
-    # scrape_course_detail(curr)
-    # write_to_csv(curr, 'is_s.csv')
+    curr = is_curriculum_seed.copy()
+    html_string = pull_html(is_curriculum_url_s)
+    is_curriculum_scraper(html_string, curr)
+    scrape_course_detail(curr)
+    write_to_csv(curr, 'is_s.csv')
 
     print(*("{} : {}".format(i, j) for i, j in cs_curriculum.items()), sep='\n')

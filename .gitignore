@@ -52,6 +52,7 @@ test/tmp
 test/version_tmp
 .yardoc
 _yardoc
+Gemfile.lock
 
 .DS_Store
 Thumbs.db
