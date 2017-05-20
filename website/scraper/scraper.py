@@ -154,6 +154,7 @@ def write_to_csv(curric, name):
         for course in course_gen(curric):
             writer.writerow(["{} {}".format(course.subject, course.num),
                              course.prerequisites if course.prerequisites is not None else "",
+                             course.name,
                              ",".join(entry for entry in course.history)])
 
 
