@@ -4,8 +4,13 @@ class BrowseCoursesController < ApplicationController
   # GET /browse_courses
   # GET /browse_courses.json
   def index
+      @browse_course = if params[:term]
+    Course.where('name LIKE ?', "%#{params[:term]}%")
+  else
     @browse_courses = Course.all
   end
+  end
+
 
   # GET /browse_courses/1
   # GET /browse_courses/1.json
@@ -70,6 +75,6 @@ class BrowseCoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def browse_course_params
-      params.require(:course).permit(:course_code, :name, :description)
+      params.require(:course).permit(:course_code, :name, :description, :term)
     end
 end
