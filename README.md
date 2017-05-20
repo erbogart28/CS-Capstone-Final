@@ -23,4 +23,4 @@ Repository for all CSC 394 - Group 1 files
    
 * Conditional in controller for roles can be used for setting permissions:
  
-      **current_user.admin?**
+      current_user.admin?
