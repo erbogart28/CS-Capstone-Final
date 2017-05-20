@@ -1,5 +1,14 @@
 <h3>Browse Courses</h3>
 
+<div class = "col-lg-4 col-md-4 col-sm-4 col-xs-6" style="float:right;margin-top:2%;margin-bottom:2%">
+<%= form_tag(browse_courses_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <div style="width:50%;float:right">
+  <%= submit_tag 'Search', name: nil %>
+  </div>
+<% end %>
+</div>
+
 <div class="panel panel-default">
         <div class="panel-body">
 		<table class="table table-responsive">
@@ -13,7 +22,7 @@
 		  </thead>
 
 		  <tbody>
-		    <% @browse_courses.each do |browse_course| %>
+		    <% @browse_course.each do |browse_course| %>
 		      <tr>
 					<td><%= browse_course.name %></td>
 					<td><%= browse_course.course_code %></td>
