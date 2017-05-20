@@ -4,13 +4,12 @@ class BrowseCoursesController < ApplicationController
   # GET /browse_courses
   # GET /browse_courses.json
   def index
-      @browse_course = if params[:term]
+    @browse_course = if params[:term]
     Course.where('name LIKE ?', "%#{params[:term]}%")
   else
     @browse_courses = Course.all
   end
   end
-
 
   # GET /browse_courses/1
   # GET /browse_courses/1.json

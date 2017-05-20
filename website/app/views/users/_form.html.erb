@@ -14,10 +14,15 @@
 
   <%= f.label :password %> 
   <%= f.password_field :password, class: 'form-control' %>
+  
+  <div class="container  col-lg-push-1" style="padding:2%"><input type = "checkbox" class="container col-lg-1 col-md-1 col-sm-1 col-xs-1" value="Terms of Agreement" name ="terms of agreement">Agree to Terms of Service</div>
 
+    
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-    </div>
+  
+  </div>
 <% end %>
+
 
 <!-- I'm just using this if statement to comment out this multilined erb code -->
 <% if false %>
