@@ -20,3 +20,7 @@ Repository for all CSC 394 - Group 1 files
    @users = User.student # obtain an array of all users who are students
    
    user.role = 'foo' # ArgumentError: 'foo' is not a valid, we can’t set invalid roles
+   
+ *Conditional in controller for roles can be used for setting permissions:
+ 
+   current_user.admin?
