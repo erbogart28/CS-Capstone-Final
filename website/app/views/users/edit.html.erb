@@ -6,6 +6,11 @@
   </div>
   <div class="panel-footer">
 	  <%= link_to 'Show', @user, class:"btn btn-xs btn-primary color-white"%>
+	  <% if current_user.admin? %>
+	      <%= link_to 'Back', users_path, class:"btn btn-xs btn-default color-white"%>
+	  <% else %>
+	      <%= link_to 'Back', user_path, class:"btn btn-xs btn-default color-white"%>
+    <% end %>
 	</div>
 </div>
 
