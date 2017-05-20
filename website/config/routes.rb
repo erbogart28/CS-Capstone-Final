@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
     get 'admin/admindashboard'
-
+    post '/pull', to: 'pull_courses#create' # :to => '...'
     get 'users/new' 
     root 'sessions#new'   
     get  '/signup',  to: 'users#new'

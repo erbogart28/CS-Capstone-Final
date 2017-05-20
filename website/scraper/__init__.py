@@ -1,6 +1,6 @@
 from threading import Thread
 from queue import Queue
-
+__all__ = ['ThreadPool', 'season_map', 'Course', 'CSCurriculumKey', 'ISCurriculumKey']
 
 class CSCurriculumKey:
     INTRODUCTORY = 0
