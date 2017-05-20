@@ -6,7 +6,7 @@
     <div class="panel-body">
         <%= form_tag(action: "run", method: "get") do %>
             <h4>Starting Quarter</h4>
-            <%= select_tag(:start_quarter, 
+            <%= select_tag(:start_quarter, find(params[:id]) #select_tag(:when_if_starting_quarter,  options_for_select([ "Spring", "test" ]))     || old code, don't know if correct
                 options_for_select([ "Spring", "Winter", "Fall" ])) %>  <!--select_tag "people", options_from_collection_for_select(@people, "id", "name")    // Might be correct format use if needed-->
             <br><br> <!--I'm lazy, accept the br's-->
             <h4>Degree Type</h4>
