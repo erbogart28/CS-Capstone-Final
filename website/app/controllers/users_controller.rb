@@ -4,12 +4,12 @@ before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is lo
 before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
 #PERMISSIONS CAN BE ADDED THROUGH CALLING METHODS LIKE THIS - BEFORE PAGE LOAD VERIFIY USER TYPE
 
+
   # GET /users
   # GET /users.json
   def index
     @users = User.all
   end
-
   # GET /users/1
   # GET /users/1.json
   def show
@@ -81,7 +81,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password, :permission, :view_as, :first, :last, :email, :degree_id, :course_load, :in_class, :online, :path_id, :deleted)
+      params.require(:user).permit(:username, :role, :password, :permission, :view_as, :first, :last, :email, :degree_id, :course_load, :in_class, :online, :path_id, :deleted)
     end
 
   # Confirms non logged-in user.
@@ -95,6 +95,6 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # Confirms the correct user.
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_url) unless current_user?(@user) || current_user.admin?
   end
 end#ne
