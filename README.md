@@ -9,17 +9,17 @@ Repository for all CSC 394 - Group 1 files
 
 * All available method examples for roles: 
 
-      **User.roles** # list all roles
+      User.roles # list all roles
 
-      **user.student!** # make a student user
+      user.student! # make a student user
 
-      **user.student?** # => true # query if the user is a student
+      user.student? # => true # query if the user is a student
 
-      **user.role** # => "student" # find out the user’s role
+      user.role # => "student" # find out the user’s role
 
-      **@users** = User.student # obtain an array of all users who are students
+      @users = User.student # obtain an array of all users who are students
 
-      **user.role = 'foo'** # ArgumentError: 'foo' is not a valid, we can’t set invalid roles
+      user.role = 'foo' # ArgumentError: 'foo' is not a valid, we can’t set invalid roles
    
 * Conditional in controller for roles can be used for setting permissions:
  
