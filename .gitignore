@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 node_modules
 .c9
 .DS_Store
@@ -114,3 +113,4 @@ tmp
 .tmux.conf
 .vim/
 .vimrc
+website/.idea
