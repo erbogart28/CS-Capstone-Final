@@ -53,9 +53,16 @@
 
   <div class="form-group">
     <%= f.label :course_load %>
-    <%= f.number_field :course_load, class: "form-control" %>
+    <%= f.text_field :course_load, class: "form-control" %>
   </div>
-
+  
+  <% if current_user.admin? %>
+    <div>
+      <%= f.label :roles, "student, faculty, or admin" %>
+      <%= f.text_field :role, class: "form-control" %>
+    </div>
+  <% end %>
+  
   <div class="form-group">
     <%= f.label :in_class %>
     <%= f.number_field :in_class, class: "form-control" %>
