@@ -5,7 +5,7 @@ import csv
 import re
 
 prereq_pattern = re.compile("PREREQUISITE")
-new_line_pattern = re.compile(r"[\r\n]")
+new_line_pattern = re.compile(r"[\r\n\:\|]")
 
 ping_count = 0
 course_url = "http://www.cdm.depaul.edu/academics/pages/courseinfo.aspx?Subject={}&CatalogNbr={}"
@@ -163,10 +163,10 @@ def write_to_csv(curric, name):
 
 
 if __name__ == '__main__':
-    # html_string = pull_html(cs_curriculum_url)
-    # cs_curriculum_scraper(html_string)
-    # scrape_course_detail(cs_curriculum)
-    # write_to_csv(cs_curriculum, 'cs.csv')
+    html_string = pull_html(cs_curriculum_url)
+    cs_curriculum_scraper(html_string)
+    scrape_course_detail(cs_curriculum)
+    write_to_csv(cs_curriculum, 'cs.csv')
 
     curr = is_curriculum_seed.copy()
     html_string = pull_html(is_curriculum_url_bsa)

@@ -19,8 +19,8 @@ class PullCoursesController < ApplicationController
     def __parse_course_csv(fname, seen)
         s = ""
         CSV.foreach fname, col_sep: ':' do |row|
-            c = Course.new(course_code: row[0], name: row[1], description: row[2])
-            if !seen.include?(c.course_code)
+            c = Course.new(course_code: row[0], name: row[1], description: row[2], prereqs: row[3], course_history: row[4])
+            unless seen.include?(c.course_code)
                 seen.add(c.course_code)
                 c.save
                 puts c.inspect
