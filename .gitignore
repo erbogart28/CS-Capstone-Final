@@ -43,7 +43,6 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 *.gem
-*.rbc
 .bundle
 .config
 InstalledFiles
@@ -54,58 +53,6 @@ test/version_tmp
 _yardoc
 Gemfile.lock
 
-.DS_Store
-Thumbs.db
-
-# C/C++
-*.slo
-*.lo
-*.o
-*.so
-*.so.*
-*.dylib
-*.lai
-*.la
-*.a
-*.lib
-*.dll
-*.exe
-*.out
-install_manifest.txt
-CMakeCache.txt
-CMakeFiles
-cmake_install.cmake
-
-# Python
-*.py[cod]
-.installed.cfg
-__pycache__
-pip-log.txt
-.coverage
-.tox
-nosetests.xml
-
-# Ruby
-*.rbc
-*.sassc
-.sass-cache
-capybara-*.html
-.rspec
-.rvmrc
-/.bundle
-**.orig
-rerun.txt
-pickle-email-*.html
-*.gem
-*.rbc
-.bundle
-.config
-InstalledFiles
-spec/reports
-test/tmp
-test/version_tmp
-.yardoc
-_yardoc
 
 tmp
 ~/workspace/website/db/development.sqlite3
@@ -115,3 +62,5 @@ tmp
 .vim/
 .vimrc
 website/.idea
+.idea/
+website/log/development.log
