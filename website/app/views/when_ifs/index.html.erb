@@ -1,12 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <h3>When-If Report</h3>
-
+<% provide(:button_text, 'Run When-If Report') %>
 <div class="panel panel-default">
     <div class="panel-body">
         <%= form_tag(action: "run", method: "get") do %>
-            <%= select_tag(:when_if_starting_quarter, 
-                options_for_select([ "Spring", "test" ])) %>
+            <h4>Starting Quarter</h4>
+            <%= select_tag(:start_quarter, #elect_tag(:when_if_starting_quarter,  options_for_select([ "Spring", "test" ]))     || old code, don't know if correct
+                options_for_select([ "Spring", "Winter", "Fall" ])) %>  <!--select_tag "people", options_from_collection_for_select(@people, "id", "name")    // Might be correct format use if needed-->
+            <br><br> <!--I'm lazy, accept the br's-->
+            <h4>Degree Type</h4>
+            <%= select_tag(:degree_id, 
+                options_for_select([ "CS", "IS" ])) %>
+            <br><br>   <!--I'm lazy, accept the br's-->
+            <h4>Concentration Type</h4>
+            <%= select_tag(:concentration,
+                options_for_select([ "Business Analysis/Systems Analysis", "Business Intelligence","Database Administration","Database Administration","IT Enterprise Management", "Standard"  ])) %>
+            <br><br><!--I'm lazy, accept the br's-->
+            <h4>Desired Course Load</h4>
+            <%= select_tag(:course_load, 
+                options_for_select([ "1", "2","3"])) %>
+            <br><br>   <!--I'm lazy, accept the br's-->
+            <h4>Classroom Enviornment</h4>
+            <%= select_tag(:online || :remote, 
+                options_for_select([ "Online", "Remote", "Both" ])) %>
+            <br><br><!--I'm lazy, accept the br's-->
+              <%= submit_tag yield(:button_text), class: "btn btn-primary" %>
         <% end %>
     </div>
 
