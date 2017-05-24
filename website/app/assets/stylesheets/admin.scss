@@ -3,4 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #admincards{
     padding: 2%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
 }
+
+@media only screen and (min-width : 481px) {
+  .flex-row.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .flex-row.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+  }
+  .flex-row.row:after,
+  .flex-row.row:before {
+    display: flex;
+  }
+}
+
