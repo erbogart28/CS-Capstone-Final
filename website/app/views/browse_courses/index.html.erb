@@ -1,11 +1,13 @@
 <h3>Browse Courses</h3>
 
 <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-6" style="float:right;margin-top:2%;margin-bottom:2%">
-<%= form_tag(browse_courses_path, method: :get) do %>
-  <%= text_field_tag :term, params[:term] %>
-  <div style="width:50%;float:right">
-  <%= submit_tag 'Search', name: nil %>
-  </div>
+    <%= form_tag(browse_courses_path, method: :get) do %>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 course_search_input">
+        <%= text_field_tag :term, params[:term], placeholder: "Search...", style: "padding-left: 15px" %>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 course_search_button" >
+        <%= submit_tag 'Search', name: nil %>
+    </div>
 <% end %>
 </div>
 
@@ -24,9 +26,17 @@
 		  <tbody>
 		    <% @browse_course.each do |browse_course| %>
 		      <tr>
-					<td><%= browse_course.name %></td>
-					<td><%= browse_course.course_code %></td>
-					<td><%= browse_course.description %></td>
+					<td>
+                        <span style="font-size: 15px"><%= browse_course.name %></span>
+                    </td>
+                    <td>
+                        <span style="font-weight: 600"><%= browse_course.course_code %></span>
+                    </td>
+                    <td>
+                        <span style="word-wrap:break-word;">
+                            <%= simple_format((browse_course.description).gsub!(/(PREREQUISITE\(S\)|PREREQUISITE|Prerequisite(s)|PREREQUISITES)/, '<br /><br />PREREQUISITE(S):') || browse_course.description + "<br /><br />PREREQUISITE(S): None" ) %>
+                        </span>
+                    </td>
 					<td><%= link_to 'Show', browse_course_path(browse_course), class:"btn btn-primary btn-xs color-white" %> </td>
 		      </tr>
 		    <% end %>

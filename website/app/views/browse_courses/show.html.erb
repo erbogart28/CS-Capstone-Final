@@ -10,7 +10,7 @@
 			</div>
 			<div class="margin-vertical">
 			  <strong>Description:</strong>
-			  <%= @browse_course.description %>
+                <%= simple_format((@browse_course.description).split(/(PREREQUISITE\(S\)|PREREQUISITE|Prerequisite(s)|PREREQUISITES)/, -1)[0] || [ @browse_course.description + "<br /><br />PREREQUISITE(S): None"] )  %>
 			</div>
 			<div class="margin-vertical">
         <strong>Prerequisite(s):</strong>
