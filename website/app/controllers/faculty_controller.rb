@@ -11,4 +11,8 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     #         redirect_to student_studentdashboard_path
     #     end
     # end
+    
+    def facultydashboard
+      @users = User.all
+    end
 end
