@@ -12,6 +12,14 @@
 			  <strong>Description:</strong>
 			  <%= @browse_course.description %>
 			</div>
+			<div class="margin-vertical">
+        <strong>Prerequisite(s):</strong>
+        <% if @browse_course.prereqs %>
+          <%= @browse_course.prereqs %>
+        <% else %>
+          None
+        <% end %>
+			 </div>
 		</div>
 
         <div class="panel-footer">
