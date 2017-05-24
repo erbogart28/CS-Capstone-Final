@@ -2,6 +2,15 @@ class SessionsController < ApplicationController
 layout 'login'
 
   def new
+    if logged_in?
+      if @current_user.admin?
+        redirect_back_or admin_admindashboard_path
+      elsif @current_user.faculty?
+        redirect_back_or faculty_facultydashboard_path
+      elsif @current_user.student?
+        redirect_back_or student_studentdashboard_path
+      end
+    end
   end
   
   def create #CODE SHOULD BE ADDED TO DEFINE USER ROLES AND REDIRECT BASED ON ROLES | DO HERE OR IN HELPER

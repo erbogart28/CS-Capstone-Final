@@ -47,7 +47,6 @@
             		  <li class="<%= 'active' if current_page?(degree_reqs_path) %>"><%= link_to "Degree Reqs", degree_reqs_path %></li>
             		  <li class="<%= 'active' if current_page?(path_courses_path) %>"><%= link_to "Path Courses", path_courses_path %></li>
             		  <li class="<%= 'active' if current_page?(courses_path) %>"><%= link_to "Courses", courses_path %></li>
-            		  <li class="<%= 'active' if current_page?(prereqs_path) %>"><%= link_to "Prereqs", prereqs_path %></li>
                 </ul>
             </li>
           <% end %>
@@ -56,7 +55,7 @@
         <ul class="nav navbar-nav navbar-right"> <!--start for login button functions | dropdown | "setting non-functional atm -->
          <% if logged_in? %> <!-- dropdown options showed if a user is logged in -->
           <li class="dropdown"> <!-- start dropdown -->
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @current_user.first %> <%= @current_user.last %> <b class="caret">
            </b>
            </a>
             <ul class="dropdown-menu">
@@ -86,7 +85,9 @@
 <div class="container">
 <% flash.each do |message_type, message| %>
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
+
+</div>
+  <% end %>
 </body>
     <%= yield %>
-	</div>
+</html>
