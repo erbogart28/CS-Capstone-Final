@@ -9,7 +9,8 @@
 		    <tr>
 				      <th>Name</th>
 				      <th>Email</th>
-				      <th colspan="2"></th>
+				      <th>Degree</th>
+				      <th colspan="3"></th>
 		    </tr>
 		  </thead>
 		  
@@ -20,6 +21,7 @@
           <div class="margin-vertical">
             <td> <%= user.first %> <%= user.last %> </td>
             <td> <%= user.email %> </td>
+            <td> <%= user.degree_id %> </td>
             <td> <%= link_to "View", studentview_url(:params => {:id => user.id}), class:"btn btn-xs btn-default color-white" %> </td>
           </div>
         <% end %>
