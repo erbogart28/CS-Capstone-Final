@@ -13,15 +13,21 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     # end
     
     def facultydashboard
+      unless current_user.admin? || current_user.faculty?
+          store_location
+          flash[:danger] = "Acess Denied"
+          redirect_to student_studentdashboard_path
+      end
       @users = User.all
     end
     
     def studentview
-      @user = User.find(params[:id])
-    end
-    
-    private
-      def user_params
-       params.require(:user).permit(:username, :role, :password, :permission, :view_as, :first, :last, :email, :degree_id, :course_load, :in_class, :online, :path_id, :deleted)
+      unless current_user.admin? || current_user.faculty?
+          store_location
+          flash[:danger] = "Acess Denied"
+          redirect_to student_studentdashboard_path
       end
+      @user = User.find(params[:id])
+      @courses_taken = CompletedCourse.joins("INNER JOIN courses ON courses.course_code = completed_courses.course_id").where("completed_courses.id = ?",params[:id])
+    end
 end

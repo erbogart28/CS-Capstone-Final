@@ -3,9 +3,32 @@
 </div>
 
 <div class="margin-vertical">
-    
+    <%= link_to 'Back', faculty_facultydashboard_path, class:"btn btn-xs btn-default color-white"%>
 </div>
 
 <div class="margin-vertical">
-    <%= link_to 'Back', faculty_facultydashboard_path, class:"btn btn-xs btn-default color-white"%>
+    <strong>Completed Courses:</strong>
+</div>
+<div class="panel panel-default">
+  <div class="panel-body">
+  <table class="table table-responsive">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th colspan="1"></th>
+	    </tr>
+	  </thead>
+		  
+	  <tbody>
+      <% @courses_taken.each do |course| %>
+        <tr>
+          <div class="margin-vertical">
+            <td> <%= course.name %> </td>
+            <td> <%= link_to "View", browse_course_path(course), class:"btn btn-xs btn-default color-white" %> </td>
+          </div>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
 </div>
