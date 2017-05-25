@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     # root 'home#land'  #root = default landing page for website / deleted route in favor of login page root / unused page
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
+    get 'studentview', to: 'faculty#studentview'
     get 'admin/admindashboard'
     post '/pull', to: 'pull_courses#create' # :to => '...'
     get 'users/new' 

@@ -15,4 +15,13 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     def facultydashboard
       @users = User.all
     end
+    
+    def studentview
+      @user = User.find(params[:id])
+    end
+    
+    private
+      def user_params
+       params.require(:user).permit(:username, :role, :password, :permission, :view_as, :first, :last, :email, :degree_id, :course_load, :in_class, :online, :path_id, :deleted)
+      end
 end

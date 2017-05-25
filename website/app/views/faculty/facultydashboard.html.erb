@@ -2,15 +2,30 @@
   <h1>Faculty Dashboard</h1>
 </div>
 
-<div class="margin-vertical">
-  <ol style="list-style-type:none">
-    <% @users.each do |user| %>
-      <% if user.student? %>
-        <div class="margin-vertical">
-          <li value=<%= user.id %>><%= link_to "View", edit_user_path(user), class:"btn btn-xs btn-default color-white" %> <%= user.first %> <%= user.last %></li>
-        </div>
+<div class="panel panel-default">
+  <div class="panel-body">
+  <table class="table table-responsive">
+		  <thead>
+		    <tr>
+				      <th>Name</th>
+				      <th>Email</th>
+				      <th colspan="2"></th>
+		    </tr>
+		  </thead>
+		  
+		  <tbody>
+      <% @users.each do |user| %>
+        <tr>
+        <% if user.student? %>
+          <div class="margin-vertical">
+            <td> <%= user.first %> <%= user.last %> </td>
+            <td> <%= user.email %> </td>
+            <td> <%= link_to "View", studentview_url(:params => {:id => user.id}), class:"btn btn-xs btn-default color-white" %> </td>
+          </div>
+        <% end %>
+        </tr>
       <% end %>
-    <% end %>
-  </ol>
+      </tbody>
+    </div>
 </div>
 
