@@ -43,7 +43,7 @@
       <%= f.text_field :user_id, class: 'form-control form-control-danger', :value => @user.id, :type => "hidden" %>
     
       <%= f.label :course_id, "Course ID" %>
-      <%= f.text_field :course_id, class: 'form-control form-control-danger' %>
+      <%= f.collection_select :course_id, Course.all, :id, :course_code %>
         
       <div class="margin-vertical"></div>  
       
