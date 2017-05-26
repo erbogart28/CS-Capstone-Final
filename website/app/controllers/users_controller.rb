@@ -7,7 +7,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   def impersonate  
     user = User.find(params[:id]) 
     impersonate_user(user)
-    log_in(current_user)
+    log_in(user)
     redirect_to root_path
   end
 

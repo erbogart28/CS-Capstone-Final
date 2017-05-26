@@ -1,5 +1,6 @@
-<% provide(:title, 'Edit user') %>
+
 <%= form_for(@user) do |f| %>
+<% provide(:title, @current_user.first) %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -20,17 +21,14 @@
     <%= f.label :password %>
     <%= f.text_field :password, class: "form-control" %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :permission %>
-    <%= f.text_field :permission, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :view_as %>
-    <%= f.text_field :view_as, class: "form-control" %>
-  </div>
-
+  
+  <% if current_user.admin? %>
+    <div class = "form-group">
+      <%= f.label :permission %>
+      <%= f.select(:role, [['student'], ['faculty'], ['admin']], class: "form-control" ) %>
+    </div>
+  <% end %>   
+      
   <div class="form-group">
     <%= f.label :first %>
     <%= f.text_field :first, class: "form-control" %>
@@ -56,12 +54,6 @@
     <%= f.text_field :course_load, class: "form-control" %>
   </div>
   
-  <% if current_user.admin? %>
-    <div>
-      <%= f.label :roles, "student, faculty, or admin" %>
-      <%= f.text_field :role, class: "form-control" %>
-    </div>
-  <% end %>
   
   <div class="form-group">
     <%= f.label :in_class %>
