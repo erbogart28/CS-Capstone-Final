@@ -55,14 +55,14 @@ def pull_html(url):
         return html
 
 
-def push_html(url, course, destination):
+def push_html(url, course, priority, destination):
     global ping_count
     with urlopen(url) as response:
         encoded_html = response.read()
         html = encoded_html.decode()
         ping_count += 1
         print(ping_count)
-        destination.append((course, html,))
+        destination.append((course, html, priority,))
 
 
 def cs_curriculum_scraper(html_string):
@@ -111,34 +111,35 @@ def push_name_tuples(course_list_soup, index, key, secondary_key=None, curric = 
         curric[key].extend(name_list)
 
 
-def course_gen(curr):
+def course_gen(curr, priority = None):
     t = type(curr)
     if t == type([]):
         for v in curr:
-            yield v
+            yield v, priority
     elif t == type({}):
-        for v in curr.values():
-            for i in course_gen(v):
-                yield i
+        for k, v in curr.items():
+            for i, p in course_gen(v, k):
+                yield i, p
 
 
 def scrape_course_detail(curric):
     global course_url
     t = ThreadPool(40)
     course_html_list = []
-    for course in course_gen(curric):
+    for course, priority in course_gen(curric):
         url = course_url.format(course.subject, course.num)
-        t.add_task(push_html, url, course, course_html_list)
+        t.add_task(push_html, url, course, priority, course_html_list)
     t.wait_completion()
-    for course, course_html in course_html_list:
-        parse_and_update_course(course, course_html)
+    for course, course_html, course_priority in course_html_list:
+        parse_and_update_course(course, course_html, course_priority)
 
 
-def parse_and_update_course(course_obj, course_html):
+def parse_and_update_course(course_obj, course_html, priority):
     soup = BeautifulSoup(course_html, 'html.parser')
+    course_obj.priority = priority
     title_div = soup.select('.CDMPageTitle')[0]
     course_obj.name = title_div.text.split(":\r\n    ")[1]
-    course_obj.description = re.sub(new_line_pattern , ' ',title_div.findNext('div').text.strip())
+    course_obj.description = re.sub(new_line_pattern , ' ', title_div.findNext('div').text.strip())
     course_obj.history = [season_map[offering.text.strip()]
                           for offering in soup.select('.CTIPageSectionHeader')
                           if offering.text.strip() in season_map]
@@ -154,12 +155,13 @@ def parse_and_update_course(course_obj, course_html):
 def write_to_csv(curric, name):
     with open(name, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=':', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        for course in course_gen(curric):
+        for course, _ in course_gen(curric):
             writer.writerow(["{} {}".format(course.subject, course.num),
                              course.name,
                              course.description,
                              course.prerequisites if course.prerequisites is not None else "",
-                             ",".join(entry for entry in course.history)])
+                             ",".join(entry for entry in course.history),
+                             course.priority])
 
 
 if __name__ == '__main__':
