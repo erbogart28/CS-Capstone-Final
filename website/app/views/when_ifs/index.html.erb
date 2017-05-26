@@ -32,7 +32,7 @@
         <% end %>
     </div>
   <script>
-    $(document).on("ready", function () {
+    $(document).on("turbolinks:load", function () {
         var degree = document.getElementById("degree-sel");
         var csOptions = ["Software and Systems Development", "Theory", "Data Science", "Database Systems", "Artificial Intelligence", "Software Engineering", "Multimedia"];
         var isOptions = ["Business Analysis/Systems Analysis", "Business Intelligence", "Database Administration", "Database Administration", "IT Enterprise Management", "Standard"];
@@ -57,8 +57,6 @@
         });
 
     });
-
-
   </script>
     <div class="panel-footer">
     </div>
