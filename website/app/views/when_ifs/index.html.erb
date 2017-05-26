@@ -11,11 +11,14 @@
             <br><br> <!--I'm lazy, accept the br's-->
             <h4>Degree Type</h4>
             <%= select_tag(:degree_id, 
-                options_for_select([ "CS", "IS" ])) %>
+                options_for_select([ "CS", "IS" ]),
+                id: "degree-sel") %>
             <br><br>   <!--I'm lazy, accept the br's-->
             <h4>Concentration Type</h4>
+
             <%= select_tag(:concentration,
-                options_for_select([ "Business Analysis/Systems Analysis", "Business Intelligence","Database Administration","Database Administration","IT Enterprise Management", "Standard"  ])) %>
+                options_for_select(["Software and Systems Development", "Theory", "Data Science", "Database Systems", "Artificial Intelligence", "Software Engineering", "Multimedia"]),
+                id: "concentration-sel") %>
             <br><br><!--I'm lazy, accept the br's-->
             <h4>Desired Course Load</h4>
             <%= select_tag(:course_load, 
@@ -28,7 +31,35 @@
               <%= submit_tag yield(:button_text), class: "btn btn-primary" %>
         <% end %>
     </div>
+  <script>
+    $(document).on("ready", function () {
+        var degree = document.getElementById("degree-sel");
+        var csOptions = ["Software and Systems Development", "Theory", "Data Science", "Database Systems", "Artificial Intelligence", "Software Engineering", "Multimedia"];
+        var isOptions = ["Business Analysis/Systems Analysis", "Business Intelligence", "Database Administration", "Database Administration", "IT Enterprise Management", "Standard"];
+        var concentration = document.getElementById("concentration-sel");
+        $("#degree-sel").on('change', function () {
+            console.log(degree.options[degree.selectedIndex].value == "CS");
+            var $el = $("#concentration-sel");
+            $el.empty(); // remove old options
+            if (degree.options[degree.selectedIndex].value == "CS") {
 
+                $.each(csOptions, function (key, value) {
+                    $el.append($("<option></option>")
+                        .attr("value", value).text(value));
+                });
+
+            } else {
+                $.each(isOptions, function (key, value) {
+                    $el.append($("<option></option>")
+                        .attr("value", value).text(value));
+                });
+            }
+        });
+
+    });
+
+
+  </script>
     <div class="panel-footer">
     </div>
 
