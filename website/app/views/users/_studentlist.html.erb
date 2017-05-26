@@ -5,7 +5,6 @@
 		  <thead>
 		    <tr>
 				      <th>Username</th>
-				      <th>Password</th>
 				      <th>Permission</th>
 				      <th>View as</th>
 				      <th>First</th>
@@ -26,7 +25,7 @@
 		      <tr>
 					<td><%= user.username %></td>
 					<td><%= user.permission %></td>
-					<td>View as <%= link_to user.first, impersonate_user_path(user), method: :post %></td>
+					<td><%= link_to "View", impersonate_user_path(user), method: :post %></td>
 					<td><%= user.view_as %></td>
 					<td><%= user.first %></td>
 					<td><%= user.last %></td>
