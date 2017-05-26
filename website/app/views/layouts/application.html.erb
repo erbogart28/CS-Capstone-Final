@@ -70,10 +70,18 @@
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
+        
       </ul>
     </div> <!-- End navbar collapose -->
   </nav> <!-- end main navbar -->
 </header> 
+
+<div class = "container">
+
+<% if current_user != true_user %>
+  You (<%= true_user.name %>) are signed in as <%= current_user.name %>
+  <%= link_to "Back to admin", stop_impersonating_users_path, method: :post %>
+<% end %>
 
 <!-- flash messages based on controller created methods -->
 	<!--<div class="container">-->

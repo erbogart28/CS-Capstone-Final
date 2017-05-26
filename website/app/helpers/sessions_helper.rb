@@ -1,7 +1,9 @@
 module SessionsHelper
+
+
     # Logs in the given user.
     def log_in(user)
-        session[:user_id] = user.id
+        session[:user_id] = user.id 
     end
     
     # Remembers a user in a persistent session.
@@ -40,5 +42,9 @@ module SessionsHelper
     # Stores the URL trying to be accessed.
     def store_location
         session[:forwarding_url] = request.original_url if request.get?
+    end
+    
+   def index
+    @users = User.order(:id)
     end
 end
