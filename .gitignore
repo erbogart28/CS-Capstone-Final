@@ -53,7 +53,6 @@ test/version_tmp
 _yardoc
 Gemfile.lock
 
-
 tmp
 ~/workspace/website/db/development.sqlite3
 ~/workspace/website/log/development.log

@@ -70,18 +70,19 @@
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
+        
       </ul>
     </div> <!-- End navbar collapose -->
   </nav> <!-- end main navbar -->
 </header> 
 
-<!-- flash messages based on controller created methods -->
-	<!--<div class="container">-->
-	<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert-placeholder">-->
-	<!--      <%# flash_messages %>-->
-	<!--</div>-->
- <!--   <%# yield %>-->
-	<!--</div>-->
+<!-- Currently not working
+<div class = "container">
+<%# if current_user != true_user %>
+  You (<%# true_user.name %>) are signed in as <%# current_user.name %>
+  <%# link_to "Back to admin", stop_impersonating_users_path, method: :post %>
+<%# end %> -->
+
 <div class="container">
 <% flash.each do |message_type, message| %>
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-<%= message_type %>"><%= message %></div>
