@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
 layout 'login'
 
-
-
-
   def new
     if logged_in?
       if @current_user.admin?

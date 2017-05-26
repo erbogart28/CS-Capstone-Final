@@ -76,20 +76,13 @@
   </nav> <!-- end main navbar -->
 </header> 
 
+<!-- Currently not working
 <div class = "container">
+<%# if current_user != true_user %>
+  You (<%# true_user.name %>) are signed in as <%# current_user.name %>
+  <%# link_to "Back to admin", stop_impersonating_users_path, method: :post %>
+<%# end %> -->
 
-<% if current_user != true_user %>
-  You (<%= true_user.name %>) are signed in as <%= current_user.name %>
-  <%= link_to "Back to admin", stop_impersonating_users_path, method: :post %>
-<% end %>
-
-<!-- flash messages based on controller created methods -->
-	<!--<div class="container">-->
-	<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert-placeholder">-->
-	<!--      <%# flash_messages %>-->
-	<!--</div>-->
- <!--   <%# yield %>-->
-	<!--</div>-->
 <div class="container">
 <% flash.each do |message_type, message| %>
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-<%= message_type %>"><%= message %></div>

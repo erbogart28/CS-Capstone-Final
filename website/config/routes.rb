@@ -16,7 +16,6 @@ end
   resources :completed_courses
   resources :users
 
-
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
     get 'admin/admindashboard'

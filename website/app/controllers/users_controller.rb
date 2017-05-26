@@ -4,7 +4,7 @@ before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is lo
 before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
 
 
-    def impersonate  
+  def impersonate  
     user = User.find(params[:id]) 
     impersonate_user(user)
     log_in(current_user)
