@@ -6,15 +6,10 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
 
   def impersonate  
     user = User.find(params[:id]) 
-    impersonate_user(user)
-    log_in(user)
+    session[:user_id] << user.id
     redirect_to root_path
   end
 
-  def stop_impersonating
-    stop_impersonating_users_path
-    redirect_to root_path
-  end
   # GET /users
   # GET /users.json
   def index
@@ -107,5 +102,4 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user) || current_user.admin?
   end
-
 end
