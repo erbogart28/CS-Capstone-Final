@@ -2,20 +2,17 @@
     <h1>Student Page: <%= @user.first %> <%= @user.last %></h1>
 </div>
 
-<div class="margin-vertical">
-    <%= link_to 'Back', faculty_facultydashboard_path, class:"btn btn-xs btn-default color-white"%>
-</div>
-
-<div class="margin-vertical">
-    <strong>Completed Courses:</strong>
-</div>
-<div class="panel panel-default">
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <strong>Completed Courses</strong>
+  </div>
   <div class="panel-body">
   <table class="table table-responsive">
 	  <thead>
 	    <tr>
 	      <th>Name</th>
-	      <th colspan="1"></th>
+	      <th>Course code</th>
+	      <th colspan="2"></th>
 	    </tr>
 	  </thead>
 		  
@@ -24,6 +21,7 @@
         <tr>
           <div class="margin-vertical">
             <td> <%= course.name %> </td>
+            <td> <%= course.course_code %> </td>
             <td> <%= link_to "View", browse_course_path(course), class:"btn btn-xs btn-default color-white" %> </td>
           </div>
         </tr>
@@ -31,4 +29,29 @@
       </tbody>
     </table>
     </div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <strong>Waive a Course</strong>
+  </div>
+  <div class="panel-body">
+    <%= form_for(@waive_course) do |f| %>
+      <%= render 'shared/error_messages', object: @waive_course %>
+    
+      <%= f.text_field :user_id, class: 'form-control form-control-danger', :value => @user.id, :type => "hidden" %>
+    
+      <%= f.label :course_id, "Course ID" %>
+      <%= f.text_field :course_id, class: 'form-control form-control-danger' %>
+        
+      <div class="margin-vertical"></div>  
+      
+      <%= f.submit "Waive Course", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="margin-vertical">
+    <%= link_to 'Back', faculty_facultydashboard_path, class:"btn btn-xs btn-default color-white"%>
 </div>

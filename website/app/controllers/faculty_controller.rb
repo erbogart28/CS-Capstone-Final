@@ -28,6 +28,7 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
           redirect_to student_studentdashboard_path
       end
       @user = User.find(params[:id])
-      @courses_taken = CompletedCourse.joins("INNER JOIN courses ON courses.course_code = completed_courses.course_id").where("completed_courses.id = ?",params[:id])
+      @courses_taken = Course.joins("INNER JOIN completed_courses ON courses.id = completed_courses.course_id").where("completed_courses.user_id = ?",params[:id])
+      @waive_course = CompletedCourse.new
     end
 end
