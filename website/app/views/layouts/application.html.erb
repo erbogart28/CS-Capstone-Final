@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -47,7 +46,6 @@
             		  <li class="<%= 'active' if current_page?(degree_reqs_path) %>"><%= link_to "Degree Reqs", degree_reqs_path %></li>
             		  <li class="<%= 'active' if current_page?(path_courses_path) %>"><%= link_to "Path Courses", path_courses_path %></li>
             		  <li class="<%= 'active' if current_page?(courses_path) %>"><%= link_to "Courses", courses_path %></li>
-            		  <li class="<%= 'active' if current_page?(prereqs_path) %>"><%= link_to "Prereqs", prereqs_path %></li>
                 </ul>
             </li>
           <% end %>
@@ -56,7 +54,7 @@
         <ul class="nav navbar-nav navbar-right"> <!--start for login button functions | dropdown | "setting non-functional atm -->
          <% if logged_in? %> <!-- dropdown options showed if a user is logged in -->
           <li class="dropdown"> <!-- start dropdown -->
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret">
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @current_user.first %> <%= @current_user.last %> <b class="caret">
            </b>
            </a>
             <ul class="dropdown-menu">
@@ -71,22 +69,18 @@
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
+        
       </ul>
     </div> <!-- End navbar collapose -->
   </nav> <!-- end main navbar -->
 </header> 
 
-<!-- flash messages based on controller created methods -->
-	<!--<div class="container">-->
-	<!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert-placeholder">-->
-	<!--      <%# flash_messages %>-->
-	<!--</div>-->
- <!--   <%# yield %>-->
-	<!--</div>-->
 <div class="container">
 <% flash.each do |message_type, message| %>
  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
+
+</div>
+  <% end %>
 </body>
     <%= yield %>
-	</div>
+</html>

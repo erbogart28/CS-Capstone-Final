@@ -1,3 +1,0 @@
-class Prereq < ApplicationRecord
-
-end

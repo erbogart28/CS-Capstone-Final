@@ -28,7 +28,7 @@ class CompletedCoursesController < ApplicationController
 
     respond_to do |format|
       if @completed_course.save
-        format.html { redirect_to @completed_course, notice: 'Completed course was successfully created.' }
+        format.html { redirect_to studentview_url(:params => {:id => @completed_course.user_id}) }
         format.json { render :show, status: :created, location: @completed_course }
       else
         format.html { render :new }

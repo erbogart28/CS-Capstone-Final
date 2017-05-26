@@ -2,8 +2,13 @@ class UsersController < ApplicationController
 before_action :set_user, only: [:show, :edit, :update, :destroy]
 before_action :logged_in_user, only: [:index, :edit, :update] #ensure user is logged in before editing is allowed
 before_action :correct_user,   only: [:edit, :update] #ensure correct user is editing correct profile
-#PERMISSIONS CAN BE ADDED THROUGH CALLING METHODS LIKE THIS - BEFORE PAGE LOAD VERIFIY USER TYPE
 
+
+  def impersonate  
+    user = User.find(params[:id]) 
+    session[:user_id] << user.id
+    redirect_to root_path
+  end
 
   # GET /users
   # GET /users.json
@@ -97,4 +102,4 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user) || current_user.admin?
   end
-end#ne
+end

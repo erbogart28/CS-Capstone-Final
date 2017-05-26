@@ -10,20 +10,16 @@
 			</div>
 			<div class="margin-vertical">
 			  <strong>Description:</strong>
-			  <%= @browse_course.description %>
+                <%= simple_format((@browse_course.description).split(/(PREREQUISITE\(S\)|PREREQUISITE|Prerequisite(s)|PREREQUISITES)/, -1)[0] || [ @browse_course.description + "<br /><br />PREREQUISITE(S): None"] )  %>
 			</div>
 			<div class="margin-vertical">
-			 <strong>Prerequisite(s):</strong>
+        <strong>Prerequisite(s):</strong>
+        <% if @browse_course.prereqs %>
+          <%= @browse_course.prereqs %>
+        <% else %>
+          None
+        <% end %>
 			 </div>
-			<div class="margin-vertical"
-			  <ul style="list-style-type:none">
-			    <% @browse_course_prereq.each do |item| %>
-			      <div class="margin-vertical">
-			        <li>&emsp;<%= link_to 'View', browse_course_path(item), class:"btn btn-primary btn-xs color-white" %> <%= item.name %> (<%= item.course_code %>) </li>
-			      </div>
-			    <% end %>
-			  <ul>
-			</div>
 		</div>
 
         <div class="panel-footer">

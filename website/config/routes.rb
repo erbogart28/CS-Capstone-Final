@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :users, only: [:index]  do
+  post :impersonate, on: :member
+  post :stop_impersonating, on: :collection
+end
   resources :browse_courses
   resources :course_deliveries
   resources :prereqs
@@ -11,9 +15,10 @@ Rails.application.routes.draw do
   resources :degrees
   resources :completed_courses
   resources :users
-    # root 'home#land'  #root = default landing page for website / deleted route in favor of login page root / unused page
+
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
+    get 'studentview', to: 'faculty#studentview'
     get 'admin/admindashboard'
     post '/pull', to: 'pull_courses#create' # :to => '...'
     get 'users/new' 
@@ -25,5 +30,4 @@ Rails.application.routes.draw do
 
 	get		'when_if', to: 'when_ifs#index'
 	post    'when_if', to: 'when_ifs#run'
-
 end
