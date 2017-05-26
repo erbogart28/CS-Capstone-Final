@@ -18,6 +18,7 @@ end
 
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
+    get 'studentview', to: 'faculty#studentview'
     get 'admin/admindashboard'
     post '/pull', to: 'pull_courses#create' # :to => '...'
     get 'users/new' 
