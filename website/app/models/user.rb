@@ -5,7 +5,6 @@ class User < ApplicationRecord
     def set_default_role
         self.role ||= :student
     end
- 
     before_save { self.email = email.downcase }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, presence: true, length: { maximum: 255 },
