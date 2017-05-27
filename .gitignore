@@ -63,3 +63,4 @@ tmp
 website/.idea
 .idea/
 website/log/development.log
+development.sqlite3

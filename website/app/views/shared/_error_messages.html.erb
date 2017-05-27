@@ -1,9 +1,8 @@
-<!-- error messages for sign up 
+<!-- error messages for sign up -->
 
-fuckin error messages. Cannot get them to show next to fields. No motivation to try to accomplish that right now.-->
 <% if @user.errors.any? %>
   <div id="error_explanation">
-    <div class="alert alert-danger">
+    <div class="alert alert-danger-has-danger">
       The form contains <%= pluralize(@user.errors.count, "error") %>.
     </div>
     <ul>
