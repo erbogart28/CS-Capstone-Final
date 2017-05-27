@@ -38,8 +38,10 @@ class PullCoursesController < ApplicationController
         __parse_course_csv("scraper/is_bsa.csv", courses_seen, is_bsa)
         __parse_course_csv("scraper/is_da.csv", courses_seen, is_da)
         __parse_course_csv("scraper/is_em.csv", courses_seen, is_em)
-        s = __parse_course_csv("scraper/is_s.csv", courses_seen, is_s)
-        render html: s.html_safe
+        __parse_course_csv("scraper/is_s.csv", courses_seen, is_s)
+        flash[:success] = "Courses updated"
+        redirect_to admin_admindashboard_path
+
     end
 
     def __parse_course_csv(fname, seen, degree)
