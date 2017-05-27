@@ -46,7 +46,7 @@ season_map = {
 
 
 class Course:
-    __slots__ = 'subject', 'num', 'name', 'prerequisites', 'history', 'description'
+    __slots__ = 'subject', 'num', 'name', 'prerequisites', 'history', 'description', 'priority'
 
     def __init__(self, subject=None, num=None, name=None):
         self.subject = subject
@@ -55,6 +55,7 @@ class Course:
         self.description = None
         self.prerequisites = None
         self.history = None
+        self.priority = None
 
     def __repr__(self):
         return "<Course subject={}, num={}, name={}, prerequisites={}, history={}>"\

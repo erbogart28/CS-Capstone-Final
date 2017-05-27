@@ -52,6 +52,7 @@ test/version_tmp
 .yardoc
 _yardoc
 Gemfile.lock
+development.sqlite3
 
 tmp
 ~/workspace/website/db/development.sqlite3
@@ -63,4 +64,4 @@ tmp
 website/.idea
 .idea/
 website/log/development.log
-development.sqlite3
+/website/db/development.sqlite3
