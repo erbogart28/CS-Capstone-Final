@@ -1,5 +1,262 @@
+<div class="page-header">
+    <h1>Student Dashboard: <%= current_user.first %> <%= current_user.last %></h1>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <strong>Completed Courses</strong>
+  </div>
+  <div class="panel-body">
+  <table class="table table-responsive">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Course code</th>
+	      <th colspan="2"></th>
+	    </tr>
+	  </thead>
+		  
+	  <tbody>
+      <% @courses_taken.each do |course| %>
+        <tr>
+          <div class="margin-vertical">
+            <td> <%= course.name %> </td>
+            <td> <%= course.course_code %> </td>
+            <td> <%= link_to "View", browse_course_path(course), class:"btn btn-xs btn-default color-white" %> </td>
+          </div>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
+</div>
+
+
+<div class="page-header">
+    <h2>Your Generated Course Plan</h2>
+</div>
+
+
+
 <container>
   <div class="page-header">
-    <h1>Student Dashboard</h1>
+    <h4>Fall Quarter 2017-2018</h4>
   </div>
 </container>
+<table class="table table-responsive">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Course code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Introduction to Programming</td>
+    <td>CSC 401</td>
+    <td>An introduction to programming with a focus on problem solving, structured programming, and algorithm design with a gentle introduction to efficiency. Concepts covered include data types, expressions, variables, assignments, conditional and iterative structures, functions, file input/output, exceptions, namespaces, and recursion. PREREQUISITE(S)  None</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/336">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Statistics and Data Analysis</td>
+    <td>IT 403</td>
+    <td>Introduction to univariate data analysis methods. Descriptive statistics and data visualization methods. Overview of sampling techniques for data collection, and introduction to statistical inference methods for decision making including simple linear regression, estimation procedures using confidence intervals and hypothesis testing. PREREQUISITE(S)  None</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/465">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Systems Analysis</td>
+    <td>IS 421</td>
+    <td>Course focus is on both traditional and object oriented systems analysis, with an emphasis upon developing competency in a wide range of modeling techniques.  Specific topics include  overview of the software development environment and project management; project selection, initiation, and planning; determining requirements; process modeling, including DFDs and use cases; logic modeling, including decision tables, sequence diagrams, and activity diagrams; introduction to Entity-Relationship Diagrams.  PREREQUISITE(S)  None</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/466">Show</a> </td>
+  </tr>
+  </tbody>
+</table>
+
+<container>
+  <div class="page-header">
+    <h4>Winter Quarter 2017-2018</h4>
+  </div>
+</container>
+<table class="table table-responsive">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Course code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Data Structures I</td>
+    <td>CSC 402</td>
+    <td>A first course on data structures in Java for graduate students.  The course introduces Java programming from within the context of data structures. The course covers arrays, linked lists, stacks and queues, data structures supporting disjoint-set operations,  and discusses recursion and performance analysis.  The implementation of the basic operations on each data structure are discussed and analyzed in terms of their efficiency. PREREQUISITE(S)   CSC 401</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/337">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Systems I</td>
+    <td>CSC 406</td>
+    <td>An introductory graduate course on computer systems topics, focusing on machine-level programming and architecture and their relevance for application programming. Information representations, assembly language and debuggers, processor architecture, program optimization, memory hierarchy and caching. Students are recommended to finish CSC 400 before enrolling in this course. PREREQUISITE(S)  CSC 401</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/339">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Scientific Computing</td>
+    <td>CSC 431</td>
+    <td>This course presents fundamental numerical algorithms for solving problems in scientific computing and computational finance. Areas covered include  error analysis, computer arithmetic, linear algebra, optimization problems, numerical integration (solvers), ordinary differential equations (ODE). The emphasis of the course is on the design of the algorithms, and their analysis. Algorithms will be implemented using mathematical software. PREREQUISITE(S)  (CSC 401 and two quarters of calculus) or instructor permission</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/381">Show</a> </td>
+  </tr>
+  </tbody>
+</table>
+
+<container>
+  <div class="page-header">
+    <h4>Spring Quarter 2017-2018</h4>
+  </div>
+</container>
+<table class="table table-responsive">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Course code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Systems II</td>
+    <td>CSC 407</td>
+    <td>An introductory graduate course on computer systems topics, focusing on operating systems components and their relevance for application programming. Linking, processes, virtual memory, dynamic memory allocation, system level I/O, networking and network programming, concurrent servers and web services. PREREQUISITE(S)  CSC 406 and CSC 402</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/340">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Data Structures II</td>
+    <td>CSC 403</td>
+    <td>This is the second course on data structures in Java for graduate students. The course covers trees, heaps, associative arrays, hash tables, tries, and data structures for representing graphs. The implementation of the basic operations on each data structure are discussed and analyzed in terms of their efficiency. PREREQUISITE(S)  CSC 402</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/338">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Information Storage and Management</td>
+    <td>TDC 478</td>
+    <td>This course provides a comprehensive overview of network-based storage technology and information storage infrastructure.  Major topics include the storage architectures, service features, and benefits of Intelligent Storage Systems. Networked storage technologies include fiber channel (FC), based Storage Area Network (SAN), Network Attached Storage (NAS), and IP-SAN. Advanced storage technologies on Content Addressed Storage (CAS), information security, and storage virtualization are also discussed.  PREREQUISITE(S)  none</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/378">Show</a> </td>
+  </tr>
+  </tbody>
+</table>
+
+<container>
+  <div class="page-header">
+    <h4>Fall Quarter 2018-2019</h4>
+  </div>
+</container>
+<table class="table table-responsive">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Course code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Mobile Application Development for iOS</td>
+    <td>CSC 471</td>
+    <td>This course introduces the core issues associated with application development for mobile devices using the iOS platform. Students will learn the Swift language, the XCode IDE, UIKit and other frameworks, the elements and architecture of the user interfaces, and more. Students will be exposed to the iOS system architecture including memory management, MVC, delegates and threads. Topics will also include understanding and handling of multi-touch events, gestures, and motion events.  PREREQUISITE(S)   CSC 403 and CSC 407</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/353">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Continuous Delivery and Devops</td>
+    <td>SE 441</td>
+    <td>A study of the tools, techniques, and processes used in Continuous Delivery and DevOps. Learn to transform an organization that uses traditional software release methods into one that embraces continuous delivery and deployment. Topics will include  the economics of DevOps and continuous delivery; the role of virtualization, cloud technologies, and containers, automated builds and testing; value stream maps; the essentials of configuration management,; effective use of source code control branches and feature flags to manage multiple lines of development. PREREQUISITE(S)  CSC 403</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/369">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Distributed Systems I</td>
+    <td>CSC 435</td>
+    <td>An introduction to distributed systems. Topics may include  architecture of distributed systems; networking; datagram-oriented and stream-oriented protocols; network programming (for example, the sockets API); remote procedure call and remote method invocation; processes and threads; code migration; software agents; naming of non-mobile and mobile entities; cryptography and security.  PREREQUISITE(S)  CSC 403 and CSC 407</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/342">Show</a> </td>
+  </tr>
+  </tbody>
+</table>
+
+<container>
+  <div class="page-header">
+    <h4>Winter Quarter 2018-2019</h4>
+  </div>
+</container>
+<table class="table table-responsive">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Course code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Mobile Application Development II</td>
+    <td>CSC 540</td>
+    <td>This course will cover advanced topics in mobile and wireless application development. The topics covered will be made explicit by the course instructor when the course is offered. PREREQUISITE(S)  CSC 471</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/358">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Object-Oriented Software Development</td>
+    <td>SE 450</td>
+    <td>Principle, techniques and tools of object-oriented modeling, design, implementation, and testing of large-scale software systems.  Topics include design patterns, application frameworks, architectural design, and the applications in the software development process to improve the extensibility, maintainability, and reliability of software systems.  PREREQUISITE(S)  CSC 403</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/345">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Cryptology</td>
+    <td>CSC 440</td>
+    <td>Introduction to the methods of cryptography and cryptanalysis. Topics include classical cryptography (codes, monoalphabetic and polyalphabetic substitution ciphers, transposition ciphers), modern block ciphers (such as DES, AES), and public key cryptography (such as RSA). Optional topics include zero-knowledge protocols, information theory, coding theory, error-correcting codes, steganography, stream ciphers, hashing algorithms, quantum cryptography, elliptic curve cryptography, and history. PREREQUISITE(S)  CSC 403</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/382">Show</a> </td>
+  </tr>
+  </tbody>
+</table>
+
+<container>
+  <div class="page-header">
+    <h4>Spring Quarter 2018-2019</h4>
+  </div>
+</container>
+<table class="table table-responsive">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Course code</th>
+    <th>Description</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Database Technologies</td>
+    <td>CSC 453</td>
+    <td>A core graduate course in database design and implementation.  Topics include database implementation and queries in SQL, logical design or relational databases, storage and indexes, database programming, and emerging database models.  PREREQUISITE(S)  CSC 403</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/344">Show</a> </td>
+  </tr>
+
+
+  <tr>
+    <td>Software Engineering Studio</td>
+    <td>SE 491</td>
+    <td>Students will work in small teams to develop realistic software systems in a master-apprentice environment. The instructor will serve as a master/mentor/project leader. Students will apply knowledge and skills they have learned in previous course in solving real world problems.  PREREQUISITE(S)  SE 450.</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/376">Show</a> </td>
+  </tr>
+  <tr>
+    <td>Digital Forensic Techniques</td>
+    <td>CNS 450</td>
+    <td>This course focuses on the forensic acquisition, analysis and presentation of data from computer systems. This course covers  preservation and interpretation of evidence; forensic imaging; file systems and data recovery; Windows registry forensics; internet history and social media analysis; mobile device forensics; timeline analysis; incident response and writing expert reports and testimony.  PREREQUISITE(S)  CSC 407 or CNS 418</td>
+    <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/365">Show</a> </td>
+  </tr>
+  </tbody>
