@@ -1,82 +1,94 @@
 <!-- I'm just using this if statement to comment out this multilined erb code -->
 <% if false %>
 
-<h1>Profile</h1>
-<div class="container">
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.first %>
-        <%= @user.last %>
-      </h1>
-    </section>
-  </aside>
-</div>
-</div>
+    <h1>Profile</h1>
+    <div class="container">
+      <div class="row">
+        <aside class="col-md-4">
+          <section class="user_info">
+            <h1>
+              <%= gravatar_for @user %>
+              <%= @user.first %>
+              <%= @user.last %>
+            </h1>
+          </section>
+        </aside>
+      </div>
+    </div>
 
 <% end %>
 <div class="container">
-<h1>Information</h1>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
-        <div class="panel-body">
-			<div class="margin-vertical">
-			  <strong>Username:</strong>
-			  <%= @user.username %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Password:</strong>
-			  <%= @user.password %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Permission:</strong>
-			  <%= @user.permission %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>View as:</strong>
-			  <%= @user.view_as %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>First:</strong>
-			  <%= @user.first %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Last:</strong>
-			  <%= @user.last %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Email:</strong>
-			  <%= @user.email %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Degree:</strong>
-			  <%= @user.degree_id %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Course load:</strong>
-			  <%= @user.course_load %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>In class:</strong>
-			  <%= @user.in_class %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Online:</strong>
-			  <%= @user.online %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Path:</strong>
-			  <%= @user.path_id %>
-			</div>
-			<div class="margin-vertical">
-			  <strong>Deleted:</strong>
-			  <%= @user.deleted %>
-			</div>
-		</div>
+  <h1>Information</h1>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="margin-vertical">
+            <%= gravatar_for(@user, {size: 200}) %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="margin-vertical">
+            <strong>Username:</strong>
+            <%= @user.username %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Password:</strong>
+            <%= @user.password %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Permission:</strong>
+            <%= @user.permission %>
+          </div>
+          <div class="margin-vertical">
+            <strong>View as:</strong>
+            <%= @user.view_as %>
+          </div>
+          <div class="margin-vertical">
+            <strong>First:</strong>
+            <%= @user.first %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Last:</strong>
+            <%= @user.last %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="margin-vertical">
+            <strong>Email:</strong>
+            <%= @user.email %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Degree:</strong>
+            <%= @user.degree_id %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Course load:</strong>
+            <%= @user.course_load %>
+          </div>
+          <div class="margin-vertical">
+            <strong>In class:</strong>
+            <%= @user.in_class %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Online:</strong>
+            <%= @user.online %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Path:</strong>
+            <%= @user.path_id %>
+          </div>
+          <div class="margin-vertical">
+            <strong>Deleted:</strong>
+            <%= @user.deleted %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="panel-footer">
-		<%= link_to 'Back',  edit_user_path(current_user), class:"btn btn-xs btn-default margin-right color-white" %>
-		<%= link_to 'Edit', edit_user_path(@user), class:"btn btn-xs btn-warning color-white" %>
-	</div>
+    <div class="panel-footer">
+      <%= link_to 'Back', edit_user_path(current_user), class: "btn btn-xs btn-default margin-right color-white" %>
+      <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-xs btn-warning color-white" %>
+    </div>
+  </div>
 </div>
