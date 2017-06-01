@@ -4,12 +4,12 @@ require "set"
 class PullCoursesController < ApplicationController
     
     def create 
-        ActiveRecord::Base.connection.execute("DELETE FROM COURSES")
-        ActiveRecord::Base.connection.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'COURSES'")
-        ActiveRecord::Base.connection.execute("DELETE FROM DEGREES")
-        ActiveRecord::Base.connection.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'DEGREES'")
-        ActiveRecord::Base.connection.execute("DELETE FROM DEGREE_REQS")
-        ActiveRecord::Base.connection.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'DEGREE_REQS'")
+        ActiveRecord::Base.connection.execute("DELETE FROM COURSES;")
+        ActiveRecord::Base.connection.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'courses';")
+        ActiveRecord::Base.connection.execute("DELETE FROM DEGREES;")
+        ActiveRecord::Base.connection.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'degrees';")
+        ActiveRecord::Base.connection.execute("DELETE FROM DEGREE_REQS;")
+        ActiveRecord::Base.connection.execute("DELETE FROM SQLITE_SEQUENCE WHERE NAME = 'degree_reqs';")
         courses_seen = Set.new
         cs = [
             Degree.new(major: 'CS', concentration: 'Software and Systems Development'),
@@ -60,7 +60,8 @@ class PullCoursesController < ApplicationController
                         course_code: row[0],
                         priority: row[5],
                         degree_id: deg.id,
-                        history: row[4]
+                        history: row[4],
+                        prereqs: row[3]
                     ).save
                 end
             else
@@ -68,7 +69,8 @@ class PullCoursesController < ApplicationController
                     course_code: row[0],
                     priority: row[5],
                     degree_id: degree.id,
-                    history: row[4]
+                    history: row[4],
+                    prereqs: row[3]
                 ).save
             end
 

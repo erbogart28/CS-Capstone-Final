@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from website.scraper import ThreadPool, season_map, Course, CSCurriculumKey as CS, ISCurriculumKey as IS
 import csv
 import re
+from copy import deepcopy
 
 prereq_pattern = re.compile("PREREQUISITE")
 new_line_pattern = re.compile(r"[\r\n\:\|]")
@@ -170,31 +171,31 @@ if __name__ == '__main__':
     scrape_course_detail(cs_curriculum)
     write_to_csv(cs_curriculum, 'cs.csv')
 
-    curr = is_curriculum_seed.copy()
+    curr = deepcopy(is_curriculum_seed)
     html_string = pull_html(is_curriculum_url_bsa)
     is_curriculum_scraper(html_string, curr)
     scrape_course_detail(curr)
     write_to_csv(curr, 'is_bsa.csv')
 
-    curr = is_curriculum_seed.copy()
+    curr = deepcopy(is_curriculum_seed)
     html_string = pull_html(is_curriculum_url_bi)
     is_curriculum_scraper(html_string, curr)
     scrape_course_detail(curr)
     write_to_csv(curr, 'is_bi.csv')
 
-    curr = is_curriculum_seed.copy()
+    curr = deepcopy(is_curriculum_seed)
     html_string = pull_html(is_curriculum_url_da)
     is_curriculum_scraper(html_string, curr)
     scrape_course_detail(curr)
     write_to_csv(curr, 'is_da.csv')
 
-    curr = is_curriculum_seed.copy()
+    curr = deepcopy(is_curriculum_seed)
     html_string = pull_html(is_curriculum_url_em)
     is_curriculum_scraper(html_string, curr)
     scrape_course_detail(curr)
     write_to_csv(curr, 'is_em.csv')
 
-    curr = is_curriculum_seed.copy()
+    curr = is_curriculum_seed
     html_string = pull_html(is_curriculum_url_s)
     is_curriculum_scraper(html_string, curr)
     scrape_course_detail(curr)

@@ -16,7 +16,7 @@ end
   resources :completed_courses
   resources :users
 
-    get 'student/studentdashboard'
+  get 'student/studentdashboard'
     get 'faculty/facultydashboard'
     get 'studentview', to: 'faculty#studentview'
     get 'admin/admindashboard'
@@ -28,6 +28,6 @@ end
     post   '/login',   to: 'sessions#create'
     delete '/logout',  to: 'sessions#destroy'
 
-	get		'when_if', to: 'when_ifs#index'
-	post    'when_if', to: 'when_ifs#run'
+	get		'when_ifs', to: 'when_ifs#index'
+	post    'when_ifs', to: 'when_ifs#run'
 end

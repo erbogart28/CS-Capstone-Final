@@ -1,0 +1,2 @@
+class WhenIf < ApplicationRecord
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_quarter: MyString
+  degree_id: MyString
+  concentration: MyString
+  course_load: 1
+
+two:
+  start_quarter: MyString
+  degree_id: MyString
+  concentration: MyString
+  course_load: 1
