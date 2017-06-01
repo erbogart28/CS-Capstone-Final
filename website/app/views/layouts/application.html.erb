@@ -28,11 +28,9 @@
       
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  <!--Start navbar collapsed  -->
         <ul class="nav navbar-nav"> <!-- Top NAV start -->
-          <li class="<%= 'active' if current_page?(student_studentdashboard_path) %>"><%= link_to "Student", student_studentdashboard_path %></li>
-          <% if current_user %>
+          <% if current_user.student? || current_user.faculty? %><li class="<%= 'active' if current_page?(student_studentdashboard_path) %>"><%= link_to "Student", student_studentdashboard_path %></li><% end %>
           <% if current_user.faculty? || current_user.admin? %><li class="<%= 'active' if current_page?(faculty_facultydashboard_path) %>"><%= link_to "Faculty", faculty_facultydashboard_path %></li><% end %>
           <% if current_user.admin? %><li class="<%= 'active' if current_page?(admin_admindashboard_path) %>"><%= link_to "Admin", admin_admindashboard_path %></li><% end %>
-          <% end %>
           <li class="<%= 'active' if current_page?(browse_courses_path) %>"><%= link_to "Browse Courses", browse_courses_path %></li>
           <li class="<%= 'active' if current_page?(when_if_path) %>"><%= link_to "When If Report", when_if_path %></li>
           <% if current_user.admin? %>
