@@ -1,5 +1,30 @@
-<container>
-  <div class="page-header">
-    <h1>Student Dashboard</h1>
+<div class="page-header">
+<h1>Student Dashboard: <%= current_user.first %> <%= current_user.last %></h1>
+
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <strong>Completed Courses</strong>
   </div>
-</container>
+  <div class="panel-body">
+  <table class="table table-responsive">
+	  <thead>
+	    <tr>
+	      <th>Name</th>
+	      <th>Course code</th>
+	      <th colspan="2"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+      <% @courses_taken.each do |f| %>
+        <tr>
+          <div class="margin-vertical">
+            <td> <%= f.name %> </td>
+            <td> <%= f.course_code %> </td>
+          </div>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
+</div>

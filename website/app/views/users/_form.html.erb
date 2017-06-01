@@ -13,9 +13,11 @@
   <%= f.label :password %> 
   <%= f.password_field :password, class: 'form-control' %>
 
-  <div class="" style="padding:2%; display:flex;justify-content: flex-start;width: 400px;flex-shrink: 10000">
-    <%= label_tag(:tos, "I agree to terms of service") %>
-    <%= check_box_tag(:tos)%>
+
+  <div class="" style="padding:2%; display:inline-block: flex-start;width: 400px;flex-shrink: 10000">
+    <%= label_tag("I agree to terms of service") %>
+    <%= check_box_tag(:tos, '', false, style: 'flex-shrink:10000')%>
+    <%= render 'tos' %>
   </div>
     
   <%= f.submit yield(:button_text), class: "btn btn-primary" , id: 'submit-register-form'%>
