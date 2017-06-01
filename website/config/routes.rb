@@ -16,7 +16,6 @@ end
   resources :completed_courses
   resources :users
 
-    get 'tos/tos'
     get 'student/studentdashboard'
     get 'faculty/facultydashboard'
     get 'studentview', to: 'faculty#studentview'
