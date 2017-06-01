@@ -10,4 +10,6 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     #         redirect_to root_path
     #     end
     # end
+    
+    
 end
