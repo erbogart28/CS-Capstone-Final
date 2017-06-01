@@ -10,13 +10,27 @@ class WhenIfsController < ApplicationController
   end
 
   def run
-    degree = params[:degree_id]
-    concentration = params[:concentration]
+    degree = params[:when_if][:degree_id]
+    concentration = params[:when_if][:concentration]
     puts concentration
-    course_load = params[:course_load].to_i
-    start_quarter = params[:start_quarter]
-    s = ShortestPath.new(concentration, 'AuO', (19 / course_load), 1)
-    puts s.shortest_path
+    @course_load = params[:when_if][:course_load].to_i
+    start_quarter = params[:when_if][:start_quarter]
+    s = ShortestPath.new(concentration, 'AuO', (19 / @course_load), @course_load)
+    s = s.shortest_path
+    s.each do |quarter|
+      quarter.map! { |code| Course.find_by course_code: code }
+    end
+    @quarters =  [
+        "Fall",
+        "Winter",
+        "Spring",
+        "Summer 10 week",
+        "Fall",
+        "Winter",
+        "Spring",
+        "Summer 10 week"
+    ]
+    @path = s
   end
 
   # GET /when_ifs/1
@@ -230,6 +244,7 @@ class ShortestPath
     @start_quarter = quarter
     @max_depth = max_depth
     @cpq = classes_per_quarter
+    p @cpq
   end
 
   def shortest_path()
@@ -273,7 +288,6 @@ class ShortestPath
     quart = @next_quarter[node.quarter]
     courses = @quarter_hash[quart]
     courses = courses.select do |c|
-      p node.completed
       if c.prereqs.nil?
         !node.completed.include?(c.course_code)
       else
@@ -310,10 +324,15 @@ class ShortestPath
     result = true
     case @deg.id
     when 1..7 # CS
+      # p node.completed
       result &= contains_n_from? node.completed, @priority_hash[0], 6
+      # p "1 #{result}"
       result &= contains_n_from? node.completed, @priority_hash[1], 5
+      # p "2 #{result}"
       result &= contains_n_from? node.completed, @priority_hash[@deg.id+1], 4
+      # p "3 #{result}"
       result &= node.completed.size >= 19
+      # p "4 #{result}"
     when 8 # Business Analysis/Systems Analysis
       result &= contains_n_from? node.completed, @priority_hash[1], 4
       result &= contains_n_from? node.completed, @priority_hash[2], 5
