@@ -10,4 +10,11 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     #         redirect_to root_path
     #     end
     # end
+    
+      def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |user|
+    csv << product.attributes
+    end
 end
