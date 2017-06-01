@@ -14,6 +14,14 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # GET /users.json
   def index
     @users = User.all
+    
+    respond_to do |format|
+    format.html
+    format.csv do
+      headers['Content-Disposition'] = "attachment; filename=\"user-list\""
+      headers['Content-Type'] ||= 'text/csv'
+      end
+  end
   end
   # GET /users/1
   # GET /users/1.json
