@@ -2,7 +2,10 @@
 <script>
 $(document).ready(function(){
     $("#pull").click(function(){
-        $(this).button('loading');
+        $(this).button('loading').delay(25000).queue(function(){
+            $(this).button("reset");
+            $(this).dequeue();
+        }); 
     });   
 });
 </script>
@@ -21,7 +24,7 @@ $(document).ready(function(){
                           All faculty and student account information. Can view certain students and faculty here as well.
                       </p>
                       <div class="access">
-                          <%= link_to "Users", users_path, :class => "btn btn-primary color-white", style: "width:80%;margin-top:4%" %>
+                          <%= link_to "Users & Faculty", users_path, :class => "btn btn-primary color-white" %>
                       </div>
               </div>
           </div>
@@ -32,10 +35,10 @@ $(document).ready(function(){
               <div class="card-content">
                   <h4 class="card-title">Pull Courses</h4>
                       <p class="aboutText">
-                          Pull the scraped course data.
+                          Upload course lists based off DePaul's course listings.
                       </p>
                       <div class="access">
-                          <%= link_to 'Pull', pull_path, :class => "btn btn-primary btn-md loading color-white", :id => "pull", style: "margin-top:23%;width:80%", method: :post %>
+                          <%= link_to 'Upload Courses', pull_path, :class => "btn btn-primary btn-md loading color-white", :id => "pull", method: :post %>
                       </div>
               </div>
           </div>
@@ -46,10 +49,10 @@ $(document).ready(function(){
               <div class="card-content">
                   <h4 class="card-title">Creat Data Reports</h4>
                       <p class="aboutText">
-                          Create csv report files.
+                          Download a CSV file of all users and their essential contact information.
                       </p>
                       <div class="access">
-                     <%= link_to 'Download CSV list', users_path(format: :csv), :class => "btn btn-primary color-white", style: "margin-top:23%;width:80%" %>                      
+                     <%= link_to 'Download CSV list', users_path(format: :csv), :class => "btn btn-primary color-white" %>                      
                      </div>
               </div>
           </div>
