@@ -2,7 +2,7 @@
 <script>
 $(document).ready(function(){
     $("#pull").click(function(){
-        $(this).button('loading').delay(25000).queue(function(){
+        $(this).button('loading').delay(30000).queue(function(){
             $(this).button("reset");
             $(this).dequeue();
         }); 
@@ -23,7 +23,7 @@ $(document).ready(function(){
                       <p class="aboutText">
                           Faculty and student account information. Ability to view as students and faculty.
                       </p>
-                      <div class="access">
+                      <div class="access" style="margin-top:1%">
                           <%= link_to "Users & Faculty", users_path, :class => "btn btn-primary color-white" %>
                       </div>
               </div>
@@ -35,10 +35,10 @@ $(document).ready(function(){
               <div class="card-content">
                   <h4 class="card-title">Pull Courses</h4>
                       <p class="aboutText">
-                          Upload course lists based off DePaul's course listings.
+                          Update course listings based off DePaul's listed courses.
                       </p>
                       <div class="access">
-                          <%= link_to 'Upload Courses', pull_path, :class => "btn btn-primary btn-md loading color-white", :id => "pull", method: :post %>
+                          <%= link_to 'Upload Courses', pull_path, :class => "btn btn-primary loading color-white", :id => "pull", method: :post %>
                       </div>
               </div>
           </div>
@@ -47,7 +47,7 @@ $(document).ready(function(){
       <div class="col-xs-12 col-sm-4 col-md-4">
           <div class="card">
               <div class="card-content">
-                  <h4 class="card-title">Creat Data Reports</h4>
+                  <h4 class="card-title">Create Data Reports</h4>
                       <p class="aboutText">
                           Download a CSV file of all users and their essential contact information.
                       </p>
@@ -58,4 +58,4 @@ $(document).ready(function(){
           </div>
       </div>
   </div> <!-- End row 1-->
-
+</div>
