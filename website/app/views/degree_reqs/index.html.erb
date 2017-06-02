@@ -13,7 +13,7 @@
 		  <tbody>
 		    <% @degree_reqs.each do |degree_req| %>
 		      <tr>
-					<td><%= degree_req.course_id %></td>
+					<td><%= degree_req.course_code %></td>
 					<td><%= link_to 'Show', degree_req, class:"btn btn-primary btn-xs color-white" %> </td>
 			<td><%= link_to 'Edit', edit_degree_req_path(degree_req), class:"btn btn-warning btn-xs color-white" %></td>
 			<td><%= link_to 'Destroy', degree_req, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-xs color-white" %></td>
