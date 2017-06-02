@@ -23,6 +23,7 @@
             <h4>Desired Course Load</h4>
             <%= f.select(:course_load,
                 options_for_select([ "1", "2","3"])) %>
+            <%= f.hidden_field(:user_id, value: @user_id) %>
             <br><br>   <!--I'm lazy, accept the br's-->
             <!--<h4>Classroom Enviornment</h4>-->
             <%# f.select_tag(:online || :remote,
@@ -33,13 +34,14 @@
     </div>
   <script>
     $(document).on("turbolinks:load", function () {
-        var degree = document.getElementById("degree-sel");
+        var degree = document.getElementById("when_if_degree_id");
         var csOptions = ["Software and Systems Development", "Theory", "Data Science", "Database Systems", "Artificial Intelligence", "Software Engineering", "Multimedia"];
         var isOptions = ["Business Analysis/Systems Analysis", "Business Intelligence", "Database Administration", "Database Administration", "IT Enterprise Management", "Standard"];
-        var concentration = document.getElementById("concentration-sel");
-        $("#degree-sel").on('change', function () {
+        var concentration = document.getElementById("when_if_concentration");
+        $("#when_if_degree_id").on('change', function () {
+            console.log('here');
             console.log(degree.options[degree.selectedIndex].value == "CS");
-            var $el = $("#concentration-sel");
+            var $el = $("#when_if_concentration");
             $el.empty(); // remove old options
             if (degree.options[degree.selectedIndex].value == "CS") {
 

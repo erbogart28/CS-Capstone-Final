@@ -33,6 +33,8 @@ end
 
 
 class BoolExp
+  attr_accessor :root
+
   def initialize(prereq, completed)
     @text = prereq
     @completed = completed
@@ -42,7 +44,6 @@ class BoolExp
     else
       @root = BoolNode.new({type: BType::TRUE})
     end
-    p 'test'
   end
 
   def evaluate
@@ -80,7 +81,9 @@ class BoolExp
           else
             right = BoolNode.new(data: read_tok(7), type: BType::LEAF)
             right.type = BType::TRUE unless valid_operand?(right.data)
-            @scanner.terminate
+            if @scanner.eos? || @scanner.pos == @text.length - 1
+              @scanner.terminate
+            end
           end
           left = BoolNode.new(left: left, right: right, type: type)
         else
@@ -101,14 +104,14 @@ class BoolExp
   def read_tok(len)
     tok = @scanner.peek(len)
     if tok.end_with? ' '
-      tok = tok.rstrip!
+      tok.strip!
     elsif tok.end_with? ')'
       tok = tok.chomp!(')')
     elsif @scanner.pos + len < @text.length - 1 && @text[@scanner.pos + len] != ')'
       @scanner.pos += 1
     end
     unless @scanner.eos?
-      @scanner.pos += @text[@scanner.pos + len - 1] == ')' || @scanner.pos + len >= @text.length ? len -1 : len
+      @scanner.pos += @text[@scanner.pos + len - 1] == ')' || tok.start_with?('SE','IT','PM', 'IS') ? len -1 : len
     end
     tok
   end
@@ -128,8 +131,8 @@ end
 # b = BoolExp.new("IT 403 and (CSC 401 or IT 411)")
 # puts b.to_s
 #
-b = BoolExp.new("CSC 423 or consent of instructor", Set.new)
-puts b.to_s
+# b = BoolExp.new("CSC 423 or consent of instructor", Set.new)
+# puts b.to_s
 #
-b = BoolExp.new("SE 450 or SE 452", Set.new)
+b = BoolExp.new("SE 477 or IS 565 or ACT 500 or IS 430 or PM 430 or ECT 455", Set.new)
 puts b.to_s

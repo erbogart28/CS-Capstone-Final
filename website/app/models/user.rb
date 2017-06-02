@@ -14,4 +14,5 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 3 }, allow_nil: true
     validates :first, presence: true
     validates :last, presence: true
+    has_many :when_ifs
 end

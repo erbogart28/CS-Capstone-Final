@@ -1,4 +1,5 @@
 require 'strscan'
+require 'timeout'
 
 class WhenIfsController < ApplicationController
   before_action :set_when_if, only: [:show, :edit, :update, :destroy]
@@ -7,6 +8,7 @@ class WhenIfsController < ApplicationController
   # GET /when_ifs.json
   def index
     @when_if = WhenIf.new
+    @user_id = session[:user_id].last
   end
 
   def run
@@ -36,6 +38,39 @@ class WhenIfsController < ApplicationController
   # GET /when_ifs/1
   # GET /when_ifs/1.json
   def show
+    @when_if = WhenIf.find(params[:id])
+    h = {
+        'Fall'.freeze => 'AuO',
+        'Winter'.freeze => 'WiO',
+        'Spring'.freeze => 'SpO',
+    }
+    course_count = get_course_count(@when_if.concentration)
+
+    s = ShortestPath.new(
+        @when_if.concentration,
+        h[@when_if.start_quarter],
+        (course_count / @when_if.course_load).ceil,
+        @when_if.course_load
+    )
+    begin
+      s = timeout(10) { s.shortest_path }
+      s.each do |quarter|
+        quarter.map! { |code| Course.find_by course_code: code }
+      end
+      @quarters =  [
+          "Fall",
+          "Winter",
+          "Spring",
+          "Summer 10 week",
+          "Fall",
+          "Winter",
+          "Spring",
+          "Summer 10 week"
+      ]
+      @path = s
+    rescue TimeoutError
+      @path = []
+    end
   end
 
   # GET /when_ifs/new
@@ -49,6 +84,8 @@ class WhenIfsController < ApplicationController
   # POST /when_ifs
   # POST /when_ifs.json
   def create
+    @when_if = WhenIf.create(when_if_params)
+    redirect_to @when_if
   end
 
   # PATCH/PUT /when_ifs/1
@@ -62,30 +99,33 @@ class WhenIfsController < ApplicationController
   end
 
   private
-    def get_max_depth(degree, concentration, load)
-      if degree == 'CS'
-        (19 / load).ceil
+  def get_course_count(concentration)
+    case concentration
+      when 'Business Analysis/Systems Analysis'
+        12 # todo finish
+      when 'Business Intelligence'
+        14
+      when 'Database Administration'
+        13
+      when 'IT Enterprise Management'
+        12
+      when 'Standard'
+        11
       else
-        case concentration
-          when 'Business Analysis/Systems Analysis'
-            -1 # todo finish
-          else
-            -1
-        end
-      end
+        19
     end
+  end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_when_if
-      # -      @when_if = WhenIf.find(params[:id])
+  # Use callbacks to share common setup or constraints between actions.
+  def set_when_if
+    # -      @when_if = WhenIf.find(params[:id])
+    @when_if = WhenIf.find(params[:id])
+  end
 
-      @when_if = WhenIf.find(params[:start_quarter, :degree_id, :course_load, :concentration])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def when_if_params
-      params.require(:when_if).permit(:concentration, :course_load, :start_quarter, :degree_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def when_if_params
+    params.require(:when_if).permit(:concentration, :course_load, :start_quarter, :degree_id, :user_id)
+  end
 end
 
 
@@ -104,13 +144,15 @@ class BoolNode
     @data = options[:data]
     @left = options[:left]
     @right = options[:right]
-    @type = options[:type]
+    @type = options[:type].strip
   end
 
   def evaluate(completed)
     return true if @type == BType::TRUE
     if @type == BType::LEAF
-      completed.include? @data
+      res = completed.include? @data
+      # p res, @data
+      res
     elsif @type == BType::OR
       @left.evaluate(completed) || @right.evaluate(completed)
     else
@@ -121,6 +163,8 @@ end
 
 
 class BoolExp
+  attr_accessor :root
+
   def initialize(prereq, completed)
     @text = prereq
     @completed = completed
@@ -133,7 +177,7 @@ class BoolExp
   end
 
   def evaluate
-
+    # p @root if @text == 'SE 477 or IS 565 or ACT 500 or IS 430 or PM 430 or ECT 455'
     @root.evaluate(@completed)
   end
 
@@ -161,13 +205,15 @@ class BoolExp
           left = BoolNode.new(data: read_tok(7), type: BType::LEAF)
 
         elsif !@scanner.eos?
-          type = read_tok 3
+          type = read_tok(3)
           if @scanner.peek(1) == '('
             right = create_tree
           else
             right = BoolNode.new(data: read_tok(7), type: BType::LEAF)
             right.type = BType::TRUE unless valid_operand?(right.data)
-            @scanner.terminate
+            if @scanner.eos? || @scanner.pos == @text.length - 1
+              @scanner.terminate
+            end
           end
           left = BoolNode.new(left: left, right: right, type: type)
         else
@@ -188,14 +234,18 @@ class BoolExp
   def read_tok(len)
     tok = @scanner.peek(len)
     if tok.end_with? ' '
-      tok = tok.rstrip!
+      tok.strip!
     elsif tok.end_with? ')'
       tok = tok.chomp!(')')
     elsif @scanner.pos + len < @text.length - 1 && @text[@scanner.pos + len] != ')'
       @scanner.pos += 1
     end
     unless @scanner.eos?
-      @scanner.pos += @text[@scanner.pos + len - 1] == ')' || tok.start_with?('SE','IT') ? len -1 : len
+      begin
+        @scanner.pos += @text[@scanner.pos + len - 1] == ')' || tok.start_with?('SE','IT','PM', 'IS') ? len -1 : len
+      rescue StandardError
+        @scanner.terminate
+      end
     end
     tok
   end
@@ -244,15 +294,20 @@ class ShortestPath
     @start_quarter = quarter
     @max_depth = max_depth
     @cpq = classes_per_quarter
-    p @cpq
   end
 
   def shortest_path()
-    list_nodes = [Node.new([],[],-1, @next_quarter.key(@start_quarter.to_sym), nil)]
+    list_nodes = [Node.new([],[],0, @next_quarter.key(@start_quarter.to_sym), nil)]
     node = nil
     loop do
-      node = list_nodes.last
+      n = list_nodes.last
+      if n.nil?
+        p node
+      end
+      node = n
+
       if node.depth >= @max_depth
+        # p 'max depth'
         if goal_state(node)
           return get_path(node)
         else
@@ -276,6 +331,17 @@ class ShortestPath
         end
       end
     end
+    if @deg.id == 12
+      Degree.find(10).degree_reqs.each do |course|
+        course.priority += 10
+        unless course.history.nil?
+          hist = course.history.split ','
+          hist.each do |quart|
+            @quarter_hash[quart.to_sym] << course
+          end
+        end
+      end
+    end
   end
 
   def map_by_priority
@@ -292,7 +358,9 @@ class ShortestPath
         !node.completed.include?(c.course_code)
       else
         b = BoolExp.new(c.prereqs, node.completed)
-        b.evaluate && !node.completed.include?(c.course_code)
+        res = b.evaluate
+        # p c.course_code, "====================================", node.completed unless res
+        res && !node.completed.include?(c.course_code)
       end
     end
     # TODO: Concentration specific priority order
@@ -322,47 +390,49 @@ class ShortestPath
 
   def goal_state(node)
     result = true
-    case @deg.id
-    when 1..7 # CS
-      # p node.completed
-      result &= contains_n_from? node.completed, @priority_hash[0], 6
-      # p "1 #{result}"
-      result &= contains_n_from? node.completed, @priority_hash[1], 5
-      # p "2 #{result}"
-      result &= contains_n_from? node.completed, @priority_hash[@deg.id+1], 4
-      # p "3 #{result}"
-      result &= node.completed.size >= 19
-      # p "4 #{result}"
-    when 8 # Business Analysis/Systems Analysis
-      result &= contains_n_from? node.completed, @priority_hash[1], 4
-      result &= contains_n_from? node.completed, @priority_hash[2], 5
-      result &= contains_n_from? node.completed, @priority_hash[3], 2
-      result &= node.completed.include? @priority_hash[4][0]
-    when 9 # Business Intelligence
-      result &= contains_n_from? node.completed, @priority_hash[0], 2
-      result &= contains_n_from? node.completed, @priority_hash[1], 4
-      result &= contains_n_from? node.completed, @priority_hash[2], 4
-      result &= contains_n_from? node.completed, @priority_hash[3], 3
-      result &= node.completed.include? @priority_hash[4][0]
-    when 10 # Database Administration
-      result &= contains_n_from? node.completed, @priority_hash[0], 1
-      result &= contains_n_from? node.completed, @priority_hash[1], 4
-      result &= contains_n_from? node.completed, @priority_hash[2], 4
-      result &= contains_n_from? node.completed, @priority_hash[3], 3
-      result &= node.completed.include? @priority_hash[4][0]
-    when 11 # IT Enterprise Management
-      result &= contains_n_from? node.completed, @priority_hash[0], 4
-      result &= contains_n_from? node.completed, @priority_hash[1], 4
-      result &= contains_n_from? node.completed, @priority_hash[2], 3
-      result &= node.completed.include? @priority_hash[4][0]
-    when 12 # Standard
-      result &= contains_n_from? node.completed, @priority_hash[0], 4
-      result &= contains_n_from? node.completed, @priority_hash[1], 4
-      result &= contains_n_from? node.completed, @priority_hash[2], 4
-      result &= node.completed.include? @priority_hash[1][0]
-    else
-      result = false
-    end
+    # case @deg.id
+    #   when 1..7 # CS
+    #     result &= contains_n_from? node.completed, @priority_hash[0], 6
+    #     p '1' if result
+    #     result &= contains_n_from? node.completed, @priority_hash[1], 5
+    #     p '2' if result
+    #     result &= contains_n_from? node.completed, @priority_hash[@deg.id+1], 4
+    #     p '3' if result
+    #     result &= node.completed.size >= 19
+    #   when 8 # Business Analysis/Systems Analysis
+    #     # # p node.completed
+    #     # # p 0
+    #     # result &= contains_n_from? node.completed, @priority_hash[1], 4
+    #     # # p "1 #{result}" if result
+    #     # result &= contains_n_from? node.completed, @priority_hash[2], 5
+    #     # p "2 #{result}" if result
+    #     # result &= contains_n_from? node.completed, @priority_hash[3], 2
+    #     # p "3 #{result}" if result
+    #     # result &= node.completed.include? @priority_hash[4][0]
+    #     # p "4 #{result}" if result
+    #     result
+    #   when 9 # Business Intelligence
+    #     result &= contains_n_from? node.completed, @priority_hash[0], 2
+    #     result &= contains_n_from? node.completed, @priority_hash[1], 4
+    #     result &= contains_n_from? node.completed, @priority_hash[2], 4
+    #     result &= contains_n_from? node.completed, @priority_hash[3], 3
+    #     result &= node.completed.include? @priority_hash[4][0]
+    #   when 10 # Database Administration
+    #     result &= contains_n_from? node.completed, @priority_hash[0], 1
+    #     result &= contains_n_from? node.completed, @priority_hash[1], 4
+    #     result &= contains_n_from? node.completed, @priority_hash[2], 4
+    #     result &= contains_n_from? node.completed, @priority_hash[3], 3
+    #     result &= node.completed.include? @priority_hash[4][0]
+    #   when 11 # IT Enterprise Management
+    #     result &= contains_n_from? node.completed, @priority_hash[0], 4
+    #     result &= contains_n_from? node.completed, @priority_hash[1], 4
+    #     result &= contains_n_from? node.completed, @priority_hash[2], 3
+    #     result &= node.completed.include? @priority_hash[4][0]
+    #   when 12 # Standard
+    #     result &= contains_n_from? node.completed, @priority_hash[0], 4
+    #   else
+    #     result = false
+    # end
     result
   end
 
