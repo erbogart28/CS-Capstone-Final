@@ -18,8 +18,8 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
     respond_to do |format|
     format.html
     format.csv do
-      headers['Content-Disposition'] = "attachment; filename=\"user-list\""
-      headers['Content-Type'] ||= 'text/csv'
+      headers['Content-Disposition'] = 'attachment; filename=userlist.csv'
+      headers['Content-Type'] = 'text/csv'
       end
   end
   end
@@ -57,16 +57,6 @@ before_action :correct_user,   only: [:edit, :update] #ensure correct user is ed
   # PATCH/PUT /users/1.json
   def update
     @user = User.find(params[:id])
-=begin
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      redirect_to @user
-      # Handle a successful update.
-     else
-      render 'edit'
-    end
-=end
-
       if @user.update(user_params)
         flash[:success] = "User was successfully updated."
         redirect_to @user
