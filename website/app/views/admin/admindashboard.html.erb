@@ -26,8 +26,8 @@
                       <p class="aboutText">
                           Pull the scraped course data.
                       </p>
-                      <div class="access">
-                          <%= link_to 'Pull', pull_path, :class => "btn btn-primary color-white", method: :post %>
+                      <div class="access" style="padding:7%;margin-top:13%">
+                          <%= link_to 'Pull', pull_path, :class => "btn btn-primary color-white", method: :POST %>
                       </div>
               </div>
           </div>
@@ -40,7 +40,7 @@
                       <p class="aboutText">
                           Download a CSV file of all users.
                       </p>
-                      <div class="access" style="margin:2%">
+                      <div class="access" style="padding:7%;margin-top:13%">
                         <%= link_to 'Download CSV list', users_path(format: :csv), :class => "btn btn-primary color-white" %>
                       </div>
               </div>
