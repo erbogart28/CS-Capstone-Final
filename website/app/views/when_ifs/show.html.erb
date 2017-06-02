@@ -1,1 +1,34 @@
-<h3>Course Deliveries</h3>
+<container>
+  <div class="page-header">
+    <h2>Your Generated Course Plan</h2>
+  </div>
+</container>
+
+<% @path.each_with_index do |val, index| %>
+    <container>
+      <div class="page-header">
+        <h4><%= @quarters[index % 8] %></h4>
+      </div>
+    </container>
+    <table class="table table-responsive">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Course code</th>
+        <th>Description</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% val.each do |course| %>
+          <tr>
+            <td><%= course.name %></td>
+            <td><%= course.course_code %></td>
+            <td><%= course.description %></td>
+            <td><a class="btn btn-primary btn-xs color-white" href="/browse_courses/<% course.course_code[-3..-1] %>">Show</a> </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>

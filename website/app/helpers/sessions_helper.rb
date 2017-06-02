@@ -17,6 +17,7 @@ module SessionsHelper
     
     # Returns the current logged-in user (if any).
     def current_user
+        session.clear if session[:user_id].class == Fixnum
         @current_user ||= User.find_by(id: session[:user_id].last) if session[:user_id]
     end
     

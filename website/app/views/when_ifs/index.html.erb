@@ -4,42 +4,44 @@
 <% provide(:button_text, 'Run When-If Report') %>
 <div class="panel panel-default">
     <div class="panel-body">
-        <%= form_tag(action: "run", method: "get") do %>
+        <%= form_for [@when_if], action: "run" do |f| %>
             <h4>Starting Quarter</h4>
-            <%= select_tag(:start_quarter, #elect_tag(:when_if_starting_quarter,  options_for_select([ "Spring", "test" ]))     || old code, don't know if correct
+            <%= f.select(:start_quarter, #elect_tag(:when_if_starting_quarter,  options_for_select([ "Spring", "test" ]))     || old code, don't know if correct
                 options_for_select([ "Spring", "Winter", "Fall" ])) %>  <!--select_tag "people", options_from_collection_for_select(@people, "id", "name")    // Might be correct format use if needed-->
             <br><br> <!--I'm lazy, accept the br's-->
             <h4>Degree Type</h4>
-            <%= select_tag(:degree_id, 
+            <%= f.select(:degree_id,
                 options_for_select([ "CS", "IS" ]),
                 id: "degree-sel") %>
             <br><br>   <!--I'm lazy, accept the br's-->
             <h4>Concentration Type</h4>
 
-            <%= select_tag(:concentration,
+            <%= f.select(:concentration,
                 options_for_select(["Software and Systems Development", "Theory", "Data Science", "Database Systems", "Artificial Intelligence", "Software Engineering", "Multimedia"]),
                 id: "concentration-sel") %>
             <br><br><!--I'm lazy, accept the br's-->
             <h4>Desired Course Load</h4>
-            <%= select_tag(:course_load, 
+            <%= f.select(:course_load,
                 options_for_select([ "1", "2","3"])) %>
+            <%= f.hidden_field(:user_id, value: @user_id) %>
             <br><br>   <!--I'm lazy, accept the br's-->
-            <h4>Classroom Enviornment</h4>
-            <%= select_tag(:online || :remote, 
+            <!--<h4>Classroom Enviornment</h4>-->
+            <%# f.select_tag(:online || :remote,
                 options_for_select([ "Online", "Remote", "Both" ])) %>
             <br><br><!--I'm lazy, accept the br's-->
-              <%= submit_tag yield(:button_text), class: "btn btn-primary" %>
+              <%= f.submit yield(:button_text), class: "btn btn-primary" %>
         <% end %>
     </div>
   <script>
     $(document).on("turbolinks:load", function () {
-        var degree = document.getElementById("degree-sel");
+        var degree = document.getElementById("when_if_degree_id");
         var csOptions = ["Software and Systems Development", "Theory", "Data Science", "Database Systems", "Artificial Intelligence", "Software Engineering", "Multimedia"];
         var isOptions = ["Business Analysis/Systems Analysis", "Business Intelligence", "Database Administration", "Database Administration", "IT Enterprise Management", "Standard"];
-        var concentration = document.getElementById("concentration-sel");
-        $("#degree-sel").on('change', function () {
+        var concentration = document.getElementById("when_if_concentration");
+        $("#when_if_degree_id").on('change', function () {
+            console.log('here');
             console.log(degree.options[degree.selectedIndex].value == "CS");
-            var $el = $("#concentration-sel");
+            var $el = $("#when_if_concentration");
             $el.empty(); // remove old options
             if (degree.options[degree.selectedIndex].value == "CS") {
 
@@ -60,5 +62,4 @@
   </script>
     <div class="panel-footer">
     </div>
-
 </div>

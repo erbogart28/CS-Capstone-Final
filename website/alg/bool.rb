@@ -1,4 +1,5 @@
 require 'strscan'
+require 'set'
 
 
 module BType
@@ -18,27 +19,36 @@ class BoolNode
     @type = options[:type]
   end
 
-  def evaluate()
+  def evaluate(completed)
+    return true if @type == BType::TRUE
     if @type == BType::LEAF
-      @data # TODO: lookup completed courses
+      completed.include? @data
     elsif @type == BType::OR
-      @left.evaluate || @right.evaluate
+      @left.evaluate(completed) || @right.evaluate(completed)
     else
-      @left.evaluate && @right.evaluate
+      @left.evaluate(completed) && @right.evaluate(completed)
     end
   end
 end
 
 
 class BoolExp
-  def initialize(prereq)
+  attr_accessor :root
+
+  def initialize(prereq, completed)
     @text = prereq
+    @completed = completed
     @scanner = StringScanner.new(prereq)
     if !prereq || prereq[0] == '(' || valid_operand?(prereq)
       @root = create_tree
     else
-      @root = BoolNode.new({type: BType::true})
+      @root = BoolNode.new({type: BType::TRUE})
     end
+  end
+
+  def evaluate
+
+    @root.evaluate(@completed)
   end
 
   def create_tree
@@ -71,7 +81,9 @@ class BoolExp
           else
             right = BoolNode.new(data: read_tok(7), type: BType::LEAF)
             right.type = BType::TRUE unless valid_operand?(right.data)
-            @scanner.terminate
+            if @scanner.eos? || @scanner.pos == @text.length - 1
+              @scanner.terminate
+            end
           end
           left = BoolNode.new(left: left, right: right, type: type)
         else
@@ -92,14 +104,14 @@ class BoolExp
   def read_tok(len)
     tok = @scanner.peek(len)
     if tok.end_with? ' '
-      tok = tok.rstrip!
+      tok.strip!
     elsif tok.end_with? ')'
       tok = tok.chomp!(')')
     elsif @scanner.pos + len < @text.length - 1 && @text[@scanner.pos + len] != ')'
       @scanner.pos += 1
     end
     unless @scanner.eos?
-      @scanner.pos += @text[@scanner.pos + len - 1] == ')' ? len -1 : len
+      @scanner.pos += @text[@scanner.pos + len - 1] == ')' || tok.start_with?('SE','IT','PM', 'IS') ? len -1 : len
     end
     tok
   end
@@ -107,18 +119,20 @@ end
 
 
 
-b = BoolExp.new("CSC 406 and CSC 402")
+# b = BoolExp.new("CSC 406 and CSC 402")
+# puts b.to_s
+#
+# b = BoolExp.new("CSC 453 and (CSC 435 or TDC 405 or TDC 463)")
+# puts b.to_s
+#
+# b = BoolExp.new("(CSC 402 or CSC 404) and CSC 423")
+# puts b.to_s
+#
+# b = BoolExp.new("IT 403 and (CSC 401 or IT 411)")
+# puts b.to_s
+#
+# b = BoolExp.new("CSC 423 or consent of instructor", Set.new)
+# puts b.to_s
+#
+b = BoolExp.new("SE 477 or IS 565 or ACT 500 or IS 430 or PM 430 or ECT 455", Set.new)
 puts b.to_s
-
-b = BoolExp.new("CSC 453 and (CSC 435 or TDC 405 or TDC 463)")
-puts b.to_s
-
-b = BoolExp.new("(CSC 402 or CSC 404) and CSC 423")
-puts b.to_s
-
-b = BoolExp.new("IT 403 and (CSC 401 or IT 411)")
-puts b.to_s
-
-b = BoolExp.new("CSC 412 or consent of instructor")
-puts b.to_s
-

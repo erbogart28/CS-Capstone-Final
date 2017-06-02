@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523012155) do
+ActiveRecord::Schema.define(version: 20170601022315) do
 
   create_table "completed_courses", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,9 +30,13 @@ ActiveRecord::Schema.define(version: 20170523012155) do
   end
 
   create_table "degree_reqs", force: :cascade do |t|
-    t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "course_code"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "priority"
+    t.integer  "degree_id"
+    t.string   "history"
+    t.string   "prereqs"
   end
 
   create_table "degrees", force: :cascade do |t|
@@ -81,6 +85,16 @@ ActiveRecord::Schema.define(version: 20170523012155) do
     t.string   "password_digest"
     t.integer  "role"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "when_ifs", force: :cascade do |t|
+    t.string   "start_quarter"
+    t.string   "degree_id"
+    t.string   "concentration"
+    t.integer  "course_load"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
   end
 
 end
