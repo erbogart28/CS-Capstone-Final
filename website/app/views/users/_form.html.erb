@@ -1,3 +1,7 @@
+<style>body{margin-top:5%;}</style>
+<script src="assets/javascripts/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/stylesheets/sweetalert.css">
+
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
@@ -14,9 +18,11 @@
   <%= f.password_field :password, class: 'form-control' %>
 
 
-  <div class="" style="padding:2%; display:inline-block: flex-start;width: 400px;flex-shrink: 10000">
-    <%= label_tag("I agree to terms of service") %>
-    <%= check_box_tag(:tos, '', false, style: 'flex-shrink:10000')%>
+  <div class="container row" style="padding:2%; display:inline-block;margin-bottom:-5%;width: 400px;flex-shrink: 10000">
+    <%= label_tag("I agree to terms of service")%>
+    <%= check_box_tag(:tos, '', false)%>
+    </div>
+    <div class="container row" style="margin-top:-25px;margin-bottom:25px;margin-left:2px;">
     <%= render 'tos' %>
   </div>
     
@@ -24,11 +30,12 @@
   
   </div>
   <script>
+
     function validateCheckbox(e)
     {
         if(!$('#tos')[0].checked){
           e.preventDefault();
-          alert("you have to accept the terms first");
+          sweetAlert("Please agree to Terms of Service");
         }
     }
     $(document).on('turbolinks:load', function() {
