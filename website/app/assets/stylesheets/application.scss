@@ -16,15 +16,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-input[type="radio"],
-input[type="checkbox"] {
-  margin: auto;
-  line-height: 500px;
-  margin-top: -20px;
-  assign-self:auto;
-  align-items: flex-baseline;
-}
-
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     vertical-align: middle !important; 
 }

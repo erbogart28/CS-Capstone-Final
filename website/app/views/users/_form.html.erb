@@ -6,22 +6,20 @@
   <%= render 'shared/error_messages', object: @user %>
 
   <%= f.label :first, "First Name" %>
-  <%= f.text_field :first, class: 'form-control form-control-danger' %>
+  <%= f.text_field :first, class: 'form-control' %>
 
   <%= f.label :last, "Last Name" %>
-  <%= f.text_field :last, class: 'form-control form-control-danger' %>
+  <%= f.text_field :last, class: 'form-control' %>
   
   <%= f.label :email, "School Email" %>
-  <%= f.email_field :email, class: 'form-control form-control-danger' %>
+  <%= f.email_field :email, class: 'form-control' %>
 
   <%= f.label :password %> 
-  <%= f.password_field :password, class: 'form-control form-control-danger' %>
+  <%= f.password_field :password, class: 'form-control' %>
 
-
-  <div class="container row" style="align-items:flex-start;padding:2%; display:inline-block;margin-bottom:-5%;width: 400px;flex-shrink: 10000">
-    <%= label_tag("I agree to terms of service") %>
-    <%= check_box_tag(:tos, '', false) %>
-    </div>
+    <label class="checkbox-inline" style="margin-top: 1em">
+      <input type="checkbox" id="tos" value="false">Agree to Terms of Service
+    </label>
     <div class="" style="margin-bottom:25px;margin-left:2px;">
     <%= render 'tos' %>
   </div>
