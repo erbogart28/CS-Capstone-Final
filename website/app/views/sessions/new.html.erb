@@ -1,27 +1,27 @@
 <% provide(:title, "Log in") %>
 <style>body{margin-top:10%;}</style>
 <!-- generates warning message for user -->
-<div class="container has-danger" style="margin-top:2%;" >
   <% flash.each do |message_type, message| %>
     <%# content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
-</div>
-<div class ="container">
+
+<div class="page-header" style="height:auto;text-indent:2%">
 <h1>Log In</h1> <!--header title for page -->
-
-<div class="pannel">
-  <div class="panel-body">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control form-control-danger' %>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control form-control-danger' %>
-      <div class="login-button-padding">
-        <%= f.submit "Log in", class: "btn btn-primary" %>
-      </div>
-    <% end %>
-
-    <p>New user? <%= link_to "Register Here", signup_path %></p>
+</div>
+  <div class="pannel">
+    <div class="panel-body" style="padding:1%">
+      <%= form_for(:session, url: login_path) do |f| %>
+      
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+        <div class="login-button-padding" style="margin-top:1.5em">
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+  
+      <p>New user?<%= link_to "Register Here", signup_path, class: 'btn btn-link' %></p>
+    </div>
   </div>
-</div>
-</div>
