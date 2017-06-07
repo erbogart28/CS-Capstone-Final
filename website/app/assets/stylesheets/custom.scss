@@ -46,28 +46,8 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+  width:100%;
 }
-
-
-/* forms */
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-//Don't judge me. Importing from sass stylesheet was not workin out... had to define state-danger variable here because of these unfortunate cirumstances and lack of motivation and sleep
-$state-danger-text: #a94442 !default;
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text,;
-  }
-}
-
 /* Users index */
 
 .users {

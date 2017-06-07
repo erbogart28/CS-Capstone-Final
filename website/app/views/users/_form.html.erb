@@ -9,20 +9,20 @@
   <%= f.text_field :first, class: 'form-control form-control-danger' %>
 
   <%= f.label :last, "Last Name" %>
-  <%= f.text_field :last, class: 'form-control' %>
+  <%= f.text_field :last, class: 'form-control form-control-danger' %>
   
   <%= f.label :email, "School Email" %>
-  <%= f.email_field :email, class: 'form-control' %>
+  <%= f.email_field :email, class: 'form-control form-control-danger' %>
 
   <%= f.label :password %> 
-  <%= f.password_field :password, class: 'form-control' %>
+  <%= f.password_field :password, class: 'form-control form-control-danger' %>
 
 
-  <div class="container row" style="padding:2%; display:inline-block;margin-bottom:-5%;width: 400px;flex-shrink: 10000">
-    <%= label_tag("I agree to terms of service")%>
-    <%= check_box_tag(:tos, '', false)%>
+  <div class="container row" style="align-items:flex-start;padding:2%; display:inline-block;margin-bottom:-5%;width: 400px;flex-shrink: 10000">
+    <%= label_tag("I agree to terms of service") %>
+    <%= check_box_tag(:tos, '', false) %>
     </div>
-    <div class="container row" style="margin-top:-25px;margin-bottom:25px;margin-left:2px;">
+    <div class="" style="margin-bottom:25px;margin-left:2px;">
     <%= render 'tos' %>
   </div>
     

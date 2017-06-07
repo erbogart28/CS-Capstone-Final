@@ -96,6 +96,11 @@ class WhenIfsController < ApplicationController
   # DELETE /when_ifs/1
   # DELETE /when_ifs/1.json
   def destroy
+    @when_if.destroy
+    respond_to do |format|
+      format.html { redirect_to student_studentdashboard_path, success: 'Path successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

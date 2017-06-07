@@ -16,11 +16,6 @@
     <%= f.label :username %>
     <%= f.text_field :username, class: "form-control" %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.text_field :password, class: "form-control" %>
-  </div>
   
   <% if current_user.admin? %>
     <div class = "form-group">
@@ -42,37 +37,6 @@
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :degree_id %>
-    <%= f.number_field :degree_id, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :course_load %>
-    <%= f.text_field :course_load, class: "form-control" %>
-  </div>
-  
-  
-  <div class="form-group">
-    <%= f.label :in_class %>
-    <%= f.number_field :in_class, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :online %>
-    <%= f.number_field :online, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :path_id %>
-    <%= f.number_field :path_id, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :deleted %>
-    <%= f.number_field :deleted, class: "form-control" %>
   </div>
 
   <div class="actions">
