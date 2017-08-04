@@ -91,8 +91,8 @@ GEM
       mini_portile2 (~> 2.2.0)
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
-    pg (0.21.0)
-    pg (0.21.0-x86-mingw32)
+    pretender (0.3.1)
+      actionpack
     puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -158,6 +158,8 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     web-console (3.5.1)
@@ -182,7 +184,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   listen
-  pg
+  pretender
   puma
   rails
   sass-rails
@@ -190,6 +192,7 @@ DEPENDENCIES
   spring-watcher-listen
   sqlite3
   turbolinks
+  tzinfo-data
   uglifier
   web-console
 
