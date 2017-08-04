@@ -91,6 +91,8 @@ GEM
       mini_portile2 (~> 2.2.0)
     nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
+    pg (0.21.0)
+    pg (0.21.0-x86-mingw32)
     pretender (0.3.1)
       actionpack
     puma (3.9.1)
@@ -184,6 +186,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   listen
+  pg
   pretender
   puma
   rails
